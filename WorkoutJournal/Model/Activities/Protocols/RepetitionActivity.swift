@@ -11,7 +11,6 @@ import Foundation
 
 protocol RepetitionActivity: Activity {
     
-    var name: String {get set}
-    var count: Int {get set}
+    var repetitions: Int {get set}
     
 }

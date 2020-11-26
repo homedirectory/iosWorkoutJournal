@@ -11,7 +11,7 @@ import Foundation
 
 protocol DistanceActivity: Activity {
     
-    var name: String {get set}
-    var distance: Int {get set}
+    var distance: Double {get set}
     
 }
+

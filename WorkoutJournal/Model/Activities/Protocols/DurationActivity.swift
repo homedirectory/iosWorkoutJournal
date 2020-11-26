@@ -11,7 +11,6 @@ import Foundation
 
 protocol DurationActivity: Activity {
     
-    var name: String {get set}
-    var timeSpent: Int {get set}
+    var duration: Double {get set}
     
 }
