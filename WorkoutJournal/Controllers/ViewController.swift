@@ -13,25 +13,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sleep(3)
-        print("HELLo")
-        
+//        let storage = CoreDataStorage()
         let jm = JournalManager.shared
+//        jm.storage = storage
+//        jm.fetch()
         
-        let r: Activity = Running(distance: 1000, duration: 60)
-        print(r.name)
+        let r = Activity(name: "Climbing", duration: 3600, distance: 100)
+
+//        do {
+//            try jm.createEntry(activity: r, date: Date())
+//        } catch let error {
+//            print(error)
+//        }
+//        jm.deleteAllEntries()
         
-        let rId = jm.createEntry(activity: r, date: Date())
         
-        jm.printEntryInfo(entryId: rId)
-        jm.setEntryDate(entryId: rId, newDate: Date(timeIntervalSince1970: 150))
-        jm.printEntryInfo(entryId: rId)
-        jm.setEntryActivityDistance(entryId: rId, newDistance: 20000)
-        jm.setEntryActivityDuration(entryId: rId, newDuration: 6000)
-        jm.printEntryInfo(entryId: rId)
-        jm.setEntryActivityRepetitions(entryId: rId, newRepetitions: 20)
-        jm.printEntryInfo(entryId: rId)
+        jm.entries.forEach({
+            $0.printInfo()
+        })
         
+//        jm.setEntryActivity(entryId: 1, newActivity: r)
+        
+//        jm.setEntryActivityDistance(entryId: 1, newDistance: 1)
+ 
     }
 
 

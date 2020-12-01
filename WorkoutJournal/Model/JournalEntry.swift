@@ -11,22 +11,29 @@ import Foundation
 
 class JournalEntry {
     
-    let id: String
-    var activity: Activity
+    let id: Int
+    var activity: Activity?
     var date: Date
     
-    init(activity: Activity, date: Date) {
+    init(id: Int, activity: Activity, date: Date) {
         self.activity = activity
         self.date = date
-        self.id = UUID().uuidString
+        self.id = id
 //        print(self.id)
     }
+    
+    init(_ managedObject: JournalEntryModel) {
+        self.id = managedObject.value(forKey: "id") as! Int
+        self.activity = Activity(managedObject.value(forKey: "activity") as! ActivityModel)
+        self.date = managedObject.value(forKey: "date") as! Date
+    }
+    
     
     func printInfo() {
         print("""
             -------------------
             entryId: \(id)
-            activity: \(activity.toString())
+            activity: \(activity?.toString() ?? "none")
             date: \(date)
             """)
     }

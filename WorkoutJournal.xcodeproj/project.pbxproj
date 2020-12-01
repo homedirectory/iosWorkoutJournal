@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E54BBA9C256E64F00099886C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBA9B256E64F00099886C /* Activity.swift */; };
+		E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */; };
 		E54BBA9E256E69690099886C /* JournalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBA9D256E69690099886C /* JournalManager.swift */; };
-		E54BBAA4256E6FC00099886C /* DistanceAcrivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBAA3256E6FC00099886C /* DistanceAcrivity.swift */; };
-		E54BBAA6256E703F0099886C /* RepetitionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBAA5256E703F0099886C /* RepetitionActivity.swift */; };
-		E54BBAA8256FBB8A0099886C /* DurationActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBAA7256FBB8A0099886C /* DurationActivity.swift */; };
-		E54BBAAC256FBDD50099886C /* Running.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBAAB256FBDD50099886C /* Running.swift */; };
+		E55D5BC72576967700E4174D /* ActivityModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC32576967700E4174D /* ActivityModel+CoreDataClass.swift */; };
+		E55D5BC82576967700E4174D /* ActivityModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC42576967700E4174D /* ActivityModel+CoreDataProperties.swift */; };
+		E55D5BC92576967700E4174D /* JournalEntryModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC52576967700E4174D /* JournalEntryModel+CoreDataClass.swift */; };
+		E55D5BCA2576967700E4174D /* JournalEntryModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC62576967700E4174D /* JournalEntryModel+CoreDataProperties.swift */; };
+		E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */; };
+		E5757A4F2576835900A381C5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4E2576835900A381C5 /* Activity.swift */; };
+		E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E587E988256E5D6E0063A46C /* GoogleService-Info.plist */; };
 		E587E967256E49D20063A46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E966256E49D20063A46C /* AppDelegate.swift */; };
 		E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E968256E49D20063A46C /* SceneDelegate.swift */; };
 		E587E96B256E49D20063A46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E96A256E49D20063A46C /* ViewController.swift */; };
 		E587E96E256E49D20063A46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E96C256E49D20063A46C /* Main.storyboard */; };
-		E587E971256E49D20063A46C /* WorkoutJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */; };
 		E587E973256E49D30063A46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E587E972256E49D30063A46C /* Assets.xcassets */; };
 		E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E974256E49D30063A46C /* LaunchScreen.storyboard */; };
 		E587E983256E534A0063A46C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E982256E534A0063A46C /* User.swift */; };
 		E587E985256E547D0063A46C /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E984256E547D0063A46C /* Journal.swift */; };
 		E587E987256E54A00063A46C /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E986256E54A00063A46C /* JournalEntry.swift */; };
-		E587E989256E5D6E0063A46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E587E988256E5D6E0063A46C /* GoogleService-Info.plist */; };
 		F5FEFBEC5E9EF02B9EBC2BC3 /* Pods_WorkoutJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,12 +32,13 @@
 		7D81DB0BCAE88DC71E946C2C /* Pods-WorkoutJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutJournal.release.xcconfig"; path = "Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal.release.xcconfig"; sourceTree = "<group>"; };
 		7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D004BDCDC4F255A8F1542556 /* Pods-WorkoutJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutJournal.debug.xcconfig"; path = "Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal.debug.xcconfig"; sourceTree = "<group>"; };
-		E54BBA9B256E64F00099886C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E54BBA9D256E69690099886C /* JournalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalManager.swift; sourceTree = "<group>"; };
-		E54BBAA3256E6FC00099886C /* DistanceAcrivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAcrivity.swift; sourceTree = "<group>"; };
-		E54BBAA5256E703F0099886C /* RepetitionActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionActivity.swift; sourceTree = "<group>"; };
-		E54BBAA7256FBB8A0099886C /* DurationActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationActivity.swift; sourceTree = "<group>"; };
-		E54BBAAB256FBDD50099886C /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
+		E55D5BC32576967700E4174D /* ActivityModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E55D5BC42576967700E4174D /* ActivityModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E55D5BC52576967700E4174D /* JournalEntryModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E55D5BC62576967700E4174D /* JournalEntryModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		E5757A4E2576835900A381C5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E587E963256E49D20063A46C /* WorkoutJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E587E966256E49D20063A46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E587E968256E49D20063A46C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,21 +86,20 @@
 		E54BBAA9256FBDAC0099886C /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				E54BBAAA256FBDC10099886C /* Protocols */,
-				E54BBAAB256FBDD50099886C /* Running.swift */,
+				E5757A4E2576835900A381C5 /* Activity.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
 		};
-		E54BBAAA256FBDC10099886C /* Protocols */ = {
+		E5757A6025768F9100A381C5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E54BBA9B256E64F00099886C /* Activity.swift */,
-				E54BBAA3256E6FC00099886C /* DistanceAcrivity.swift */,
-				E54BBAA5256E703F0099886C /* RepetitionActivity.swift */,
-				E54BBAA7256FBB8A0099886C /* DurationActivity.swift */,
+				E55D5BC32576967700E4174D /* ActivityModel+CoreDataClass.swift */,
+				E55D5BC42576967700E4174D /* ActivityModel+CoreDataProperties.swift */,
+				E55D5BC52576967700E4174D /* JournalEntryModel+CoreDataClass.swift */,
+				E55D5BC62576967700E4174D /* JournalEntryModel+CoreDataProperties.swift */,
 			);
-			path = Protocols;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		E587E95A256E49D20063A46C = {
@@ -175,7 +176,9 @@
 		E587E981256E4A2E0063A46C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				E5757A6025768F9100A381C5 /* Entities */,
 				E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */,
+				E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -240,9 +243,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */,
 				E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */,
-				E587E989256E5D6E0063A46C /* GoogleService-Info.plist in Resources */,
 				E587E973256E49D30063A46C /* Assets.xcassets in Resources */,
+				E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */,
 				E587E96E256E49D20063A46C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,18 +300,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E54BBAA8256FBB8A0099886C /* DurationActivity.swift in Sources */,
+				E55D5BC72576967700E4174D /* ActivityModel+CoreDataClass.swift in Sources */,
+				E55D5BCA2576967700E4174D /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E587E96B256E49D20063A46C /* ViewController.swift in Sources */,
-				E587E971256E49D20063A46C /* WorkoutJournal.xcdatamodeld in Sources */,
+				E55D5BC82576967700E4174D /* ActivityModel+CoreDataProperties.swift in Sources */,
 				E587E967256E49D20063A46C /* AppDelegate.swift in Sources */,
-				E54BBAAC256FBDD50099886C /* Running.swift in Sources */,
-				E54BBAA4256E6FC00099886C /* DistanceAcrivity.swift in Sources */,
 				E587E983256E534A0063A46C /* User.swift in Sources */,
 				E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */,
+				E55D5BC92576967700E4174D /* JournalEntryModel+CoreDataClass.swift in Sources */,
 				E587E987256E54A00063A46C /* JournalEntry.swift in Sources */,
-				E54BBA9C256E64F00099886C /* Activity.swift in Sources */,
-				E54BBAA6256E703F0099886C /* RepetitionActivity.swift in Sources */,
 				E587E985256E547D0063A46C /* Journal.swift in Sources */,
+				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
+				E5757A4F2576835900A381C5 /* Activity.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
