@@ -17,7 +17,8 @@ final class CoreDataStorage {
     }
     
     func save(entry: JournalEntry) throws {
-        let activityEntity = NSEntityDescription.entity(forEntityName: "ActivityModel", in: persistentContainer.viewContext)!
+        print(entry.activity!.entityName)
+        let activityEntity = NSEntityDescription.entity(forEntityName: entry.activity!.entityName, in: persistentContainer.viewContext)!
         let activityManagedObject = NSManagedObject(entity: activityEntity, insertInto: persistentContainer.viewContext)
         activityManagedObject.setValue(entry.activity!.name, forKey: "name")
         activityManagedObject.setValue(entry.activity!.duration, forKey: "duration")

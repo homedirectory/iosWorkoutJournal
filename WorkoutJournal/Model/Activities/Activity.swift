@@ -17,6 +17,11 @@ class Activity {
     var distance: Double?
     var repetitions: Int?
     
+    lazy var entityName: String = {
+        let name = NSStringFromClass(type(of: self)) + "Model"
+        return name.components(separatedBy: ".").last!
+    }()
+    
     init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
         self.name = name
         self.duration = duration
@@ -24,23 +29,23 @@ class Activity {
         self.repetitions = repetitions
     }
     
-    init(_ managedObject: ActivityModel) {
-        self.name = managedObject.value(forKey: "name") as! String
-        self.duration = managedObject.value(forKey: "duration") as? Double
-        self.distance = managedObject.value(forKey: "distance") as? Double
-        self.repetitions = managedObject.value(forKey: "repetitions") as? Int
-    }
-    
-    func toManagedObject(context: NSManagedObjectContext) -> NSManagedObject {
-        let entity = NSEntityDescription.entity(forEntityName: "ActivityModel", in: context)!
-        let managedObject = NSManagedObject(entity: entity, insertInto: context)
-        managedObject.setValue(self.name, forKey: "name")
-        managedObject.setValue(self.duration, forKey: "duration")
-        managedObject.setValue(self.distance, forKey: "distance")
-        managedObject.setValue(self.repetitions, forKey: "repetitions")
-        
-        return managedObject
-    }
+//    init(_ managedObject: ActivityModel) {
+//        self.name = managedObject.value(forKey: "name") as! String
+//        self.duration = managedObject.value(forKey: "duration") as? Double
+//        self.distance = managedObject.value(forKey: "distance") as? Double
+//        self.repetitions = managedObject.value(forKey: "repetitions") as? Int
+//    }
+//
+//    func toManagedObject(context: NSManagedObjectContext) -> NSManagedObject {
+//        let entity = NSEntityDescription.entity(forEntityName: "ActivityModel", in: context)!
+//        let managedObject = NSManagedObject(entity: entity, insertInto: context)
+//        managedObject.setValue(self.name, forKey: "name")
+//        managedObject.setValue(self.duration, forKey: "duration")
+//        managedObject.setValue(self.distance, forKey: "distance")
+//        managedObject.setValue(self.repetitions, forKey: "repetitions")
+//
+//        return managedObject
+//    }
     
     func toString() -> String {
         var str =  "[ name: \(name)"

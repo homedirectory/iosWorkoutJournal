@@ -8,11 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */; };
+		E53AD6C725780B2B00143FCB /* Running.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6C625780B2B00143FCB /* Running.swift */; };
+		E53AD6C925780F5400143FCB /* PushUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6C825780F5400143FCB /* PushUps.swift */; };
+		E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6CA25780F5B00143FCB /* PullUps.swift */; };
+		E53AD6CD25780F7400143FCB /* Plank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6CC25780F7400143FCB /* Plank.swift */; };
+		E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6CE25780F9000143FCB /* ExcerciseSession.swift */; };
+		E53AD6DE2578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D02578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift */; };
+		E53AD6DF2578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D12578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift */; };
+		E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D22578218500143FCB /* PullUpsModel+CoreDataClass.swift */; };
+		E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D32578218500143FCB /* PullUpsModel+CoreDataProperties.swift */; };
+		E53AD6E22578218500143FCB /* PushUpsModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D42578218500143FCB /* PushUpsModel+CoreDataClass.swift */; };
+		E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */; };
+		E53AD6E42578218500143FCB /* RunningModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */; };
+		E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */; };
+		E53AD6E62578218500143FCB /* ActivityModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D82578218500143FCB /* ActivityModel+CoreDataClass.swift */; };
+		E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */; };
+		E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */; };
+		E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */; };
+		E53AD6EA2578218500143FCB /* PlankModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */; };
+		E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */; };
 		E54BBA9E256E69690099886C /* JournalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBA9D256E69690099886C /* JournalManager.swift */; };
-		E55D5BC72576967700E4174D /* ActivityModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC32576967700E4174D /* ActivityModel+CoreDataClass.swift */; };
-		E55D5BC82576967700E4174D /* ActivityModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC42576967700E4174D /* ActivityModel+CoreDataProperties.swift */; };
-		E55D5BC92576967700E4174D /* JournalEntryModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC52576967700E4174D /* JournalEntryModel+CoreDataClass.swift */; };
-		E55D5BCA2576967700E4174D /* JournalEntryModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D5BC62576967700E4174D /* JournalEntryModel+CoreDataProperties.swift */; };
 		E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */; };
 		E5757A4F2576835900A381C5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4E2576835900A381C5 /* Activity.swift */; };
 		E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E587E988256E5D6E0063A46C /* GoogleService-Info.plist */; };
@@ -32,11 +47,26 @@
 		7D81DB0BCAE88DC71E946C2C /* Pods-WorkoutJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutJournal.release.xcconfig"; path = "Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal.release.xcconfig"; sourceTree = "<group>"; };
 		7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D004BDCDC4F255A8F1542556 /* Pods-WorkoutJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutJournal.debug.xcconfig"; path = "Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal.debug.xcconfig"; sourceTree = "<group>"; };
+		E53AD6C625780B2B00143FCB /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
+		E53AD6C825780F5400143FCB /* PushUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUps.swift; sourceTree = "<group>"; };
+		E53AD6CA25780F5B00143FCB /* PullUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUps.swift; sourceTree = "<group>"; };
+		E53AD6CC25780F7400143FCB /* Plank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plank.swift; sourceTree = "<group>"; };
+		E53AD6CE25780F9000143FCB /* ExcerciseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseSession.swift; sourceTree = "<group>"; };
+		E53AD6D02578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExcerciseSessionModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D12578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExcerciseSessionModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D22578218500143FCB /* PullUpsModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PullUpsModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D32578218500143FCB /* PullUpsModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PullUpsModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D42578218500143FCB /* PushUpsModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PushUpsModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PushUpsModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunningModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunningModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D82578218500143FCB /* ActivityModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ActivityModel+CoreDataClass.swift"; path = "../../../ActivityModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ActivityModel+CoreDataProperties.swift"; path = "../../../ActivityModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "JournalEntryModel+CoreDataClass.swift"; path = "../../../JournalEntryModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "JournalEntryModel+CoreDataProperties.swift"; path = "../../../JournalEntryModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlankModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlankModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E54BBA9D256E69690099886C /* JournalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalManager.swift; sourceTree = "<group>"; };
-		E55D5BC32576967700E4174D /* ActivityModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E55D5BC42576967700E4174D /* ActivityModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E55D5BC52576967700E4174D /* JournalEntryModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E55D5BC62576967700E4174D /* JournalEntryModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		E5757A4E2576835900A381C5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E587E963256E49D20063A46C /* WorkoutJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				E5757A4E2576835900A381C5 /* Activity.swift */,
+				E53AD6C625780B2B00143FCB /* Running.swift */,
+				E53AD6C825780F5400143FCB /* PushUps.swift */,
+				E53AD6CA25780F5B00143FCB /* PullUps.swift */,
+				E53AD6CC25780F7400143FCB /* Plank.swift */,
+				E53AD6CE25780F9000143FCB /* ExcerciseSession.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -94,10 +129,20 @@
 		E5757A6025768F9100A381C5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E55D5BC32576967700E4174D /* ActivityModel+CoreDataClass.swift */,
-				E55D5BC42576967700E4174D /* ActivityModel+CoreDataProperties.swift */,
-				E55D5BC52576967700E4174D /* JournalEntryModel+CoreDataClass.swift */,
-				E55D5BC62576967700E4174D /* JournalEntryModel+CoreDataProperties.swift */,
+				E53AD6D02578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift */,
+				E53AD6D12578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift */,
+				E53AD6D22578218500143FCB /* PullUpsModel+CoreDataClass.swift */,
+				E53AD6D32578218500143FCB /* PullUpsModel+CoreDataProperties.swift */,
+				E53AD6D42578218500143FCB /* PushUpsModel+CoreDataClass.swift */,
+				E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */,
+				E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */,
+				E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */,
+				E53AD6D82578218500143FCB /* ActivityModel+CoreDataClass.swift */,
+				E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */,
+				E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */,
+				E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */,
+				E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */,
+				E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -300,19 +345,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55D5BC72576967700E4174D /* ActivityModel+CoreDataClass.swift in Sources */,
-				E55D5BCA2576967700E4174D /* JournalEntryModel+CoreDataProperties.swift in Sources */,
+				E53AD6E62578218500143FCB /* ActivityModel+CoreDataClass.swift in Sources */,
 				E587E96B256E49D20063A46C /* ViewController.swift in Sources */,
-				E55D5BC82576967700E4174D /* ActivityModel+CoreDataProperties.swift in Sources */,
+				E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */,
 				E587E967256E49D20063A46C /* AppDelegate.swift in Sources */,
 				E587E983256E534A0063A46C /* User.swift in Sources */,
+				E53AD6E42578218500143FCB /* RunningModel+CoreDataClass.swift in Sources */,
 				E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */,
-				E55D5BC92576967700E4174D /* JournalEntryModel+CoreDataClass.swift in Sources */,
+				E53AD6DF2578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift in Sources */,
 				E587E987256E54A00063A46C /* JournalEntry.swift in Sources */,
+				E53AD6DE2578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift in Sources */,
+				E53AD6EA2578218500143FCB /* PlankModel+CoreDataClass.swift in Sources */,
+				E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */,
+				E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */,
+				E53AD6C925780F5400143FCB /* PushUps.swift in Sources */,
 				E587E985256E547D0063A46C /* Journal.swift in Sources */,
+				E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */,
+				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
+				E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */,
+				E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */,
+				E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */,
 				E5757A4F2576835900A381C5 /* Activity.swift in Sources */,
+				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
+				E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */,
+				E53AD6E22578218500143FCB /* PushUpsModel+CoreDataClass.swift in Sources */,
+				E53AD6C725780B2B00143FCB /* Running.swift in Sources */,
+				E53AD6CD25780F7400143FCB /* Plank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

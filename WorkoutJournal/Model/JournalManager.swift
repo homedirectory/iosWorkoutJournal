@@ -27,7 +27,7 @@ class JournalManager {
         self.entries = [JournalEntry]()
         self.lastId = 0
         self.storage = CoreDataStorage()
-        self.fetch()
+//        self.fetch()
     }
         
     // MARK: - CRUD
@@ -78,20 +78,20 @@ class JournalManager {
         self.entries = []
     }
     
-    func setEntryActivity(entryId: Int, newActivity: Activity) {
-        let newActivityManagedObject = newActivity.toManagedObject(context: self.storage!.persistentContainer.viewContext)
-        
-        do {
-            try self.storage!.deleteEntryActivity(entryId: entryId)
-            try self.storage!.updateEntry(entryId: entryId, newValue: newActivityManagedObject, keyPath: "activity")
-        } catch let error {
-            print("- updating Entry (ID: \(entryId), error: \(error)")
-            return
-        }
-        
-        let entry = findById(entryId: entryId)
-        entry.activity = newActivity
-    }
+//    func setEntryActivity(entryId: Int, newActivity: Activity) {
+//        let newActivityManagedObject = newActivity.toManagedObject(context: self.storage!.persistentContainer.viewContext)
+//
+//        do {
+//            try self.storage!.deleteEntryActivity(entryId: entryId)
+//            try self.storage!.updateEntry(entryId: entryId, newValue: newActivityManagedObject, keyPath: "activity")
+//        } catch let error {
+//            print("- updating Entry (ID: \(entryId), error: \(error)")
+//            return
+//        }
+//
+//        let entry = findById(entryId: entryId)
+//        entry.activity = newActivity
+//    }
     
     func setEntryDate(entryId: Int, newDate: Date) {
         do {
@@ -142,23 +142,23 @@ class JournalManager {
     }
     
     // MARK: - Core Data
-        
-    func fetch() {
-        var fetched = [NSManagedObject]()
-        do {
-            fetched = try self.storage!.fetchAll(entityName: "JournalEntryModel")
-        } catch let error {
-            print("- failed fetching entries, error: \(error)")
-            return
-        }
-        
-        self.entries = fetched.map({
-            JournalEntry($0 as! JournalEntryModel)
-        })
-        self.lastId = self.entries.map({
-            $0.id
-            }).max() ?? 0
-    }
+    
+//    func fetch() {
+//        var fetched = [NSManagedObject]()
+//        do {
+//            fetched = try self.storage!.fetchAll(entityName: "JournalEntryModel")
+//        } catch let error {
+//            print("- failed fetching entries, error: \(error)")
+//            return
+//        }
+//
+//        self.entries = fetched.map({
+//            JournalEntry($0 as! JournalEntryModel)
+//        })
+//        self.lastId = self.entries.map({
+//            $0.id
+//            }).max() ?? 0
+//    }
     
     // MARK: - Support
     

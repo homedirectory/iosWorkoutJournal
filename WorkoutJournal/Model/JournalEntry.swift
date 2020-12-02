@@ -22,11 +22,11 @@ class JournalEntry {
 //        print(self.id)
     }
     
-    init(_ managedObject: JournalEntryModel) {
-        self.id = managedObject.value(forKey: "id") as! Int
-        self.activity = Activity(managedObject.value(forKey: "activity") as! ActivityModel)
-        self.date = managedObject.value(forKey: "date") as! Date
-    }
+//    init(_ managedObject: JournalEntryModel) {
+//        self.id = managedObject.value(forKey: "id") as! Int
+//        self.activity = Activity(managedObject.value(forKey: "activity") as! ActivityModel)
+//        self.date = managedObject.value(forKey: "date") as! Date
+//    }
     
     
     func printInfo() {

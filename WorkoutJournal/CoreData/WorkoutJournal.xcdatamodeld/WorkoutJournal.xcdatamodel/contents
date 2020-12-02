@@ -6,13 +6,23 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="repetitions" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="ExcerciseSessionModel" representedClassName="ExcerciseSessionModel" parentEntity="ActivityModel" syncable="YES" codeGenerationType="class"/>
     <entity name="JournalEntryModel" representedClassName="JournalEntryModel" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="activity" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ActivityModel"/>
     </entity>
+    <entity name="PlankModel" representedClassName="PlankModel" parentEntity="ActivityModel" syncable="YES" codeGenerationType="class"/>
+    <entity name="PullUpsModel" representedClassName="PullUpsModel" parentEntity="ActivityModel" syncable="YES" codeGenerationType="class"/>
+    <entity name="PushUpsModel" representedClassName="PushUpsModel" parentEntity="ActivityModel" syncable="YES" codeGenerationType="class"/>
+    <entity name="RunningModel" representedClassName="RunningModel" parentEntity="ActivityModel" syncable="YES"/>
     <elements>
         <element name="ActivityModel" positionX="-54" positionY="9" width="128" height="103"/>
         <element name="JournalEntryModel" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="RunningModel" positionX="-54" positionY="27" width="128" height="43"/>
+        <element name="PushUpsModel" positionX="-45" positionY="36" width="128" height="43"/>
+        <element name="PullUpsModel" positionX="-36" positionY="45" width="128" height="43"/>
+        <element name="PlankModel" positionX="-18" positionY="54" width="128" height="43"/>
+        <element name="ExcerciseSessionModel" positionX="0" positionY="72" width="128" height="43"/>
     </elements>
 </model>
