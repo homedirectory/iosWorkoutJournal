@@ -27,7 +27,7 @@ class JournalManager {
         self.entries = [JournalEntry]()
         self.lastId = 0
         self.storage = CoreDataStorage()
-//        self.fetch()
+        self.fetch()
     }
         
     // MARK: - CRUD
@@ -143,22 +143,22 @@ class JournalManager {
     
     // MARK: - Core Data
     
-//    func fetch() {
-//        var fetched = [NSManagedObject]()
-//        do {
-//            fetched = try self.storage!.fetchAll(entityName: "JournalEntryModel")
-//        } catch let error {
-//            print("- failed fetching entries, error: \(error)")
-//            return
-//        }
-//
-//        self.entries = fetched.map({
-//            JournalEntry($0 as! JournalEntryModel)
-//        })
-//        self.lastId = self.entries.map({
-//            $0.id
-//            }).max() ?? 0
-//    }
+    func fetch() {
+        var fetched = [NSManagedObject]()
+        do {
+            fetched = try self.storage!.fetchAll(entityName: "JournalEntryModel")
+        } catch let error {
+            print("- failed fetching entries, error: \(error)")
+            return
+        }
+
+        self.entries = fetched.map({
+            JournalEntry($0 as! JournalEntryModel)
+        })
+        self.lastId = self.entries.map({
+            $0.id
+            }).max() ?? 0
+    }
     
     // MARK: - Support
     
