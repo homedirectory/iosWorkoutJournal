@@ -9,7 +9,7 @@
 import Foundation
 
 
-class PullUps: Activity {
+public class PullUps: Activity {
     
     private override init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
         super.init(name: name, duration: duration, distance: distance, repetitions: nil)

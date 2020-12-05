@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Activity {
+public class Activity {
     
     var name: String
     var duration: Double?
