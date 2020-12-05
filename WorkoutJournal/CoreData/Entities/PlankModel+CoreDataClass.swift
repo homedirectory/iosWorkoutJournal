@@ -13,4 +13,9 @@ import CoreData
 @objc(PlankModel)
 public class PlankModel: ActivityModel {
 
+    override public func transform() -> Plank {
+        let plank = Plank(duration: self.duration)
+        return plank
+    }
+    
 }
