@@ -13,4 +13,9 @@ import CoreData
 @objc(PushUpsModel)
 public class PushUpsModel: ActivityModel {
 
+    override public func transform() -> PushUps {
+        let pushUps = PushUps(repetitions: Int(self.repetitions))
+        return pushUps
+    }
+    
 }

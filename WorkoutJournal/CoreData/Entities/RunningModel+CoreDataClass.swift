@@ -13,4 +13,9 @@ import CoreData
 @objc(RunningModel)
 public class RunningModel: ActivityModel {
 
+    override public func transform() -> Running {
+        let running = Running(duration: self.duration, distance: self.distance)
+        return running
+    }
+    
 }

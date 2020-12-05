@@ -13,4 +13,9 @@ import CoreData
 @objc(ExcerciseSessionModel)
 public class ExcerciseSessionModel: ActivityModel {
 
+    override public func transform() -> ExcerciseSession {
+        let session = ExcerciseSession(duration: self.duration)
+        return session
+    }
+    
 }
