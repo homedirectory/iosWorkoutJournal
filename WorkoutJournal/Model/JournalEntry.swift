@@ -13,7 +13,7 @@ class JournalEntry {
     
     let id: Int
     var activity: Activity?
-    var date: Date
+    var date: Date?
     
     init(id: Int, activity: Activity, date: Date) {
         self.activity = activity
@@ -22,10 +22,13 @@ class JournalEntry {
     }
     
     init(_ managedObject: JournalEntryModel) {
+//        print("- init from JournalEntryModel")
         self.id = managedObject.value(forKey: "id") as! Int
         let activity = managedObject.value(forKey: "activity")! as! ActivityModel
+//        print("type of fetched activity: ", type(of: activity))
         self.activity = activity.transform()
-        self.date = managedObject.value(forKey: "date") as! Date
+//        print("transformed activity: ", type(of: self.activity!))
+        self.date = managedObject.value(forKey: "date") as? Date
     }
     
     
@@ -34,7 +37,7 @@ class JournalEntry {
             -------------------
             entryId: \(id)
             activity: \(activity?.toString() ?? "none")
-            date: \(date)
+            date: \(String(describing: date))
             """)
     }
     

@@ -76,24 +76,27 @@ class JournalManager {
         }
         
         self.entries = []
+        self.lastId = 0
     }
     
-//    func setEntryActivity(entryId: Int, newActivity: Activity) {
-//        let newActivityManagedObject = newActivity.toManagedObject(context: self.storage!.persistentContainer.viewContext)
-//
-//        do {
-//            try self.storage!.deleteEntryActivity(entryId: entryId)
-//            try self.storage!.updateEntry(entryId: entryId, newValue: newActivityManagedObject, keyPath: "activity")
-//        } catch let error {
-//            print("- updating Entry (ID: \(entryId), error: \(error)")
-//            return
-//        }
-//
-//        let entry = findById(entryId: entryId)
-//        entry.activity = newActivity
-//    }
+    func setEntryActivity(entryId: Int, newActivity: Activity) {
+        print(type(of: newActivity))
+        let newActivityManagedObject = newActivity.toManagedObject(context: self.storage!.persistentContainer.viewContext)
+        print(type(of: newActivityManagedObject))
+
+        do {
+            try self.storage!.deleteEntryActivity(entryId: entryId)
+            try self.storage!.updateEntry(entryId: entryId, newValue: newActivityManagedObject, keyPath: "activity")
+        } catch let error {
+            print("- updating Entry (ID: \(entryId), error: \(error)")
+            return
+        }
+
+        let entry = findById(entryId: entryId)
+        entry.activity = newActivity
+    }
     
-    func setEntryDate(entryId: Int, newDate: Date) {
+    func setEntryDate(entryId: Int, newDate: Date?) {
         do {
             try self.storage!.updateEntry(entryId: entryId, newValue: newDate, keyPath: "date")
         } catch let error {
@@ -105,7 +108,7 @@ class JournalManager {
         entry.date = newDate
     }
     
-    func setEntryActivityDistance(entryId: Int, newDistance: Double) {
+    func updateEntryActivity(entryId: Int, newDistance: Double?) {
         do {
             try self.storage!.updateEntryActivity(entryId: entryId, newValue: newDistance, keyPath: "distance")
         } catch let error {
@@ -117,7 +120,7 @@ class JournalManager {
         activity!.distance = newDistance
     }
     
-    func setEntryActivityRepetitions(entryId: Int, newRepetitions: Int) {
+    func updateEntryActivity(entryId: Int, newRepetitions: Int?) {
         do {
             try self.storage!.updateEntryActivity(entryId: entryId, newValue: newRepetitions, keyPath: "repetitions")
         } catch let error {
@@ -129,7 +132,7 @@ class JournalManager {
         activity!.repetitions = newRepetitions
     }
     
-    func setEntryActivityDuration(entryId: Int, newDuration: Double) {
+    func updateEntryActivity(entryId: Int, newDuration: Double?) {
         do {
             try self.storage!.updateEntryActivity(entryId: entryId, newValue: newDuration, keyPath: "duration")
         } catch let error {

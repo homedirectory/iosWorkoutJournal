@@ -11,6 +11,13 @@ import Foundation
 
 public class PullUps: Activity {
     
+    private static var __totalRepetitions = Stats<Int>(name: "Total pull-ups", value: 0)
+    override class var totalRepetitions: Stats<Int> {
+        get {
+            return Self.__totalRepetitions
+        }
+    }
+    
     private override init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
         super.init(name: name, duration: nil, distance: nil, repetitions: repetitions)
     }

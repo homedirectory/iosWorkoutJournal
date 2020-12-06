@@ -38,8 +38,8 @@
 		E587E973256E49D30063A46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E587E972256E49D30063A46C /* Assets.xcassets */; };
 		E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E974256E49D30063A46C /* LaunchScreen.storyboard */; };
 		E587E983256E534A0063A46C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E982256E534A0063A46C /* User.swift */; };
-		E587E985256E547D0063A46C /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E984256E547D0063A46C /* Journal.swift */; };
 		E587E987256E54A00063A46C /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E986256E54A00063A46C /* JournalEntry.swift */; };
+		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
 		F5FEFBEC5E9EF02B9EBC2BC3 /* Pods_WorkoutJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,9 +79,9 @@
 		E587E975256E49D30063A46C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E587E977256E49D30063A46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E587E982256E534A0063A46C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E587E984256E547D0063A46C /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		E587E986256E54A00063A46C /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		E587E988256E5D6E0063A46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,9 +185,9 @@
 			children = (
 				E54BBAA9256FBDAC0099886C /* Activities */,
 				E587E982256E534A0063A46C /* User.swift */,
-				E587E984256E547D0063A46C /* Journal.swift */,
 				E587E986256E54A00063A46C /* JournalEntry.swift */,
 				E54BBA9D256E69690099886C /* JournalManager.swift */,
+				E5E8A122257D2C4A00238364 /* Stats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,10 +359,10 @@
 				E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */,
 				E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */,
 				E53AD6C925780F5400143FCB /* PushUps.swift in Sources */,
-				E587E985256E547D0063A46C /* Journal.swift in Sources */,
 				E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */,
 				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
+				E5E8A123257D2C4A00238364 /* Stats.swift in Sources */,
 				E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */,
 				E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */,
 				E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */,
