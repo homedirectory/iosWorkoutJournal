@@ -14,8 +14,5 @@ class JournalEntryTableViewDateCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
         
-//    func selectAction() {
-//        self.coordinator!.pushActivitiesListViewController(trigerredCell: self)
-//    }
-    
+    #warning("TODO: complete this cell with date picker")
 }

@@ -34,6 +34,10 @@ class ViewController: UIViewController, Storyboarded {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
 }
 
 // MARK: - IBActions

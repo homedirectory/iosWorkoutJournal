@@ -18,8 +18,8 @@ public class PushUps: Activity {
         }
     }
     
-    private override init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
-        super.init(name: name, duration: nil, distance: nil, repetitions: repetitions)
+    internal required init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
+        super.init(name: "Push-ups", duration: nil, distance: nil, repetitions: repetitions)
     }
     
     convenience init(repetitions: Int) {

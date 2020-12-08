@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+#warning("Fix date so it is actually displayed, n00b")
 class JournalEntryCell: UITableViewCell {
     
     var entry: JournalEntry? {
@@ -40,7 +40,6 @@ class JournalEntryCell: UITableViewCell {
     }
     
     func configureDetails(activity: Activity) {
-//        activityImage.image = UIImage(named: "il_570xN.1565327576_3yrc.jpg")
         labelActivityName.text = activity.name
         
         if let _ = activity.distance {

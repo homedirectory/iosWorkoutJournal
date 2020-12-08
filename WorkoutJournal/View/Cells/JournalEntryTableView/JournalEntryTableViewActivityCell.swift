@@ -13,12 +13,14 @@ import UIKit
 class JournalEntryTableViewActivityCell: UITableViewCell {
     
     weak var coordinator: Coordinator?
+    var unlocker: (() -> ())?
     var cellLabel: String?
     var chosenActivity: Activity.Type? {
         didSet {
             print("chosen activity was set to: ", chosenActivity)
             self.cellLabel = StaticVariables.activityTypeToString(activityType: self.chosenActivity!)
             self.label.text = cellLabel
+            self.unlocker!()
         }
     }
     
