@@ -7,8 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
 
-class Coordinator {
+public class Coordinator {
+    
+    var navController: UINavigationController?
+    
+    init(navController: UINavigationController) {
+        self.navController = navController
+    }
+    
+    func start(journalManager: JournalManager) {
+        let vc = ViewController.instantiate(storyboardName: "Main")
+        vc.coordinator = self
+        vc.journalManager = journalManager
+        navController!.pushViewController(vc, animated: true)
+    }
     
 }
