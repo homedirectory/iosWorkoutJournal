@@ -39,6 +39,9 @@
 		E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E974256E49D30063A46C /* LaunchScreen.storyboard */; };
 		E587E983256E534A0063A46C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E982256E534A0063A46C /* User.swift */; };
 		E587E987256E54A00063A46C /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E986256E54A00063A46C /* JournalEntry.swift */; };
+		E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */; };
+		E5B7D174257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */; };
+		E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */; };
 		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
 		E5E8A125257E907400238364 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* Coordinator.swift */; };
 		E5E8A129257E918300238364 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A128257E918300238364 /* Storyboarded.swift */; };
@@ -83,6 +86,9 @@
 		E587E982256E534A0063A46C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E587E986256E54A00063A46C /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		E587E988256E5D6E0063A46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
+		E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalEntryActivityDetailsView.xib; sourceTree = "<group>"; };
+		E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryActivityDetailsView.swift; sourceTree = "<group>"; };
 		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		E5E8A124257E907400238364 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E5E8A128257E918300238364 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 		E587E965256E49D20063A46C /* WorkoutJournal */ = {
 			isa = PBXGroup;
 			children = (
+				E5B7D16F257F96CC00DCB684 /* View */,
 				E5E8A127257E917800238364 /* Protocols */,
 				E5E8A126257E909E00238364 /* Coordinators */,
 				E587E988256E5D6E0063A46C /* GoogleService-Info.plist */,
@@ -232,6 +239,32 @@
 				E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E5B7D16F257F96CC00DCB684 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7D175257FA47E00DCB684 /* JournalEntryActivityDetails */,
+				E5B7D170257F96D400DCB684 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5B7D170257F96D400DCB684 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E5B7D175257FA47E00DCB684 /* JournalEntryActivityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */,
+				E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */,
+			);
+			path = JournalEntryActivityDetails;
 			sourceTree = "<group>";
 		};
 		E5E8A126257E909E00238364 /* Coordinators */ = {
@@ -313,6 +346,7 @@
 				E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */,
 				E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */,
 				E587E973256E49D30063A46C /* Assets.xcassets in Resources */,
+				E5B7D174257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib in Resources */,
 				E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */,
 				E587E96E256E49D20063A46C /* Main.storyboard in Resources */,
 			);
@@ -378,6 +412,7 @@
 				E587E987256E54A00063A46C /* JournalEntry.swift in Sources */,
 				E53AD6DE2578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift in Sources */,
 				E53AD6EA2578218500143FCB /* PlankModel+CoreDataClass.swift in Sources */,
+				E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */,
 				E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */,
 				E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */,
 				E53AD6C925780F5400143FCB /* PushUps.swift in Sources */,
@@ -393,6 +428,7 @@
 				E5757A4F2576835900A381C5 /* Activity.swift in Sources */,
 				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
+				E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */,
 				E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */,
 				E53AD6E22578218500143FCB /* PushUpsModel+CoreDataClass.swift in Sources */,
 				E53AD6C725780B2B00143FCB /* Running.swift in Sources */,

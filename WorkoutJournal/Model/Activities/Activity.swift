@@ -70,6 +70,21 @@ public class Activity {
         }
     }
     
+    lazy var distanceString: String = {
+        guard let _ = distance else { return ""}
+        return String(format: "%.2f km", distance!/1000)
+    }()
+    
+    lazy var durationString: String = {
+        guard let _ = duration else { return "" }
+        return String(format: "%.2f min", duration!/60)
+    }()
+    
+    lazy var repetitionsString: String = {
+        guard let _ = repetitions else { return "" }
+        return String(repetitions!)
+    }()
+    
     lazy var entityName: String = {
         let name = NSStringFromClass(type(of: self)) + "Model"
         return name.components(separatedBy: ".").last!
@@ -91,19 +106,6 @@ public class Activity {
             Self.totalRepetitions.value! += repetitions!
         }
     }
-//
-//    deinit {
-//        print("parent deinit")
-//        if let _ = self.duration {
-//            Self.totalDuration.value! -= self.duration!
-//        }
-//        if let _ = self.distance {
-//            Self.totalDistance.value! -= self.distance!
-//        }
-//        if let _ = self.repetitions {
-//            Self.totalRepetitions.value! -= self.repetitions!
-//        }
-//    }
     
     func removeStats() {
         if let _ = self.duration {
@@ -127,6 +129,12 @@ public class Activity {
 
         return managedObject
     }
+   
+}
+
+// MARK: - toString
+
+extension Activity {
     
     func toString() -> String {
         var str =  "[ name: \(name)"
@@ -137,5 +145,4 @@ public class Activity {
         
         return str
     }
-    
 }

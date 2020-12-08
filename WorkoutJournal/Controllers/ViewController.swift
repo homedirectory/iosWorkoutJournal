@@ -8,26 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Storyboarded {
+    
+    weak var coordinator: Coordinator?
+    var journalManager: JournalManager?
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var newEntryButton: UIButton!
+    
+    // for testing
+    @IBOutlet weak var deleteAllButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let jm = JournalManager.shared
-//        let running = Running(duration: 2400, distance: 6000)
+        tableView.delegate = self
+        tableView.dataSource = self
         
-//        jm.createEntry(activity: running, date: Date())
-//        jm.deleteAllEntries()
-        
-//        jm.deleteAllEntries()
-//        jm.createEntry(activity: Running(duration: 50, distance: 200), date: Date())
-//        jm.createEntry(activity: Plank(duration: 50), date: Date())
-//        jm.updateEntryActivity(entryId: 1, newDuration: 15)
-//        jm.updateEntryActivity(entryId: 1, newDuration: 50)
-//        jm.createEntry(activity: Plank(duration: 120), date: Date())
-        print(Running.totalDistance.value, Running.totalDistance.value)
-        print(Plank.totalDistance.value)
-        print(Activity.totalDistance.value, Activity.totalDistance.value)
+        guard let jm = journalManager else { return }
         
         jm.entries.forEach({
             $0.printInfo()
@@ -35,7 +33,45 @@ class ViewController: UIViewController {
         })
         
     }
-
-
+    
 }
+
+// MARK: - IBActions
+
+extension ViewController {
+
+    @IBAction func newEntryButtonAction(_ sender: Any) {
+        self.journalManager!.createEntry(activity: Running(duration: 100, distance: 100), date: Date())
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func deleteAllButtonAction(_ sender: Any) {
+        self.journalManager!.deleteAllEntries()
+        self.tableView.reloadData()
+      }
+    
+}
+
+// MARK: - UITableView extensions
+
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.journalManager!.entries.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let entryCell = tableView.dequeueReusableCell(withIdentifier: JournalEntryCell.id) as! JournalEntryCell
+        entryCell.entry = journalManager!.entries[indexPath.row]
+        
+        return entryCell
+    }
+    
+}
+
+extension ViewController: UITableViewDelegate {
+    
+}
+
+
 
