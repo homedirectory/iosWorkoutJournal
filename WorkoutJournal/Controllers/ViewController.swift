@@ -41,8 +41,8 @@ class ViewController: UIViewController, Storyboarded {
 extension ViewController {
 
     @IBAction func newEntryButtonAction(_ sender: Any) {
-        self.journalManager!.createEntry(activity: Running(duration: 100, distance: 100), date: Date())
-        self.tableView.reloadData()
+        self.coordinator!.pushJournalEntryViewController(journalManager: self.journalManager!)
+//        self.tableView.reloadData()
     }
     
     @IBAction func deleteAllButtonAction(_ sender: Any) {

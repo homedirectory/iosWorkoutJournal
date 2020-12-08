@@ -25,4 +25,19 @@ public class Coordinator {
         navController!.pushViewController(vc, animated: true)
     }
     
+    func pushJournalEntryViewController(journalManager: JournalManager) {
+        let vc = JournalEntryViewController.instantiate(storyboardName: "Main")
+        vc.coordinator = self
+        vc.journalManager = journalManager
+        navController!.pushViewController(vc, animated: true)
+    }
+    
+    func pushActivitiesListViewController(trigerredCell: JournalEntryTableViewActivityCell) {
+        let vc = ActivitiesListViewController.instantiate(storyboardName: "Main")
+        vc.coordinator = self
+        vc.fromCell = trigerredCell
+        navController!.pushViewController(vc, animated: true)
+    }
+    
+    
 }

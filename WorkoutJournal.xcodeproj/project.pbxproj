@@ -42,6 +42,13 @@
 		E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */; };
 		E5B7D174257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */; };
 		E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */; };
+		E5B7D179257FC6B400DCB684 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */; };
+		E5B7D17D257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */; };
+		E5B7D17F257FD1D000DCB684 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */; };
+		E5B7D183257FD24100DCB684 /* ActivityTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D182257FD24100DCB684 /* ActivityTypeCell.swift */; };
+		E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D184257FD41D00DCB684 /* StaticVariables.swift */; };
+		E5B7D189257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */; };
+		E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */; };
 		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
 		E5E8A125257E907400238364 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* Coordinator.swift */; };
 		E5E8A129257E918300238364 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A128257E918300238364 /* Storyboarded.swift */; };
@@ -89,6 +96,13 @@
 		E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
 		E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalEntryActivityDetailsView.xib; sourceTree = "<group>"; };
 		E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryActivityDetailsView.swift; sourceTree = "<group>"; };
+		E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
+		E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewActivityCell.swift; sourceTree = "<group>"; };
+		E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
+		E5B7D182257FD24100DCB684 /* ActivityTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCell.swift; sourceTree = "<group>"; };
+		E5B7D184257FD41D00DCB684 /* StaticVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticVariables.swift; sourceTree = "<group>"; };
+		E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewDetailsCell.swift; sourceTree = "<group>"; };
+		E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewDateCell.swift; sourceTree = "<group>"; };
 		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		E5E8A124257E907400238364 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E5E8A128257E918300238364 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -201,6 +215,7 @@
 				E587E986256E54A00063A46C /* JournalEntry.swift */,
 				E54BBA9D256E69690099886C /* JournalManager.swift */,
 				E5E8A122257D2C4A00238364 /* Stats.swift */,
+				E5B7D184257FD41D00DCB684 /* StaticVariables.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				E587E96A256E49D20063A46C /* ViewController.swift */,
+				E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */,
+				E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +270,7 @@
 		E5B7D170257F96D400DCB684 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E5B7D186257FDEB000DCB684 /* JournalEntryTableView */,
 				E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */,
 			);
 			path = Cells;
@@ -265,6 +283,25 @@
 				E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */,
 			);
 			path = JournalEntryActivityDetails;
+			sourceTree = "<group>";
+		};
+		E5B7D186257FDEB000DCB684 /* JournalEntryTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7D187257FDEBE00DCB684 /* ActivityCell */,
+				E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */,
+				E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */,
+				E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */,
+			);
+			path = JournalEntryTableView;
+			sourceTree = "<group>";
+		};
+		E5B7D187257FDEBE00DCB684 /* ActivityCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7D182257FD24100DCB684 /* ActivityTypeCell.swift */,
+			);
+			path = ActivityCell;
 			sourceTree = "<group>";
 		};
 		E5E8A126257E909E00238364 /* Coordinators */ = {
@@ -407,6 +444,8 @@
 				E587E967256E49D20063A46C /* AppDelegate.swift in Sources */,
 				E587E983256E534A0063A46C /* User.swift in Sources */,
 				E53AD6E42578218500143FCB /* RunningModel+CoreDataClass.swift in Sources */,
+				E5B7D183257FD24100DCB684 /* ActivityTypeCell.swift in Sources */,
+				E5B7D189257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift in Sources */,
 				E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */,
 				E53AD6DF2578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift in Sources */,
 				E587E987256E54A00063A46C /* JournalEntry.swift in Sources */,
@@ -414,18 +453,22 @@
 				E53AD6EA2578218500143FCB /* PlankModel+CoreDataClass.swift in Sources */,
 				E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */,
 				E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */,
+				E5B7D17F257FD1D000DCB684 /* ActivitiesListViewController.swift in Sources */,
 				E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */,
 				E53AD6C925780F5400143FCB /* PushUps.swift in Sources */,
 				E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */,
 				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
 				E5E8A129257E918300238364 /* Storyboarded.swift in Sources */,
+				E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */,
 				E5E8A123257D2C4A00238364 /* Stats.swift in Sources */,
 				E5E8A125257E907400238364 /* Coordinator.swift in Sources */,
 				E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */,
 				E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */,
+				E5B7D179257FC6B400DCB684 /* JournalEntryViewController.swift in Sources */,
 				E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */,
 				E5757A4F2576835900A381C5 /* Activity.swift in Sources */,
+				E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */,
 				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
 				E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */,
@@ -433,6 +476,7 @@
 				E53AD6E22578218500143FCB /* PushUpsModel+CoreDataClass.swift in Sources */,
 				E53AD6C725780B2B00143FCB /* Running.swift in Sources */,
 				E53AD6CD25780F7400143FCB /* Plank.swift in Sources */,
+				E5B7D17D257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
