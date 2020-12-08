@@ -64,6 +64,7 @@ class JournalManager {
             print("- failed deleting ID: \(entryId), error: index was not found")
             return
         }
+        self.entries[entryIndex].activity!.removeStats()
         self.entries.remove(at: entryIndex)
     }
     
@@ -75,6 +76,9 @@ class JournalManager {
             return
         }
         
+        self.entries.forEach({
+            $0.activity!.removeStats()
+        })
         self.entries = []
         self.lastId = 0
     }

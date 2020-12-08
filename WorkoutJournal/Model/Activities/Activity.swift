@@ -12,56 +12,26 @@ import CoreData
 
 public class Activity {
     
-    private static var _totalDuration = Stats<Double>(name: "Duration", value: 0)
+    private static var _totalDuration = Stats<Double>(name: "Total duration", value: 0)
     class var totalDuration: Stats<Double> {
         get {
             return Self._totalDuration
         }
     }
     
-    private static var _totalDistance = Stats<Double>(name: "Distance", value: 0)
+    private static var _totalDistance = Stats<Double>(name: "Total distance", value: 0)
     class var totalDistance: Stats<Double> {
         get {
             return Self._totalDistance
         }
     }
     
-    private static var _totalRepetitions = Stats<Int>(name: "Repetitions", value: 0)
+    private static var _totalRepetitions = Stats<Int>(name: "Total repetitions", value: 0)
     class var totalRepetitions: Stats<Int> {
         get {
             return Self._totalRepetitions
         }
     }
-//
-//    private static var _totalDuration: Double = 0
-//    class var totalDuration: Double {
-//           get {
-//            return Self._totalDuration
-//           }
-//           set {
-//            Self._totalDuration = max(newValue, 0)
-//           }
-//       }
-//
-//    private static var _totalDistance: Double = 0
-//    class var totalDistance: Double {
-//           get {
-//            return Self._totalDistance
-//           }
-//           set {
-//            Self._totalDistance = max(newValue, 0)
-//           }
-//       }
-//
-//    private static var _totalRepetitions: Int = 0
-//    class var totalRepetitions: Int {
-//           get {
-//            return Self._totalRepetitions
-//           }
-//           set {
-//            Self._totalRepetitions = max(newValue, 0)
-//           }
-//       }
     
     var name: String
     var duration: Double?
@@ -119,6 +89,31 @@ public class Activity {
         }
         if let _ = repetitions {
             Self.totalRepetitions.value! += repetitions!
+        }
+    }
+//
+//    deinit {
+//        print("parent deinit")
+//        if let _ = self.duration {
+//            Self.totalDuration.value! -= self.duration!
+//        }
+//        if let _ = self.distance {
+//            Self.totalDistance.value! -= self.distance!
+//        }
+//        if let _ = self.repetitions {
+//            Self.totalRepetitions.value! -= self.repetitions!
+//        }
+//    }
+    
+    func removeStats() {
+        if let _ = self.duration {
+            Self.totalDuration.value! = max(0, Self.totalDuration.value! - self.duration!)
+        }
+        if let _ = self.distance {
+            Self.totalDistance.value! = max(0, Self.totalDistance.value! - self.distance!)
+        }
+        if let _ = self.repetitions {
+            Self.totalRepetitions.value! = max(0, Self.totalRepetitions.value! - self.repetitions!)
         }
     }
     
