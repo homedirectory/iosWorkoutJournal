@@ -21,13 +21,13 @@
 		E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */; };
 		E53AD6E42578218500143FCB /* RunningModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */; };
 		E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */; };
-		E53AD6E62578218500143FCB /* ActivityModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D82578218500143FCB /* ActivityModel+CoreDataClass.swift */; };
 		E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */; };
 		E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */; };
 		E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */; };
 		E53AD6EA2578218500143FCB /* PlankModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */; };
 		E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */; };
 		E54BBA9E256E69690099886C /* JournalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBA9D256E69690099886C /* JournalManager.swift */; };
+		E5539B2D258291B100103EA6 /* ActivityModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5539B2C258291B000103EA6 /* ActivityModel+CoreDataClass.swift */; };
 		E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */; };
 		E5757A4F2576835900A381C5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4E2576835900A381C5 /* Activity.swift */; };
 		E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E587E988256E5D6E0063A46C /* GoogleService-Info.plist */; };
@@ -72,13 +72,13 @@
 		E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PushUpsModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunningModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunningModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E53AD6D82578218500143FCB /* ActivityModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ActivityModel+CoreDataClass.swift"; path = "../../../ActivityModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ActivityModel+CoreDataProperties.swift"; path = "../../../ActivityModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "JournalEntryModel+CoreDataClass.swift"; path = "../../../JournalEntryModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "JournalEntryModel+CoreDataProperties.swift"; path = "../../../JournalEntryModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlankModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlankModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E54BBA9D256E69690099886C /* JournalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalManager.swift; sourceTree = "<group>"; };
+		E5539B2C258291B000103EA6 /* ActivityModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ActivityModel+CoreDataClass.swift"; path = "WorkoutJournal/CoreData/Entities/ActivityModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		E5757A4E2576835900A381C5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E587E963256E49D20063A46C /* WorkoutJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,8 +161,8 @@
 				E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */,
 				E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */,
 				E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */,
-				E53AD6D82578218500143FCB /* ActivityModel+CoreDataClass.swift */,
 				E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */,
+				E5539B2C258291B000103EA6 /* ActivityModel+CoreDataClass.swift */,
 				E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */,
 				E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */,
 				E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */,
@@ -438,7 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E53AD6E62578218500143FCB /* ActivityModel+CoreDataClass.swift in Sources */,
 				E587E96B256E49D20063A46C /* ViewController.swift in Sources */,
 				E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */,
 				E587E967256E49D20063A46C /* AppDelegate.swift in Sources */,
@@ -469,6 +468,7 @@
 				E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */,
 				E5757A4F2576835900A381C5 /* Activity.swift in Sources */,
 				E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */,
+				E5539B2D258291B100103EA6 /* ActivityModel+CoreDataClass.swift in Sources */,
 				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
 				E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */,

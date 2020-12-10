@@ -2,7 +2,7 @@
 //  JournalEntryModel+CoreDataClass.swift
 //  WorkoutJournal
 //
-//  Created by Vlad Bilyk on 01.12.2020.
+//  Created by Vlad Bilyk on 02.12.2020.
 //  Copyright © 2020 Vlad Bilyk. All rights reserved.
 //
 //
