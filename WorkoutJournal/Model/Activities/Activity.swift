@@ -90,7 +90,7 @@ public class Activity {
         return name.components(separatedBy: ".").last!
     }()
     
-    required init(name: String = "Activity", duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
+    required init(name: String = "Activity", duration: Double? = 0, distance: Double? = 0, repetitions: Int? = 0) {
         self.name = name
         self.duration = duration
         self.distance = distance

@@ -18,7 +18,7 @@ public class Plank: Activity {
         }
     }
     
-    internal required init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
+    internal required init(name: String, duration: Double? = 0, distance: Double? = nil, repetitions: Int? = nil) {
         super.init(name: "Plank", duration: duration, distance: nil, repetitions: nil)
     }
     

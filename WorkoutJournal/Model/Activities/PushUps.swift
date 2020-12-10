@@ -18,7 +18,7 @@ public class PushUps: Activity {
         }
     }
     
-    internal required init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
+    internal required init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = 0) {
         super.init(name: "Push-ups", duration: nil, distance: nil, repetitions: repetitions)
     }
     

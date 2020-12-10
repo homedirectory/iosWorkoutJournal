@@ -27,7 +27,7 @@ public class Running: Activity {
     
     static var totalRuns = Stats<Int>(name: "Total runs", value: 0)
     
-    internal required init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = nil) {
+    internal required init(name: String, duration: Double? = 0, distance: Double? = 0, repetitions: Int? = nil) {
         super.init(name: "Running", duration: duration, distance: distance, repetitions: nil)
     }
     
