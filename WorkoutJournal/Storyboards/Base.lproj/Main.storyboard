@@ -79,9 +79,8 @@
                                     <action selector="newEntryButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ZH-hD-3UF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcD-2e-X1I">
-                                <rect key="frame" x="319" y="85" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcD-2e-X1I">
+                                <rect key="frame" x="347" y="210" width="62" height="30"/>
                                 <state key="normal" title="delete all"/>
                                 <connections>
                                     <action selector="deleteAllButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKS-ZZ-S5u"/>
@@ -91,10 +90,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5sg-sG-RDo" firstAttribute="top" secondItem="hB7-Kt-XEq" secondAttribute="bottom" constant="50" id="52K-47-o3d"/>
+                            <constraint firstItem="hB7-Kt-XEq" firstAttribute="top" secondItem="YcD-2e-X1I" secondAttribute="bottom" constant="20" id="Lhr-86-YoP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hB7-Kt-XEq" secondAttribute="trailing" constant="50" id="Rid-G9-gDC"/>
                             <constraint firstItem="5sg-sG-RDo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Rxp-43-jsN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5sg-sG-RDo" secondAttribute="trailing" constant="5" id="dJq-j0-n5e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5sg-sG-RDo" secondAttribute="bottom" constant="5" id="p6b-uy-zyt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YcD-2e-X1I" secondAttribute="trailing" constant="5" id="wnD-Of-hxt"/>
                             <constraint firstItem="hB7-Kt-XEq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="xzX-27-HmH"/>
                             <constraint firstItem="5sg-sG-RDo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="ydp-cK-Qgk"/>
                         </constraints>
@@ -119,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z8x-O1-bfl">
-                                <rect key="frame" x="0.0" y="314" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalEntryTableViewActivityCell" rowHeight="75" id="rbk-ug-OTs" customClass="JournalEntryTableViewActivityCell" customModule="WorkoutJournal" customModuleProvider="target">
@@ -152,7 +153,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="688-BC-hkc">
+                                                <textField hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="688-BC-hkc">
                                                     <rect key="frame" x="20" y="11" width="374" height="53"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -194,9 +195,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOP-3i-GBU">
-                                <rect key="frame" x="325" y="106" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOP-3i-GBU">
+                                <rect key="frame" x="374" y="144" width="30" height="30"/>
                                 <state key="normal" title="Test"/>
                                 <connections>
                                     <action selector="testButtonAction:" destination="F6Q-ny-oks" eventType="touchUpInside" id="T6J-5r-0rO"/>
@@ -215,25 +215,37 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="trailing" secondItem="z8x-O1-bfl" secondAttribute="trailing" id="0Gc-9x-nu4"/>
                             <constraint firstItem="z8x-O1-bfl" firstAttribute="leading" secondItem="xzp-tB-CPF" secondAttribute="leading" id="0f5-lf-kgh"/>
                             <constraint firstItem="rlB-AH-jeD" firstAttribute="top" secondItem="z8x-O1-bfl" secondAttribute="bottom" constant="20" id="F2v-4G-FFn"/>
                             <constraint firstItem="rlB-AH-jeD" firstAttribute="leading" secondItem="xzp-tB-CPF" secondAttribute="leading" constant="75" id="GTF-fJ-C6W"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="bottom" secondItem="rlB-AH-jeD" secondAttribute="bottom" constant="10" id="How-4n-aHf"/>
-                            <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="xzp-tB-CPF" secondAttribute="top" constant="270" id="dmC-Oe-yRI"/>
+                            <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="MOP-3i-GBU" secondAttribute="bottom" constant="20" id="NFE-zo-Xhv"/>
+                            <constraint firstItem="xzp-tB-CPF" firstAttribute="trailing" secondItem="MOP-3i-GBU" secondAttribute="trailing" constant="10" id="Qf3-Ac-7e7"/>
+                            <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="xzp-tB-CPF" secondAttribute="top" constant="150" id="dmC-Oe-yRI"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="trailing" secondItem="rlB-AH-jeD" secondAttribute="trailing" constant="75" id="tNg-iH-dQv"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="bottom" secondItem="z8x-O1-bfl" secondAttribute="bottom" constant="100" id="tQP-h2-d2D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xzp-tB-CPF"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="iK9-uE-tYx" appends="YES" id="22z-2H-nwS"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="gestureRecognizer" destination="iK9-uE-tYx" id="4uZ-Np-OYG"/>
                         <outlet property="saveButton" destination="rlB-AH-jeD" id="q1l-vM-3MB"/>
                         <outlet property="tableView" destination="z8x-O1-bfl" id="Lm8-sH-Xg1"/>
                         <outlet property="testButton" destination="MOP-3i-GBU" id="xvw-ix-fTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKG-Om-MgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="iK9-uE-tYx">
+                    <connections>
+                        <action selector="gestureRecognizerAction:" destination="F6Q-ny-oks" id="LRT-QE-dzb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="873.91304347826099" y="101.78571428571428"/>
         </scene>

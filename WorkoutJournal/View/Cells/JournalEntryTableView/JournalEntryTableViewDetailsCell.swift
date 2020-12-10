@@ -22,6 +22,14 @@ class JournalEntryTableViewDetailsCell: UITableViewCell, UITextFieldDelegate {
     
     func unlockTextField() {
         self.textField.isEnabled = true
+        self.textField.isUserInteractionEnabled = true
+        self.textField.isHidden = false
+    }
+    
+    func lockTextField() {
+        self.textField.isEnabled = false
+        self.textField.isUserInteractionEnabled = false
+        self.textField.isHidden = true
     }
     
     func getText() -> String {

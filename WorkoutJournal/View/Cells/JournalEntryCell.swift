@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-#warning("Fix date so it is actually displayed, n00b")
+#warning("TODO: Fix date so it is actually displayed, n00b")
 class JournalEntryCell: UITableViewCell {
     
     var entry: JournalEntry? {

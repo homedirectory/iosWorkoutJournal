@@ -9,10 +9,26 @@
 import Foundation
 import UIKit
 
-
+#warning("TODO: complete this cell with date picker")
 class JournalEntryTableViewDateCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
-        
-    #warning("TODO: complete this cell with date picker")
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    var date: Date?
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+    }
+    
+}
+
+// MARK: - IBActions
+
+extension JournalEntryTableViewDateCell {
+    
+    @IBAction func datePickerAction(_ sender: Any) {
+    }
+    
 }

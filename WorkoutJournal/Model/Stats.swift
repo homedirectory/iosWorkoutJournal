@@ -21,15 +21,4 @@ public class Stats<T> {
         self.value = value
     }
     
-//    static var runningDistance: Double = 0
-//    static var runningDuration: Double = 0
-//
-//    static var pushUpsRepetitions: Int = 0
-//
-//    static var pullUpsRepetitions: Int = 0
-//
-//    static var plankDuration: Int = 0
-//
-//    static var excerciseSessionDuration: Double = 0
-    
 }
