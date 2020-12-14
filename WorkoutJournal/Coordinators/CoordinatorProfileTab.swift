@@ -20,7 +20,10 @@ public class CoordinatorProfileTab {
     }
     
     func start(journalManager: JournalManager) {
-        self.navController = UINavigationController()
+        let vc = ProfileViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
+        vc.coordinator = self
+        vc.journalManager = journalManager
+        self.navController = UINavigationController(rootViewController: vc)
     }
         
 }
