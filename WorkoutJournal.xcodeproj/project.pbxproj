@@ -51,6 +51,8 @@
 		E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */; };
 		E5D2921125879D0300A6671F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921025879D0300A6671F /* Extensions.swift */; };
 		E5D292132587E83400A6671F /* CoordinatorProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292122587E83400A6671F /* CoordinatorProfileTab.swift */; };
+		E5D292152587EAF300A6671F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D292142587EAF300A6671F /* Profile.storyboard */; };
+		E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292182587EBA300A6671F /* ProfileViewController.swift */; };
 		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
 		E5E8A125257E907400238364 /* CoordinatorOverviewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */; };
 		E5E8A129257E918300238364 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A128257E918300238364 /* Storyboarded.swift */; };
@@ -107,6 +109,8 @@
 		E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewDateCell.swift; sourceTree = "<group>"; };
 		E5D2921025879D0300A6671F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E5D292122587E83400A6671F /* CoordinatorProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProfileTab.swift; sourceTree = "<group>"; };
+		E5D292142587EAF300A6671F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E5D292182587EBA300A6671F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorOverviewTab.swift; sourceTree = "<group>"; };
 		E5E8A128257E918300238364 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -237,9 +241,8 @@
 		E587E97F256E4A110063A46C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E587E96A256E49D20063A46C /* ViewController.swift */,
-				E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */,
-				E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */,
+				E5D292172587EB9100A6671F /* OverviewTab */,
+				E5D292162587EB8400A6671F /* ProfileTab */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			children = (
 				E587E96C256E49D20063A46C /* Overview.storyboard */,
 				E587E974256E49D30063A46C /* LaunchScreen.storyboard */,
+				E5D292142587EAF300A6671F /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -307,6 +311,24 @@
 				E5B7D182257FD24100DCB684 /* ActivityTypeCell.swift */,
 			);
 			path = ActivityCell;
+			sourceTree = "<group>";
+		};
+		E5D292162587EB8400A6671F /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				E5D292182587EBA300A6671F /* ProfileViewController.swift */,
+			);
+			path = ProfileTab;
+			sourceTree = "<group>";
+		};
+		E5D292172587EB9100A6671F /* OverviewTab */ = {
+			isa = PBXGroup;
+			children = (
+				E587E96A256E49D20063A46C /* ViewController.swift */,
+				E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */,
+				E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */,
+			);
+			path = OverviewTab;
 			sourceTree = "<group>";
 		};
 		E5E8A126257E909E00238364 /* Coordinators */ = {
@@ -391,6 +413,7 @@
 				E587E973256E49D30063A46C /* Assets.xcassets in Resources */,
 				E5B7D174257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib in Resources */,
 				E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */,
+				E5D292152587EAF300A6671F /* Profile.storyboard in Resources */,
 				E587E96E256E49D20063A46C /* Overview.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +485,7 @@
 				E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */,
 				E53AD6C925780F5400143FCB /* PushUps.swift in Sources */,
 				E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */,
+				E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */,
 				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
 				E5E8A129257E918300238364 /* Storyboarded.swift in Sources */,
