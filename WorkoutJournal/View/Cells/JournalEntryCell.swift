@@ -12,20 +12,13 @@ import UIKit
 #warning("TODO: Fix date so it is actually displayed, n00b")
 class JournalEntryCell: UITableViewCell {
     
-    var entry: JournalEntry? {
-        didSet {
-            guard let activity = entry!.activity else {
-                activityImage.isHidden = true
-                labelActivityName.text = "[Empty]"
-                labelActivityName.isHidden = true
-                labelDistance.isHidden = true
-                labelRepetitions.isHidden = true
-                return
-            }
-            configureDetails(activity: activity)
-
-        }
-    }
+    var entry: JournalEntry?
+//        didSet {
+//            print("DIDSET")
+//            guard let activity = entry!.activity else { return }
+//            configureDetails(activity: activity)
+//        }
+//    }
     
     #warning("TODO: fix image")
     @IBOutlet weak var activityImage: UIImageView!
@@ -34,30 +27,36 @@ class JournalEntryCell: UITableViewCell {
     @IBOutlet weak var labelDuration: UILabel!
     @IBOutlet weak var labelRepetitions: UILabel!
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-//        self.entry = nil
+    func configureDefaults() {
+        self.labelActivityName.text = ""
+        self.labelDistance.text = "Distance"
+        self.labelDuration.text = "Duration"
+        self.labelRepetitions.text = "Repetitions"
+        
+        self.labelDistance.isHidden = true
+        self.labelDuration.isHidden = true
+        self.labelRepetitions.isHidden = true
     }
     
-    func configureDetails(activity: Activity) {
-        labelActivityName.text = activity.name
+    public func configureDetails() {
+        guard let activity = self.entry?.activity else { return }
+        self.configureDefaults()
+        
+        self.labelActivityName.text = type(of: activity).name
         
         if let _ = activity.distance {
-            labelDistance.text = activity.distanceString
-        } else {
-            labelDistance.isHidden = true
+            self.labelDistance.text = activity.distanceString
+            self.labelDistance.isHidden = false
         }
         
         if let _ = activity.duration {
-            labelDuration.text = activity.durationString
-        } else {
-            labelDuration.isHidden = true
+            self.labelDuration.text = activity.durationString
+            self.labelDuration.isHidden = false
         }
         
         if let _ = activity.repetitions {
-            labelRepetitions.text = activity.repetitionsString
-        } else {
-            labelRepetitions.isHidden = true
+            self.labelRepetitions.text = activity.repetitionsString
+            self.labelRepetitions.isHidden = false
         }
     }
     
@@ -65,8 +64,3 @@ class JournalEntryCell: UITableViewCell {
 }
 
 
-extension UITableViewCell {
-    static var id: String {
-        String(describing: Self.self)
-    }
-}

@@ -27,12 +27,16 @@ public class Running: Activity {
     
     static var totalRuns = Stats<Int>(name: "Total runs", value: 0)
     
-    internal required init(name: String, duration: Double? = 0, distance: Double? = 0, repetitions: Int? = nil) {
-        super.init(name: "Running", duration: duration, distance: distance, repetitions: nil)
+    override class var name: String {
+        return "Running"
+    }
+    
+    internal required init(duration: Double? = 0, distance: Double? = 0, repetitions: Int? = nil) {
+        super.init(duration: duration, distance: distance, repetitions: nil)
     }
     
     convenience init(duration: Double, distance: Double) {
-        self.init(name: "Running", duration: duration, distance: distance, repetitions: nil)
+        self.init(duration: duration, distance: distance, repetitions: nil)
         Running.totalRuns.value! += 1
     }
     

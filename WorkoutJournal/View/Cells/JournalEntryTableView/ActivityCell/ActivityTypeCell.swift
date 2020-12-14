@@ -16,7 +16,8 @@ class ActivityTypeCell: UITableViewCell {
     
     var activityType: Activity.Type? {
         didSet {
-            self.activityLabel.text = StaticVariables.activityTypeToString(activityType: self.activityType!)
+            guard let _ = self.activityType else { return }
+            self.activityLabel.text = self.activityType!.name
         }
     }
     

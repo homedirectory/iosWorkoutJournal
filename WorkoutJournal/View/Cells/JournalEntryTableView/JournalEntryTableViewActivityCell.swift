@@ -12,28 +12,19 @@ import UIKit
 
 class JournalEntryTableViewActivityCell: UITableViewCell {
     
+    @IBOutlet weak var label: UILabel!
+    
     weak var coordinator: Coordinator?
     var completion: ((Activity.Type?) -> ())?
     var cellLabel: String?
+    
     var chosenActivity: Activity.Type? {
         didSet {
-            print("chosen activity was set to: ", chosenActivity ?? "wut")
-            self.cellLabel = StaticVariables.activityTypeToString(activityType: self.chosenActivity!)
+            guard let activity = self.chosenActivity else { return }
+            self.cellLabel = activity.name
             self.label.text = cellLabel
             self.completion!(self.chosenActivity!)
         }
     }
-    
-    @IBOutlet weak var label: UILabel!
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        //self.label.text = "Activity"
-    }
-    
-//    func selectAction() {
-//        self.coordinator!.pushActivitiesListViewController(trigerredCell: self)
-//    }
     
 }

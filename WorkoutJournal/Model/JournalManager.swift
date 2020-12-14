@@ -40,7 +40,7 @@ class JournalManager {
             return
         }
         
-        entries.append(entry)
+        entries.insert(entry, at: 0)
         do {
             try self.storage?.save(entry: entry)
         } catch let error {
@@ -109,7 +109,7 @@ class JournalManager {
         }
         
         let entry = findById(entryId: entryId)
-        entry.date = newDate
+        entry.creationDate = newDate
     }
     
     func updateEntryActivity(entryId: Int, newDistance: Double?) {
@@ -161,7 +161,9 @@ class JournalManager {
 
         self.entries = fetched.map({
             JournalEntry($0 as! JournalEntryModel)
-        })
+            }).sorted(by: {
+                $0.creationDate! > $1.creationDate!
+            })
         self.lastId = self.entries.map({
             $0.id
             }).max() ?? 0

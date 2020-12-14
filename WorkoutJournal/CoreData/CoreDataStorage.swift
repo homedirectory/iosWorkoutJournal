@@ -20,7 +20,6 @@ final class CoreDataStorage {
         print(entry.activity!.entityName)
         let activityEntity = NSEntityDescription.entity(forEntityName: entry.activity!.entityName, in: persistentContainer.viewContext)!
         let activityManagedObject = NSManagedObject(entity: activityEntity, insertInto: persistentContainer.viewContext)
-        activityManagedObject.setValue(entry.activity!.name, forKey: "name")
         activityManagedObject.setValue(entry.activity!.duration, forKey: "duration")
         activityManagedObject.setValue(entry.activity!.distance, forKey: "distance")
         activityManagedObject.setValue(entry.activity!.repetitions, forKey: "repetitions")
@@ -28,7 +27,7 @@ final class CoreDataStorage {
         let entryEntity = NSEntityDescription.entity(forEntityName: "JournalEntryModel", in: persistentContainer.viewContext)!
         let entryManagedObject = NSManagedObject(entity: entryEntity, insertInto: persistentContainer.viewContext)
         entryManagedObject.setValue(entry.id, forKey: "id")
-        entryManagedObject.setValue(entry.date, forKey: "date")
+        entryManagedObject.setValue(entry.creationDate, forKey: "date")
         entryManagedObject.setValue(activityManagedObject, forKey: "activity")
 
         saveContext()

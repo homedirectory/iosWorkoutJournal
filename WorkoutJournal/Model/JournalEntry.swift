@@ -13,11 +13,11 @@ class JournalEntry {
     
     let id: Int
     var activity: Activity?
-    var date: Date?
+    var creationDate: Date?
     
     init(id: Int, activity: Activity, date: Date) {
         self.activity = activity
-        self.date = date
+        self.creationDate = date
         self.id = id
     }
     
@@ -28,7 +28,7 @@ class JournalEntry {
 //        print("type of fetched activity: ", type(of: activity))
         self.activity = activity.transform()
 //        print("transformed activity: ", type(of: self.activity!))
-        self.date = managedObject.value(forKey: "date") as? Date
+        self.creationDate = managedObject.value(forKey: "date") as? Date
     }
     
     
@@ -37,7 +37,7 @@ class JournalEntry {
             -------------------
             entryId: \(id)
             activity: \(activity?.toString() ?? "none")
-            date: \(String(describing: date))
+            date: \(String(describing: creationDate))
             """)
     }
     

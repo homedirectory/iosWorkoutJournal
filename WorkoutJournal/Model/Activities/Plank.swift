@@ -18,12 +18,16 @@ public class Plank: Activity {
         }
     }
     
-    internal required init(name: String, duration: Double? = 0, distance: Double? = nil, repetitions: Int? = nil) {
-        super.init(name: "Plank", duration: duration, distance: nil, repetitions: nil)
+    override class var name: String {
+        return "Plank"
+    }
+    
+    internal required init(duration: Double? = 0, distance: Double? = nil, repetitions: Int? = nil) {
+        super.init(duration: duration, distance: nil, repetitions: nil)
     }
     
     convenience init(duration: Double) {
-        self.init(name: "Plank", duration: duration, distance: nil, repetitions: nil)
+        self.init(duration: duration, distance: nil, repetitions: nil)
     }
     
 }

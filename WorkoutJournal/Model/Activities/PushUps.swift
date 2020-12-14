@@ -18,12 +18,16 @@ public class PushUps: Activity {
         }
     }
     
-    internal required init(name: String, duration: Double? = nil, distance: Double? = nil, repetitions: Int? = 0) {
-        super.init(name: "Push-ups", duration: nil, distance: nil, repetitions: repetitions)
+    override class var name: String {
+        return "Push-ups"
+    }
+    
+    internal required init(duration: Double? = nil, distance: Double? = nil, repetitions: Int? = 0) {
+        super.init(duration: nil, distance: nil, repetitions: repetitions)
     }
     
     convenience init(repetitions: Int) {
-        self.init(name: "Push-ups", duration: nil, distance: nil, repetitions: repetitions)
+        self.init(duration: nil, distance: nil, repetitions: repetitions)
     }
     
 }

@@ -33,7 +33,10 @@ public class Activity {
         }
     }
     
-    var name: String
+    class var name: String {
+        return "Activity"
+    }
+    
     var duration: Double?
     {
         willSet {
@@ -90,8 +93,7 @@ public class Activity {
         return name.components(separatedBy: ".").last!
     }()
     
-    required init(name: String = "Activity", duration: Double? = 0, distance: Double? = 0, repetitions: Int? = 0) {
-        self.name = name
+    required init(duration: Double? = 0, distance: Double? = 0, repetitions: Int? = 0) {
         self.duration = duration
         self.distance = distance
         self.repetitions = repetitions
@@ -122,7 +124,7 @@ public class Activity {
     func toManagedObject(context: NSManagedObjectContext) -> NSManagedObject {
         let entity = NSEntityDescription.entity(forEntityName: self.entityName, in: context)!
         let managedObject = NSManagedObject(entity: entity, insertInto: context)
-        managedObject.setValue(self.name, forKey: "name")
+        managedObject.setValue(Self.name, forKey: "name")
         managedObject.setValue(self.duration, forKey: "duration")
         managedObject.setValue(self.distance, forKey: "distance")
         managedObject.setValue(self.repetitions, forKey: "repetitions")
@@ -137,7 +139,7 @@ public class Activity {
 extension Activity {
     
     func toString() -> String {
-        var str =  "[ name: \(name)"
+        var str =  "[ name: \(Self.name)"
         str += duration == nil ? "" : " | duration: \(String(self.duration! / 60)) min."
         str += distance == nil ? "" : " |  distance: \(String(self.distance! / 1000)) km"
         str += repetitions == nil ? "" : " | repetitions: \(String(self.repetitions!))"

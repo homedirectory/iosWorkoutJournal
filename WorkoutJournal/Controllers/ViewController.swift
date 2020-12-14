@@ -67,6 +67,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let entryCell = tableView.dequeueReusableCell(withIdentifier: JournalEntryCell.id) as! JournalEntryCell
         entryCell.entry = journalManager!.entries[indexPath.row]
+        entryCell.configureDetails()
         
         return entryCell
     }
