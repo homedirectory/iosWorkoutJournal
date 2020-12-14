@@ -27,16 +27,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         coordinatorOverview!.start(journalManager: JournalManager.shared)
         let navControllerOverview = coordinatorOverview!.navController!
         navControllerOverview.title = "Overview"
-        
-        print(navControllerOverview.viewControllers)
-        
-        
+                
         coordinatorProfile = CoordinatorProfileTab()
         coordinatorProfile!.start(journalManager: JournalManager.shared)
         let navControllerProfile = coordinatorProfile!.navController!
         navControllerProfile.title = "Profile"
         
         tabBarController.setViewControllers([navControllerOverview, navControllerProfile], animated: true)
+        
+        let imageNames: [String] = ["house", "person"]
+        
+        guard let items = tabBarController.tabBar.items else { return }
+        
+        for (i, item) in items.enumerated() {
+            item.image = UIImage(systemName: imageNames[i])
+        }
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
