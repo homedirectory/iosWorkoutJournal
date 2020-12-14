@@ -12,7 +12,7 @@ import UIKit
 
 class ActivitiesListViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: Coordinator?
+    weak var coordinator: CoordinatorOverviewTab?
     var fromCell: JournalEntryTableViewActivityCell?
     let activityTypes = StaticVariables.defaultActivityTypes
     

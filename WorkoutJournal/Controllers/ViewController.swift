@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: Coordinator?
+    weak var coordinator: CoordinatorOverviewTab?
     var journalManager: JournalManager?
 
     @IBOutlet weak var tableView: UITableView!

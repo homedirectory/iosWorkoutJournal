@@ -50,7 +50,6 @@ class JournalEntryCell: UITableViewCell {
         }
         
         if let _ = activity.duration {
-            print(activity.duration)
             self.labelDuration.text = activity.getDurationString()
             self.labelDuration.isHidden = false
         }

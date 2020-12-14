@@ -14,7 +14,7 @@ class JournalEntryTableViewActivityCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     
-    weak var coordinator: Coordinator?
+    weak var coordinator: CoordinatorOverviewTab?
     var completion: ((Activity.Type?) -> ())?
     var cellLabel: String?
     

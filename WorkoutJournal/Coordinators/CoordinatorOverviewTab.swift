@@ -10,23 +10,24 @@ import Foundation
 import UIKit
 
 
-public class Coordinator {
+public class CoordinatorOverviewTab {
+    
+    static var STORYBOARD_NAME: String = "Overview"
     
     var navController: UINavigationController?
     
-    init(navController: UINavigationController) {
-        self.navController = navController
+    init() {
     }
     
     func start(journalManager: JournalManager) {
-        let vc = ViewController.instantiate(storyboardName: "Main")
+        let vc = ViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
         vc.journalManager = journalManager
-        navController!.pushViewController(vc, animated: true)
+        self.navController = UINavigationController(rootViewController: vc)
     }
     
     func pushJournalEntryViewController(journalManager: JournalManager, entryToUpdate entry: JournalEntry? = nil) {
-        let vc = JournalEntryViewController.instantiate(storyboardName: "Main")
+        let vc = JournalEntryViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
         vc.journalManager = journalManager
         vc.entryToUpdate = entry
@@ -34,7 +35,7 @@ public class Coordinator {
     }
     
     func pushActivitiesListViewController(trigerredCell: JournalEntryTableViewActivityCell) {
-        let vc = ActivitiesListViewController.instantiate(storyboardName: "Main")
+        let vc = ActivitiesListViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
         vc.fromCell = trigerredCell
         navController!.pushViewController(vc, animated: true)
