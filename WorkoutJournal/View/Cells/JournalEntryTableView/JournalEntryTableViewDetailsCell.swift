@@ -14,9 +14,18 @@ class JournalEntryTableViewDetailsCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     
-    func setup(initialText: String) {
+    var locked: Bool = true
+    
+    func setup(placeholderText text: String) {
         self.textField.delegate = self
-        self.textField.placeholder = initialText
+        self.textField.text = ""
+        self.textField.placeholder = text
+        self.selectionStyle = .none
+    }
+    
+    func setup(withText text: String) {
+        self.textField.delegate = self
+        self.textField.text = text
         self.selectionStyle = .none
     }
     
@@ -24,20 +33,30 @@ class JournalEntryTableViewDetailsCell: UITableViewCell, UITextFieldDelegate {
         self.textField.isEnabled = true
         self.textField.isUserInteractionEnabled = true
         self.textField.isHidden = false
+        self.locked = false
     }
     
     func lockTextField() {
         self.textField.isEnabled = false
         self.textField.isUserInteractionEnabled = false
-        self.textField.isHidden = true
+        self.textField.isHidden = false
+        self.locked = true
     }
     
     func getText() -> String {
         return self.textField.text!
     }
     
+    #warning("warning if text input is not a number")
     func getNumber() -> Double? {
-        return Double(self.textField.text!)
+        if !locked {
+            return Double(self.textField.text!)
+        }
+        return nil
+    }
+    
+    func setNumber(number: Double) {
+        self.textField.text = String(number)
     }
 }
 

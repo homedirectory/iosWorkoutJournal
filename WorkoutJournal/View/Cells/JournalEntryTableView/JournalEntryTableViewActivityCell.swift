@@ -20,11 +20,21 @@ class JournalEntryTableViewActivityCell: UITableViewCell {
     
     var chosenActivity: Activity.Type? {
         didSet {
-            guard let activity = self.chosenActivity else { return }
-            self.cellLabel = activity.name
-            self.label.text = cellLabel
-            self.completion!(self.chosenActivity!)
+            guard let aT = self.chosenActivity else {
+                self.label.text = "Activity"
+                return
+            }
+//            self.cellLabel = activity.name
+            self.label.text = aT.name
+//            self.completion!(self.chosenActivity!)
         }
+    }
+    
+    func chooseActivity(_ activityType: Activity.Type?) {
+        guard let aT = activityType else { return }
+        self.chosenActivity = aT
+        self.completion!(aT)
+        
     }
     
 }

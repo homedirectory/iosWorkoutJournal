@@ -22,7 +22,7 @@ public class ExcerciseSession: Activity {
         return "Excercise Session"
     }
     
-    internal required init(duration: Double? = 0, distance: Double? = nil, repetitions: Int? = nil) {
+    internal required init(duration: Double? = 0, distance: Double? = nil, repetitions: Double? = nil) {
         super.init(duration: duration, distance: nil, repetitions: nil)
     }
     

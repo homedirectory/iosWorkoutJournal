@@ -22,16 +22,11 @@ class ViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         guard let jm = journalManager else { return }
         
-        jm.entries.forEach({
-            $0.printInfo()
-            print(type(of: $0.activity!))
-        })
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +41,6 @@ extension ViewController {
 
     @IBAction func newEntryButtonAction(_ sender: Any) {
         self.coordinator!.pushJournalEntryViewController(journalManager: self.journalManager!)
-//        self.tableView.reloadData()
     }
     
     @IBAction func deleteAllButtonAction(_ sender: Any) {
@@ -75,6 +69,12 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        let entry = (self.tableView.cellForRow(at: indexPath) as! JournalEntryCell).entry!
+        self.coordinator!.pushJournalEntryViewController(journalManager: self.journalManager!, entryToUpdate: entry)
+    }
     
 }
 

@@ -25,10 +25,11 @@ public class Coordinator {
         navController!.pushViewController(vc, animated: true)
     }
     
-    func pushJournalEntryViewController(journalManager: JournalManager) {
+    func pushJournalEntryViewController(journalManager: JournalManager, entryToUpdate entry: JournalEntry? = nil) {
         let vc = JournalEntryViewController.instantiate(storyboardName: "Main")
         vc.coordinator = self
         vc.journalManager = journalManager
+        vc.entryToUpdate = entry
         navController!.pushViewController(vc, animated: true)
     }
     

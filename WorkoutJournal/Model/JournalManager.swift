@@ -113,6 +113,7 @@ class JournalManager {
     }
     
     func updateEntryActivity(entryId: Int, newDistance: Double?) {
+        guard let _ = newDistance else { return }
         do {
             try self.storage!.updateEntryActivity(entryId: entryId, newValue: newDistance, keyPath: "distance")
         } catch let error {
@@ -124,7 +125,8 @@ class JournalManager {
         activity!.distance = newDistance
     }
     
-    func updateEntryActivity(entryId: Int, newRepetitions: Int?) {
+    func updateEntryActivity(entryId: Int, newRepetitions: Double?) {
+        guard let _ = newRepetitions else { return }
         do {
             try self.storage!.updateEntryActivity(entryId: entryId, newValue: newRepetitions, keyPath: "repetitions")
         } catch let error {
@@ -137,6 +139,7 @@ class JournalManager {
     }
     
     func updateEntryActivity(entryId: Int, newDuration: Double?) {
+        guard let _ = newDuration else { return }
         do {
             try self.storage!.updateEntryActivity(entryId: entryId, newValue: newDuration, keyPath: "duration")
         } catch let error {

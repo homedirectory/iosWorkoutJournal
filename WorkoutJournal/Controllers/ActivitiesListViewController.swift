@@ -51,7 +51,7 @@ extension ActivitiesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView.cellForRow(at: indexPath) as! ActivityTypeCell
-        self.fromCell!.chosenActivity = cell.activityType
+        self.fromCell!.chooseActivity(cell.activityType)
         self.coordinator!.navController?.popViewController(animated: true)
     }
     

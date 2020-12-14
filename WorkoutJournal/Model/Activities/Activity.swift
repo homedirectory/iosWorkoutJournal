@@ -26,8 +26,8 @@ public class Activity {
         }
     }
     
-    private static var _totalRepetitions = Stats<Int>(name: "Total repetitions", value: 0)
-    class var totalRepetitions: Stats<Int> {
+    private static var _totalRepetitions = Stats<Double>(name: "Total repetitions", value: 0)
+    class var totalRepetitions: Stats<Double> {
         get {
             return Self._totalRepetitions
         }
@@ -45,7 +45,9 @@ public class Activity {
             }
         }
         didSet {
-            Self.totalDuration.value! += self.duration!
+            if let _ = self.duration {
+                Self.totalDuration.value! += self.duration!
+            }
         }
     }
     
@@ -57,11 +59,13 @@ public class Activity {
             }
         }
         didSet {
-            Self.totalDistance.value! += self.distance!
+            if let _ = self.distance {
+                Self.totalDistance.value! += self.distance!
+            }
         }
     }
     
-    var repetitions: Int?
+    var repetitions: Double?
     {
         willSet {
             if let prevRepetitions = self.repetitions {
@@ -69,31 +73,18 @@ public class Activity {
             }
         }
         didSet {
-            Self.totalRepetitions.value! += self.repetitions!
+            if let _ = self.repetitions {
+                Self.totalRepetitions.value! += self.repetitions!
+            }
         }
     }
-    
-    lazy var distanceString: String = {
-        guard let _ = distance else { return ""}
-        return String(format: "%.2f km", distance!/1000)
-    }()
-    
-    lazy var durationString: String = {
-        guard let _ = duration else { return "" }
-        return String(format: "%.2f min", duration!/60)
-    }()
-    
-    lazy var repetitionsString: String = {
-        guard let _ = repetitions else { return "" }
-        return String(repetitions!)
-    }()
     
     lazy var entityName: String = {
         let name = NSStringFromClass(type(of: self)) + "Model"
         return name.components(separatedBy: ".").last!
     }()
     
-    required init(duration: Double? = 0, distance: Double? = 0, repetitions: Int? = 0) {
+    required init(duration: Double? = 0, distance: Double? = 0, repetitions: Double? = 0) {
         self.duration = duration
         self.distance = distance
         self.repetitions = repetitions
@@ -124,7 +115,6 @@ public class Activity {
     func toManagedObject(context: NSManagedObjectContext) -> NSManagedObject {
         let entity = NSEntityDescription.entity(forEntityName: self.entityName, in: context)!
         let managedObject = NSManagedObject(entity: entity, insertInto: context)
-        managedObject.setValue(Self.name, forKey: "name")
         managedObject.setValue(self.duration, forKey: "duration")
         managedObject.setValue(self.distance, forKey: "distance")
         managedObject.setValue(self.repetitions, forKey: "repetitions")
@@ -132,6 +122,27 @@ public class Activity {
         return managedObject
     }
    
+}
+
+// MARK: - Getters
+
+extension Activity {
+    
+    public func getDistanceString() -> String {
+          guard let _ = distance else { return ""}
+          return String(format: "%.2f km", distance!/1000)
+      }
+      
+    public func getDurationString() -> String {
+          guard let _ = duration else { return "" }
+          return String(format: "%.2f min", duration!/60)
+      }
+      
+      public func getRepetitionsString() -> String {
+          guard let _ = repetitions else { return "" }
+          return String(Int(repetitions!))
+      }
+    
 }
 
 // MARK: - toString

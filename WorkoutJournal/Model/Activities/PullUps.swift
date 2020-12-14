@@ -11,8 +11,8 @@ import Foundation
 
 public class PullUps: Activity {
     
-    private static var __totalRepetitions = Stats<Int>(name: "Total pull-ups", value: 0)
-    override class var totalRepetitions: Stats<Int> {
+    private static var __totalRepetitions = Stats<Double>(name: "Total pull-ups", value: 0)
+    override class var totalRepetitions: Stats<Double> {
         get {
             return Self.__totalRepetitions
         }
@@ -22,11 +22,11 @@ public class PullUps: Activity {
         return "Pull-ups"
     }
     
-    internal required init(duration: Double? = nil, distance: Double? = nil, repetitions: Int? = 0) {
+    internal required init(duration: Double? = nil, distance: Double? = nil, repetitions: Double? = 0) {
         super.init(duration: nil, distance: nil, repetitions: repetitions)
     }
     
-    convenience init(repetitions: Int) {
+    convenience init(repetitions: Double) {
         self.init(duration: nil, distance: nil, repetitions: repetitions)
     }
     

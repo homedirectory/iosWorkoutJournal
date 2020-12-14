@@ -14,8 +14,9 @@ class JournalEntryViewController: UIViewController, Storyboarded {
     
     weak var coordinator: Coordinator?
     var journalManager: JournalManager?
-    private var detailsCellLabels = ["", "Duration", "Distance", "Repetititons"]
-    private var selectedActivityInstance: Activity? = nil
+    private var detailsCellLabels = ["Duration", "Distance", "Repetititons"]
+    private var selectedActivityInstance: Activity?
+    var entryToUpdate: JournalEntry?
     
     lazy var activityCell = self.tableView.cellForRow(at: [0, 0]) as! JournalEntryTableViewActivityCell
     lazy var durationCell = self.tableView.cellForRow(at: [0, 1]) as! JournalEntryTableViewDetailsCell
@@ -36,26 +37,56 @@ class JournalEntryViewController: UIViewController, Storyboarded {
         
         self.saveButton.layer.cornerRadius = 25.0
         
+        if let _ = self.entryToUpdate {
+//            self.setUpdatingEntry()
+            self.selectedActivityInstance = self.entryToUpdate!.activity
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
+    
+    func setUpdatingEntry() {
+        self.selectedActivityInstance = self.entryToUpdate!.activity
+//        self.dateCell.date = self.entryToUpdate!.creationDate
+//        self.unlockTextFields()
     }
         
     func unlockTextFields() {
         self.lockTextFields()
+        
         let cells = [durationCell, distanceCell, repetitionsCell]
-        let selectedActivityInstanceDetails = [self.selectedActivityInstance!.duration, self.selectedActivityInstance!.distance, self.selectedActivityInstance!.repetitions] as [Any?]
         
         for (index, cell) in cells.enumerated() {
-            if let _ = selectedActivityInstanceDetails[index] {
+            if let number = self.getSelectedActivityInstanceDetails()[index] {
                 cell.unlockTextField()
+                cell.setNumber(number: number)
             }
         }
     }
     
-    func lockTextFields() {
+    private func lockTextFields() {
         let cells = [durationCell, distanceCell, repetitionsCell]
         cells.forEach({
             $0.lockTextField()
         })
     }
+    
+    private func getSelectedActivityInstanceDetails() -> [Double?] {
+        return [self.selectedActivityInstance!.duration,
+                self.selectedActivityInstance!.distance,
+                self.selectedActivityInstance!.repetitions]
+
+    }
+    
+}
+
+// MARK: - IBActions, objc functions
+
+extension JournalEntryViewController {
     
     @objc func resignTextFields() {
         for cell in [self.durationCell, self.distanceCell, self.repetitionsCell] {
@@ -64,13 +95,6 @@ class JournalEntryViewController: UIViewController, Storyboarded {
             }
         }
     }
-
-  
-}
-
-// MARK: - IBActions
-
-extension JournalEntryViewController {
     
     @IBAction func gestureRecognizerAction(_ sender: Any) {
         self.resignTextFields()
@@ -81,11 +105,28 @@ extension JournalEntryViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        let reps = self.repetitionsCell.getNumber() == nil ? nil : Int(self.repetitionsCell.getNumber()!)
-        let activity = self.activityCell.chosenActivity!.init(duration: self.durationCell.getNumber(), distance: self.distanceCell.getNumber(), repetitions: reps)
+//        if let entry = self.entryToUpdate {
+//            self.journalManager!.updateEntryActivity(entryId: entry.id, newDistance: self.distanceCell.getNumber())
+//            self.journalManager!.updateEntryActivity(entryId: entry.id, newDuration: self.durationCell.getNumber())
+//            self.journalManager!.updateEntryActivity(entryId: entry.id, newRepetitions: self.repetitionsCell.getNumber())
+//        }
+//        else {
+//            let activity = self.activityCell.chosenActivity!.init(duration: self.durationCell.getNumber(), distance: self.distanceCell.getNumber(), repetitions: self.repetitionsCell.getNumber())
+        #warning("Throw an exception here")
+            guard let activity = self.selectedActivityInstance else { return }
+            activity.duration = self.durationCell.getNumber()
+            activity.distance = self.distanceCell.getNumber()
+            activity.repetitions = self.repetitionsCell.getNumber()
+            
+        if let entry = self.entryToUpdate {
+            self.journalManager!.setEntryActivity(entryId: entry.id, newActivity: activity)
+        } else {
+            self.journalManager!.createEntry(activity: activity, date: Date())
+        }
+//        }
         
-        self.journalManager?.createEntry(activity: activity, date: Date())
-        
+        self.selectedActivityInstance = nil
+        self.entryToUpdate = nil
         self.coordinator!.navController?.popViewController(animated: true)
     }
     
@@ -101,13 +142,17 @@ extension JournalEntryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("CELL FOR ROW AT")
         if indexPath.row == 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: JournalEntryTableViewActivityCell.id) as! JournalEntryTableViewActivityCell
             cell.coordinator = self.coordinator!
-            cell.label.text = cell.cellLabel == nil ? "Activity" : cell.cellLabel!
+//            cell.label.text = cell.cellLabel == nil ? "Activity" : cell.cellLabel!
             cell.completion = { [weak self] activityType in
                 self?.selectedActivityInstance = activityType!.init()
-                self?.unlockTextFields()
+//                self?.unlockTextFields()
+            }
+            if let sai = self.selectedActivityInstance {
+                cell.chosenActivity = type(of: sai)
             }
 
             return cell
@@ -115,7 +160,22 @@ extension JournalEntryViewController: UITableViewDataSource {
         
         else if Array(1...3).contains(indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: JournalEntryTableViewDetailsCell.id) as! JournalEntryTableViewDetailsCell
-            cell.setup(initialText: self.detailsCellLabels[indexPath.row])
+            if let _ = self.selectedActivityInstance {
+                print(self.selectedActivityInstance)
+                if let detail = self.getSelectedActivityInstanceDetails()[indexPath.row - 1] {
+                    print("unlock")
+                    cell.unlockTextField()
+                    cell.setup(withText: String(Int(detail)))
+                }
+                else {
+                    print("lock")
+                    cell.lockTextField()
+                    cell.setup(placeholderText: self.detailsCellLabels[indexPath.row - 1])
+                }
+            }
+            else {
+                cell.setup(placeholderText: self.detailsCellLabels[indexPath.row - 1])
+            }
             return cell
         }
         

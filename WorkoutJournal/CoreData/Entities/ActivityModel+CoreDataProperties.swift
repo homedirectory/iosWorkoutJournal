@@ -19,7 +19,6 @@ extension ActivityModel {
 
     @NSManaged public var distance: Double
     @NSManaged public var duration: Double
-    @NSManaged public var name: String?
-    @NSManaged public var repetitions: Int64
+    @NSManaged public var repetitions: Double
 
 }

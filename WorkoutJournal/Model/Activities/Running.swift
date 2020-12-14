@@ -25,13 +25,13 @@ public class Running: Activity {
         }
     }
     
-    static var totalRuns = Stats<Int>(name: "Total runs", value: 0)
+    static var totalRuns = Stats<Double>(name: "Total runs", value: 0)
     
     override class var name: String {
         return "Running"
     }
     
-    internal required init(duration: Double? = 0, distance: Double? = 0, repetitions: Int? = nil) {
+    internal required init(duration: Double? = 0, distance: Double? = 0, repetitions: Double? = nil) {
         super.init(duration: duration, distance: distance, repetitions: nil)
     }
     

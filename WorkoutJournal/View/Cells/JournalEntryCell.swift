@@ -45,17 +45,18 @@ class JournalEntryCell: UITableViewCell {
         self.labelActivityName.text = type(of: activity).name
         
         if let _ = activity.distance {
-            self.labelDistance.text = activity.distanceString
+            self.labelDistance.text = activity.getDistanceString()
             self.labelDistance.isHidden = false
         }
         
         if let _ = activity.duration {
-            self.labelDuration.text = activity.durationString
+            print(activity.duration)
+            self.labelDuration.text = activity.getDurationString()
             self.labelDuration.isHidden = false
         }
         
         if let _ = activity.repetitions {
-            self.labelRepetitions.text = activity.repetitionsString
+            self.labelRepetitions.text = activity.getRepetitionsString()
             self.labelRepetitions.isHidden = false
         }
     }
