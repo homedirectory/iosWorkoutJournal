@@ -161,7 +161,6 @@ extension JournalEntryViewController: UITableViewDataSource {
         else if Array(1...3).contains(indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: JournalEntryTableViewDetailsCell.id) as! JournalEntryTableViewDetailsCell
             if let _ = self.selectedActivityInstance {
-                print(self.selectedActivityInstance)
                 if let detail = self.getSelectedActivityInstanceDetails()[indexPath.row - 1] {
                     print("unlock")
                     cell.unlockTextField()
@@ -174,6 +173,7 @@ extension JournalEntryViewController: UITableViewDataSource {
                 }
             }
             else {
+                cell.lockTextField()
                 cell.setup(placeholderText: self.detailsCellLabels[indexPath.row - 1])
             }
             return cell
