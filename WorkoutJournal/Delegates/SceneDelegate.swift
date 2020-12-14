@@ -11,8 +11,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: Coordinator?
-
+    var coordinatorOverview: Coordinator?
+    var coordinatorProfile: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,11 +21,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let navController = UINavigationController()
-        coordinator = Coordinator(navController: navController)
-        coordinator!.start(journalManager: JournalManager.shared)
+        let tabBarController = UITabBarController()
         
-        window?.rootViewController = navController
+        let navControllerOverview = UINavigationController()
+        coordinatorOverview = Coordinator(navController: navControllerOverview)
+        let navControllerProfile = UINavigationController()
+        coordinatorProfile = Coordinator(navController: navControllerProfile)
+        
+        tabBarController.setViewControllers([navControllerOverview, navControllerProfile], animated: true)
+        
+        coordinatorOverview!.start(journalManager: JournalManager.shared)
+        
+        
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 
