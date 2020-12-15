@@ -48,6 +48,7 @@ class JournalManager {
         }
         self.lastId += 1
         print("- saved to core data")
+        
     }
     
     func deleteEntry(entryId: Int) {
@@ -173,7 +174,7 @@ class JournalManager {
     }
     
     // MARK: - Support
-    
+
     private func contains(entry journalEntry: JournalEntry) -> Bool {
         let id = journalEntry.id
         for entry in self.entries {
