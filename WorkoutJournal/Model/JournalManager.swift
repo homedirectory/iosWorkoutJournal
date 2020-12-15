@@ -85,9 +85,7 @@ class JournalManager {
     }
     
     func setEntryActivity(entryId: Int, newActivity: Activity) {
-        print(type(of: newActivity))
         let newActivityManagedObject = newActivity.toManagedObject(context: self.storage!.persistentContainer.viewContext)
-        print(type(of: newActivityManagedObject))
 
         do {
             try self.storage!.deleteEntryActivity(entryId: entryId)

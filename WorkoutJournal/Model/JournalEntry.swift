@@ -22,12 +22,9 @@ class JournalEntry {
     }
     
     init(_ managedObject: JournalEntryModel) {
-//        print("- init from JournalEntryModel")
         self.id = managedObject.value(forKey: "id") as! Int
         let activity = managedObject.value(forKey: "activity")! as! ActivityModel
-//        print("type of fetched activity: ", type(of: activity))
         self.activity = activity.transform()
-//        print("transformed activity: ", type(of: self.activity!))
         self.creationDate = managedObject.value(forKey: "date") as? Date
     }
     
