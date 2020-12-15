@@ -30,6 +30,7 @@ class StatsViewController: UIViewController, Storyboarded {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
+        self.setupTotalTimeLabel()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -37,6 +38,10 @@ class StatsViewController: UIViewController, Storyboarded {
         if (self.activityStatsView != nil) && touch.view == self.view {
             self.hideStats()
         }
+    }
+    
+    func setupTotalTimeLabel() {
+        self.totalTimeLabel.text = StaticVariables.getTotalTimeSpentOnActivities().toString()
     }
     
     func showStats(stats: [Stats]) {
