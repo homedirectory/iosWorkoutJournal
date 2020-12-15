@@ -14,3 +14,9 @@ extension UITableViewCell {
         String(describing: Self.self)
     }
 }
+
+extension UICollectionViewCell {
+    static var id: String {
+        String(describing: Self.self)
+    }
+}
