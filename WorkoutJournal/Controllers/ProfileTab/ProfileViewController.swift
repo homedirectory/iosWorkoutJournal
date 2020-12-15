@@ -67,7 +67,7 @@ extension ProfileViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            self.coordinator!.pushStatsViewController()
+            self.coordinator!.pushStatsViewController(journalManager: self.journalManager!)
         }
     }
     
