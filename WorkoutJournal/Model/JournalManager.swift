@@ -113,42 +113,42 @@ class JournalManager {
     }
     
     func updateEntryActivity(entryId: Int, newDistance: Double?) {
-        guard let _ = newDistance else { return }
+        guard let newD = newDistance else { return }
         do {
-            try self.storage!.updateEntryActivity(entryId: entryId, newValue: newDistance, keyPath: "distance")
+            try self.storage!.updateEntryActivity(entryId: entryId, newValue: newD, keyPath: "distance")
         } catch let error {
             print("- failed updating Entry (ID: \(entryId)), error: \(error)")
             return
         }
         
         let activity = findById(entryId: entryId).activity
-        activity!.distance = newDistance
+        activity!.distance = newD
     }
     
     func updateEntryActivity(entryId: Int, newRepetitions: Double?) {
-        guard let _ = newRepetitions else { return }
+        guard let newR = newRepetitions else { return }
         do {
-            try self.storage!.updateEntryActivity(entryId: entryId, newValue: newRepetitions, keyPath: "repetitions")
+            try self.storage!.updateEntryActivity(entryId: entryId, newValue: newR, keyPath: "repetitions")
         } catch let error {
             print("- failed updating Entry (ID: \(entryId)), error: \(error)")
             return
         }
         
         let activity = findById(entryId: entryId).activity
-        activity!.repetitions = newRepetitions
+        activity!.repetitions = newR
     }
     
     func updateEntryActivity(entryId: Int, newDuration: Double?) {
-        guard let _ = newDuration else { return }
+        guard let newDur = newDuration else { return }
         do {
-            try self.storage!.updateEntryActivity(entryId: entryId, newValue: newDuration, keyPath: "duration")
+            try self.storage!.updateEntryActivity(entryId: entryId, newValue: newDur, keyPath: "duration")
         } catch let error {
             print("- failed updating Entry (ID: \(entryId)), error: \(error)")
             return
         }
         
         let activity = findById(entryId: entryId).activity
-        activity!.duration = newDuration
+        activity!.duration = newDur
     }
     
     // MARK: - Core Data
