@@ -87,5 +87,89 @@
             </objects>
             <point key="canvasLocation" x="150.72463768115944" y="87.723214285714278"/>
         </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="LyZ-wx-cQL">
+            <objects>
+                <viewController storyboardIdentifier="StatsViewController" id="GRr-Ra-xz7" customClass="StatsViewController" customModule="WorkoutJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cdd-mJ-f4z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jt-AW-9gv">
+                                <rect key="frame" x="171" y="49" width="72" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total time spent excercising: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEu-tD-Rdr">
+                                <rect key="frame" x="5" y="179" width="404" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BAi-MJ-duJ">
+                                <rect key="frame" x="0.0" y="284" width="414" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityStatsCell" id="rog-yI-46e" customClass="ActivityStatsCell" customModule="WorkoutJournal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rog-yI-46e" id="AhW-Lf-dKL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJk-Dk-GwD">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FJk-Dk-GwD" firstAttribute="leading" secondItem="AhW-Lf-dKL" secondAttribute="leadingMargin" id="Dfe-Y7-sYL"/>
+                                                <constraint firstItem="FJk-Dk-GwD" firstAttribute="centerY" secondItem="AhW-Lf-dKL" secondAttribute="centerY" id="QhM-Ij-qhq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="FJk-Dk-GwD" id="TBz-81-SNV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By activity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFg-Q3-gde">
+                                <rect key="frame" x="5" y="253" width="404" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fFg-Q3-gde" firstAttribute="centerX" secondItem="Cdd-mJ-f4z" secondAttribute="centerX" id="1X1-j4-enc"/>
+                            <constraint firstItem="6Jt-AW-9gv" firstAttribute="top" secondItem="pzr-c3-P2M" secondAttribute="top" constant="5" id="3w4-Nc-ws9"/>
+                            <constraint firstItem="fFg-Q3-gde" firstAttribute="leading" secondItem="pzr-c3-P2M" secondAttribute="leading" constant="5" id="Bun-Bc-hAm"/>
+                            <constraint firstItem="pzr-c3-P2M" firstAttribute="trailing" secondItem="LEu-tD-Rdr" secondAttribute="trailing" constant="5" id="CkT-vb-qpZ"/>
+                            <constraint firstItem="BAi-MJ-duJ" firstAttribute="leading" secondItem="pzr-c3-P2M" secondAttribute="leading" id="K7V-Qd-Tyn"/>
+                            <constraint firstItem="pzr-c3-P2M" firstAttribute="bottom" secondItem="BAi-MJ-duJ" secondAttribute="bottom" constant="10" id="O9d-pb-430"/>
+                            <constraint firstItem="LEu-tD-Rdr" firstAttribute="top" secondItem="6Jt-AW-9gv" secondAttribute="bottom" constant="100" id="USL-Lf-CrR"/>
+                            <constraint firstItem="BAi-MJ-duJ" firstAttribute="top" secondItem="fFg-Q3-gde" secondAttribute="bottom" constant="10" id="Wk2-bD-1b8"/>
+                            <constraint firstItem="6Jt-AW-9gv" firstAttribute="centerX" secondItem="Cdd-mJ-f4z" secondAttribute="centerX" id="dr1-QS-63G"/>
+                            <constraint firstItem="pzr-c3-P2M" firstAttribute="trailing" secondItem="BAi-MJ-duJ" secondAttribute="trailing" id="rtd-sn-4KL"/>
+                            <constraint firstItem="fFg-Q3-gde" firstAttribute="top" secondItem="LEu-tD-Rdr" secondAttribute="bottom" constant="50" id="zUN-4r-qnc"/>
+                            <constraint firstItem="LEu-tD-Rdr" firstAttribute="leading" secondItem="pzr-c3-P2M" secondAttribute="leading" constant="5" id="zoX-xY-SQF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pzr-c3-P2M"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableLabel" destination="fFg-Q3-gde" id="SrR-Lf-ZKG"/>
+                        <outlet property="tableView" destination="BAi-MJ-duJ" id="9HT-mq-7Hr"/>
+                        <outlet property="topLabel" destination="6Jt-AW-9gv" id="LMU-TA-Yal"/>
+                        <outlet property="totalTimeLabel" destination="LEu-tD-Rdr" id="Nll-IJ-4Io"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8Q-HJ-43K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915.94202898550736" y="87.723214285714278"/>
+        </scene>
     </scenes>
 </document>

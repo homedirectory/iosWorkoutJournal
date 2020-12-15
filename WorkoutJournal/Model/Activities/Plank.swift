@@ -30,4 +30,8 @@ public class Plank: Activity {
         self.init(duration: duration, distance: nil, repetitions: nil)
     }
     
+    override class func getStats() -> [Stats<Double>] {
+        return [totalDuration]
+    }
+    
 }

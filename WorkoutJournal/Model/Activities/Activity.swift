@@ -121,6 +121,10 @@ public class Activity {
 
         return managedObject
     }
+    
+    class func getStats() -> [Stats<Double>] {
+        return [totalDuration, totalDistance, totalRepetitions]
+    }
    
 }
 

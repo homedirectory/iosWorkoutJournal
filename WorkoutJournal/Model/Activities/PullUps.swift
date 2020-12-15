@@ -30,4 +30,8 @@ public class PullUps: Activity {
         self.init(duration: nil, distance: nil, repetitions: repetitions)
     }
     
+    override class func getStats() -> [Stats<Double>] {
+        return [totalRepetitions]
+    }
+    
 }

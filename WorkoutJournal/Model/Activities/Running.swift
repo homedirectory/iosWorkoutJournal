@@ -40,6 +40,10 @@ public class Running: Activity {
         Running.totalRuns.value! += 1
     }
     
+    override class func getStats() -> [Stats<Double>] {
+        return [totalDuration, totalDistance, totalRuns]
+    }
+    
     override public func removeStats() {
         super.removeStats()
         Self.totalRuns.value! -= 1

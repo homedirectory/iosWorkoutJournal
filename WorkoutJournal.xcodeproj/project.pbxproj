@@ -54,6 +54,8 @@
 		E5D292152587EAF300A6671F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D292142587EAF300A6671F /* Profile.storyboard */; };
 		E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292182587EBA300A6671F /* ProfileViewController.swift */; };
 		E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921B2588C21D00A6671F /* ImageTextCell.swift */; };
+		E5D2921E2588D9EF00A6671F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921D2588D9EF00A6671F /* StatsViewController.swift */; };
+		E5D292202588DD0100A6671F /* ActivityStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921F2588DD0100A6671F /* ActivityStatsCell.swift */; };
 		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
 		E5E8A125257E907400238364 /* CoordinatorOverviewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */; };
 		E5E8A129257E918300238364 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A128257E918300238364 /* Storyboarded.swift */; };
@@ -113,6 +115,8 @@
 		E5D292142587EAF300A6671F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E5D292182587EBA300A6671F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E5D2921B2588C21D00A6671F /* ImageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextCell.swift; sourceTree = "<group>"; };
+		E5D2921D2588D9EF00A6671F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E5D2921F2588DD0100A6671F /* ActivityStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatsCell.swift; sourceTree = "<group>"; };
 		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorOverviewTab.swift; sourceTree = "<group>"; };
 		E5E8A128257E918300238364 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				E5D292182587EBA300A6671F /* ProfileViewController.swift */,
+				E5D2921D2588D9EF00A6671F /* StatsViewController.swift */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				E5D2921B2588C21D00A6671F /* ImageTextCell.swift */,
+				E5D2921F2588DD0100A6671F /* ActivityStatsCell.swift */,
 			);
 			path = ProfileCollectionView;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */,
 				E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */,
 				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
+				E5D292202588DD0100A6671F /* ActivityStatsCell.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
 				E5E8A129257E918300238364 /* Storyboarded.swift in Sources */,
 				E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */,
@@ -512,6 +519,7 @@
 				E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */,
 				E5539B2D258291B100103EA6 /* ActivityModel+CoreDataClass.swift in Sources */,
 				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
+				E5D2921E2588D9EF00A6671F /* StatsViewController.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
 				E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */,
 				E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */,

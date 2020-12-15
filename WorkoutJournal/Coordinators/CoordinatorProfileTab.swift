@@ -25,5 +25,10 @@ public class CoordinatorProfileTab {
         vc.journalManager = journalManager
         self.navController = UINavigationController(rootViewController: vc)
     }
+    
+    func pushStatsViewController() {
+        let vc = StatsViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
+        self.navController?.pushViewController(vc, animated: true)
+    }
         
 }
