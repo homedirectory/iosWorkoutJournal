@@ -14,7 +14,7 @@ import CoreData
 public class ExcerciseSessionModel: ActivityModel {
 
     override public func transform() -> ExcerciseSession {
-        let session = ExcerciseSession(duration: self.duration)
+        let session = ExcerciseSession(duration: self.duration, distance: nil, repetitions: nil)
         return session
     }
     

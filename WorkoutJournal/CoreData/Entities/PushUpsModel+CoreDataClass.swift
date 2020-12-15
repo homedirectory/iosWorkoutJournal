@@ -14,7 +14,7 @@ import CoreData
 public class PushUpsModel: ActivityModel {
 
     override public func transform() -> PushUps {
-        let pushUps = PushUps(repetitions: self.repetitions)
+        let pushUps = PushUps(duration: nil, distance: nil, repetitions: self.repetitions)
         return pushUps
     }
     

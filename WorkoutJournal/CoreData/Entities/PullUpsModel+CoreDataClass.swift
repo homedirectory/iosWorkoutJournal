@@ -14,7 +14,7 @@ import CoreData
 public class PullUpsModel: ActivityModel {
 
     override public func transform() -> PullUps {
-        let pullUps = PullUps(repetitions: self.repetitions)
+        let pullUps = PullUps(duration: nil, distance: nil, repetitions: self.repetitions)
         return pullUps
     }
     

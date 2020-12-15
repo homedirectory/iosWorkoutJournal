@@ -14,7 +14,7 @@ import CoreData
 public class PlankModel: ActivityModel {
 
     override public func transform() -> Plank {
-        let plank = Plank(duration: self.duration)
+        let plank = Plank(duration: self.duration, distance: nil, repetitions: nil)
         return plank
     }
     
