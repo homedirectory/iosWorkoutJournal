@@ -13,6 +13,7 @@ class StatsViewController: UIViewController, Storyboarded {
     
     private let activityTypes: [Activity.Type] = StaticVariables.defaultActivityTypes
     private var activityStatsView: ActivityStatsView?
+    var tapRecognizer: UIGestureRecognizer?
     
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
@@ -26,7 +27,20 @@ class StatsViewController: UIViewController, Storyboarded {
         self.tableView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        if (self.activityStatsView != nil) && touch.view == self.view {
+            self.hideStats()
+        }
+    }
+    
     func showStats(stats: [Stats]) {
+        self.hideStats()
+        
         if stats.isEmpty {
             return
         }
@@ -39,6 +53,13 @@ class StatsViewController: UIViewController, Storyboarded {
                                                                  height: self.view.frame.height - y))
         self.activityStatsView!.setup(stats: stats)
         self.view.addSubview(self.activityStatsView!)
+    }
+    
+    func hideStats() {
+        if let _ = self.activityStatsView {
+            self.activityStatsView!.removeFromSuperview()
+            self.activityStatsView = nil
+        }
     }
     
 }
@@ -54,21 +75,13 @@ extension StatsViewController: UITableViewDataSource {
         return cell
     }
     
-    
 }
 
 extension StatsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.activityStatsView = ActivityStatsView(frame: CGRect(x: 200, y: 200, width: 100, height: 100))
-////        self.activityStatsView!.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
-//        self.activityStatsView!.isHidden = false
-//        self.activityStatsView!.alpha = 1
-////        self.activityStatsView?.draw(CGRect(x: 200, y: 200, width: 100, height: 100))
-//        self.view.addSubview(self.activityStatsView!)
-//        self.view.bringSubviewToFront(self.activityStatsView!)
-//        print("woo")
         self.showStats(stats: self.activityTypes[indexPath.row].getStats())
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
