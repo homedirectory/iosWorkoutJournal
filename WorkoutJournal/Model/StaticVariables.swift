@@ -21,4 +21,8 @@ public class StaticVariables {
         return String(describing: activityType).components(separatedBy: ".").last!
     }
     
+    static func getTotalTimeSpentOnActivities() -> Stats {
+        return Stats(name: "Total time spent excercising", value: Running.totalDuration.value! + Plank.totalDuration.value! + ExcerciseSession.totalDuration.value!, units: .seconds)
+    }
+    
 }
