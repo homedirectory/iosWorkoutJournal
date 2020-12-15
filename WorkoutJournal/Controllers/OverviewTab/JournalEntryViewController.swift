@@ -98,13 +98,6 @@ extension JournalEntryViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-//        if let entry = self.entryToUpdate {
-//            self.journalManager!.updateEntryActivity(entryId: entry.id, newDistance: self.distanceCell.getNumber())
-//            self.journalManager!.updateEntryActivity(entryId: entry.id, newDuration: self.durationCell.getNumber())
-//            self.journalManager!.updateEntryActivity(entryId: entry.id, newRepetitions: self.repetitionsCell.getNumber())
-//        }
-//        else {
-//            let activity = self.activityCell.chosenActivity!.init(duration: self.durationCell.getNumber(), distance: self.distanceCell.getNumber(), repetitions: self.repetitionsCell.getNumber())
         #warning("Throw an exception here")
             guard let activity = self.selectedActivityInstance else { return }
             activity.duration = self.durationCell.getNumber()
@@ -116,7 +109,6 @@ extension JournalEntryViewController {
         } else {
             self.journalManager!.createEntry(activity: activity, date: Date())
         }
-//        }
         
         self.selectedActivityInstance = nil
         self.entryToUpdate = nil
@@ -139,11 +131,10 @@ extension JournalEntryViewController: UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: JournalEntryTableViewActivityCell.id) as! JournalEntryTableViewActivityCell
             cell.coordinator = self.coordinator!
-//            cell.label.text = cell.cellLabel == nil ? "Activity" : cell.cellLabel!
             cell.completion = { [weak self] activityType in
                 self?.selectedActivityInstance = activityType!.init()
-//                self?.unlockTextFields()
             }
+            
             if let sai = self.selectedActivityInstance {
                 cell.chosenActivity = type(of: sai)
             }

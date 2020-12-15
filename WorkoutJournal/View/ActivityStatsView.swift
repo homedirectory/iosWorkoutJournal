@@ -14,7 +14,7 @@ public class ActivityStatsView: UIView {
 //        super.draw(rect)
 //        self.backgroundColor = .yellow
 //    }
-    
+        
     static let LABEL_HEIGHT = 60
     
     public override init(frame: CGRect) {
@@ -28,7 +28,6 @@ public class ActivityStatsView: UIView {
     
     func setup(stats: [Stats]) {
         let lblWidth = self.frame.width
-//        let lblHeight = self.frame.height / 7
         let lblX = CGFloat(self.frame.origin.x)
         var lblY = self.frame.height / 4
         
