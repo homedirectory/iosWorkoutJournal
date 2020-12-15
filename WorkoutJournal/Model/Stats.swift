@@ -31,7 +31,9 @@ public class Stats {
             case .metres:
                 valueString = String(format: "%.2f km", val/1000)
             case .seconds:
-                valueString = String(format: "%.2f min", val/60)
+                let hours = floor(val / 3600)
+                let minutes = (val - (hours * 3600)) / 60
+                valueString = "\(Int(hours)) h \(Int(minutes)) min"
             case .numbers:
                 valueString = String(Int(val))
         }
