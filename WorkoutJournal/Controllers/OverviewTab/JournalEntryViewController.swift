@@ -38,7 +38,6 @@ class JournalEntryViewController: UIViewController, Storyboarded {
         self.saveButton.layer.cornerRadius = 25.0
         
         if let _ = self.entryToUpdate {
-//            self.setUpdatingEntry()
             self.selectedActivityInstance = self.entryToUpdate!.activity
         }
         
@@ -49,12 +48,6 @@ class JournalEntryViewController: UIViewController, Storyboarded {
         self.tableView.reloadData()
     }
     
-    func setUpdatingEntry() {
-        self.selectedActivityInstance = self.entryToUpdate!.activity
-//        self.dateCell.date = self.entryToUpdate!.creationDate
-//        self.unlockTextFields()
-    }
-        
     func unlockTextFields() {
         self.lockTextFields()
         
