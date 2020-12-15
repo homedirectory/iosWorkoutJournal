@@ -12,6 +12,7 @@ import UIKit
 class StatsViewController: UIViewController, Storyboarded {
     
     private let activityTypes: [Activity.Type] = StaticVariables.defaultActivityTypes
+    private var activityStatsView: ActivityStatsView?
     
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
@@ -23,6 +24,21 @@ class StatsViewController: UIViewController, Storyboarded {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    func showStats(stats: [Stats]) {
+        if stats.isEmpty {
+            return
+        }
+        
+        let y = self.view.frame.origin.y + self.view.frame.height * CGFloat([(0.75 / Double(stats.count)) * 2, 0.6].min()!)
+        
+        self.activityStatsView = ActivityStatsView(frame: CGRect(x: self.view.frame.origin.x,
+                                                                 y: y,
+                                                                 width: self.view.frame.width,
+                                                                 height: self.view.frame.height - y))
+        self.activityStatsView!.setup(stats: stats)
+        self.view.addSubview(self.activityStatsView!)
     }
     
 }
@@ -42,5 +58,17 @@ extension StatsViewController: UITableViewDataSource {
 }
 
 extension StatsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.activityStatsView = ActivityStatsView(frame: CGRect(x: 200, y: 200, width: 100, height: 100))
+////        self.activityStatsView!.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
+//        self.activityStatsView!.isHidden = false
+//        self.activityStatsView!.alpha = 1
+////        self.activityStatsView?.draw(CGRect(x: 200, y: 200, width: 100, height: 100))
+//        self.view.addSubview(self.activityStatsView!)
+//        self.view.bringSubviewToFront(self.activityStatsView!)
+//        print("woo")
+        self.showStats(stats: self.activityTypes[indexPath.row].getStats())
+    }
     
 }

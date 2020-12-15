@@ -12,12 +12,41 @@ import UIKit
 
 public class Stats {
     
+    var name: String
     var value: Double?
     var image: UIImage?
+    let units: StatsUnits
     
     init(name: String, value: Double, units: StatsUnits) {
         self.name = name
         self.value = value
+        self.units = units
+    }
+    
+    public func toString() -> String {
+        guard let val = self.value else { return "" }
+        var valueString = ""
+        
+        switch self.units {
+            case .metres:
+                valueString = String(format: "%.2f km", val/1000)
+            case .seconds:
+                valueString = String(format: "%.2f min", val/60)
+            case .numbers:
+                valueString = String(Int(val))
+        }
+    
+        return "\(self.name): \(valueString)"
+    }
+    
+}
+
+extension Stats {
+    
+    enum StatsUnits {
+        case metres
+        case seconds
+        case numbers
     }
     
 }

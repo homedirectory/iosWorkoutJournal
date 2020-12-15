@@ -8,14 +8,40 @@
 
 import UIKit
 
-class ActivityStatsView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+public class ActivityStatsView: UIView {
+    
+//    override public func draw(_ rect: CGRect) {
+//        super.draw(rect)
+//        self.backgroundColor = .yellow
+//    }
+    
+    static let LABEL_HEIGHT = 60
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .lightGray
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup(stats: [Stats]) {
+        let lblWidth = self.frame.width
+//        let lblHeight = self.frame.height / 7
+        let lblX = CGFloat(self.frame.origin.x)
+        var lblY = self.frame.height / 4
+        
+        for stat in stats {
+            let lbl = UILabel(frame: CGRect(x: lblX, y: lblY, width: lblWidth, height: CGFloat(Self.LABEL_HEIGHT)))
+            lbl.text = "    " + stat.toString()
+            lbl.backgroundColor = .white
+            lbl.layer.borderWidth = 1
+            lbl.layer.borderColor = UIColor.gray.cgColor
+            self.addSubview(lbl)
+            
+            lblY += CGFloat(Self.LABEL_HEIGHT)
+        }
+    }
+    
 }
