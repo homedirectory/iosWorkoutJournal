@@ -53,6 +53,7 @@
 		E5D292132587E83400A6671F /* CoordinatorProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292122587E83400A6671F /* CoordinatorProfileTab.swift */; };
 		E5D292152587EAF300A6671F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D292142587EAF300A6671F /* Profile.storyboard */; };
 		E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292182587EBA300A6671F /* ProfileViewController.swift */; };
+		E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921B2588C21D00A6671F /* ImageTextCell.swift */; };
 		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
 		E5E8A125257E907400238364 /* CoordinatorOverviewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */; };
 		E5E8A129257E918300238364 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A128257E918300238364 /* Storyboarded.swift */; };
@@ -111,6 +112,7 @@
 		E5D292122587E83400A6671F /* CoordinatorProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProfileTab.swift; sourceTree = "<group>"; };
 		E5D292142587EAF300A6671F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E5D292182587EBA300A6671F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E5D2921B2588C21D00A6671F /* ImageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextCell.swift; sourceTree = "<group>"; };
 		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorOverviewTab.swift; sourceTree = "<group>"; };
 		E5E8A128257E918300238364 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		E5B7D170257F96D400DCB684 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E5D2921A2588C1D700A6671F /* ProfileCollectionView */,
 				E5B7D186257FDEB000DCB684 /* JournalEntryTableView */,
 				E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */,
 			);
@@ -329,6 +332,14 @@
 				E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */,
 			);
 			path = OverviewTab;
+			sourceTree = "<group>";
+		};
+		E5D2921A2588C1D700A6671F /* ProfileCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E5D2921B2588C21D00A6671F /* ImageTextCell.swift */,
+			);
+			path = ProfileCollectionView;
 			sourceTree = "<group>";
 		};
 		E5E8A126257E909E00238364 /* Coordinators */ = {
@@ -489,6 +500,7 @@
 				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
 				E5E8A129257E918300238364 /* Storyboarded.swift in Sources */,
+				E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */,
 				E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */,
 				E5E8A123257D2C4A00238364 /* Stats.swift in Sources */,
 				E5E8A125257E907400238364 /* CoordinatorOverviewTab.swift in Sources */,
