@@ -11,21 +11,21 @@ import Foundation
 
 public class Running: Activity {
     
-    private static var __totalDuration = Stats<Double>(name: "Total running time", value: 0)
-    override class var totalDuration: Stats<Double> {
+    private static var __totalDuration = Stats(name: "Total running time", value: 0, units: .seconds)
+    override class var totalDuration: Stats {
         get {
             return Self.__totalDuration
         }
     }
     
-    private static var __totalDistance = Stats<Double>(name: "Total running distance", value: 0)
-    override class var totalDistance: Stats<Double> {
+    private static var __totalDistance = Stats(name: "Total running distance", value: 0, units: .metres)
+    override class var totalDistance: Stats {
         get {
             return Self.__totalDistance
         }
     }
     
-    static var totalRuns = Stats<Double>(name: "Total runs", value: 0)
+    static var totalRuns = Stats(name: "Total runs", value: 0, units: .numbers)
     
     override class var name: String {
         return "Running"
@@ -40,7 +40,7 @@ public class Running: Activity {
         Running.totalRuns.value! += 1
     }
     
-    override class func getStats() -> [Stats<Double>] {
+    override class func getStats() -> [Stats] {
         return [totalDuration, totalDistance, totalRuns]
     }
     

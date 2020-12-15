@@ -11,8 +11,8 @@ import Foundation
 
 public class ExcerciseSession: Activity {
     
-    private static var __totalDuration = Stats<Double>(name: "Total Ex. Sessions duration: ", value: 0)
-    override class var totalDuration: Stats<Double> {
+    private static var __totalDuration = Stats(name: "Total Ex. Sessions duration: ", value: 0, units: .seconds)
+    override class var totalDuration: Stats {
         get {
             return Self.__totalDuration
         }
@@ -30,7 +30,7 @@ public class ExcerciseSession: Activity {
         self.init(duration: duration, distance: nil, repetitions: nil)
     }
     
-    override class func getStats() -> [Stats<Double>] {
+    override class func getStats() -> [Stats] {
         return [totalDuration]
     }
     

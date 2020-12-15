@@ -12,22 +12,22 @@ import CoreData
 
 public class Activity {
     
-    private static var _totalDuration = Stats<Double>(name: "Total duration", value: 0)
-    class var totalDuration: Stats<Double> {
+    private static var _totalDuration = Stats(name: "Total duration", value: 0, units: .seconds)
+    class var totalDuration: Stats {
         get {
             return Self._totalDuration
         }
     }
     
-    private static var _totalDistance = Stats<Double>(name: "Total distance", value: 0)
-    class var totalDistance: Stats<Double> {
+    private static var _totalDistance = Stats(name: "Total distance", value: 0, units: .metres)
+    class var totalDistance: Stats {
         get {
             return Self._totalDistance
         }
     }
     
-    private static var _totalRepetitions = Stats<Double>(name: "Total repetitions", value: 0)
-    class var totalRepetitions: Stats<Double> {
+    private static var _totalRepetitions = Stats(name: "Total repetitions", value: 0, units: .numbers)
+    class var totalRepetitions: Stats {
         get {
             return Self._totalRepetitions
         }
@@ -122,7 +122,7 @@ public class Activity {
         return managedObject
     }
     
-    class func getStats() -> [Stats<Double>] {
+    class func getStats() -> [Stats] {
         return [totalDuration, totalDistance, totalRepetitions]
     }
    

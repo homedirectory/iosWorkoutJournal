@@ -10,13 +10,12 @@ import Foundation
 import UIKit
 
 
-public class Stats<T> {
+public class Stats {
     
-    var name: String?
-    var value: T?
+    var value: Double?
     var image: UIImage?
     
-    init(name: String, value: T) {
+    init(name: String, value: Double, units: StatsUnits) {
         self.name = name
         self.value = value
     }
