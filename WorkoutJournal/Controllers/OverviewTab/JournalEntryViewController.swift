@@ -127,7 +127,6 @@ extension JournalEntryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("CELL FOR ROW AT")
         if indexPath.row == 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: JournalEntryTableViewActivityCell.id) as! JournalEntryTableViewActivityCell
             cell.coordinator = self.coordinator!
@@ -146,12 +145,10 @@ extension JournalEntryViewController: UITableViewDataSource {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: JournalEntryTableViewDetailsCell.id) as! JournalEntryTableViewDetailsCell
             if let _ = self.selectedActivityInstance {
                 if let detail = self.getSelectedActivityInstanceDetails()[indexPath.row - 1] {
-                    print("unlock")
                     cell.unlockTextField()
                     cell.setup(withText: String(Int(detail)))
                 }
                 else {
-                    print("lock")
                     cell.lockTextField()
                     cell.setup(placeholderText: self.detailsCellLabels[indexPath.row - 1])
                 }
