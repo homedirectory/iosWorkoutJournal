@@ -13,12 +13,6 @@ import UIKit
 class JournalEntryCell: UITableViewCell {
     
     var entry: JournalEntry?
-//        didSet {
-//            print("DIDSET")
-//            guard let activity = entry!.activity else { return }
-//            configureDetails(activity: activity)
-//        }
-//    }
     
     #warning("TODO: fix image")
     @IBOutlet weak var activityImage: UIImageView!
@@ -44,18 +38,18 @@ class JournalEntryCell: UITableViewCell {
         
         self.labelActivityName.text = type(of: activity).name
         
-        if let _ = activity.distance {
-            self.labelDistance.text = activity.getDistanceString()
+        if let distance = activity.distance {
+            self.labelDistance.text = distance.kmString
             self.labelDistance.isHidden = false
         }
         
-        if let _ = activity.duration {
-            self.labelDuration.text = activity.getDurationString()
+        if let duration = activity.duration {
+            self.labelDuration.text = duration.secondsString
             self.labelDuration.isHidden = false
         }
         
-        if let _ = activity.repetitions {
-            self.labelRepetitions.text = activity.getRepetitionsString()
+        if let reps = activity.repetitions {
+            self.labelRepetitions.text = String(Int(reps))
             self.labelRepetitions.isHidden = false
         }
     }

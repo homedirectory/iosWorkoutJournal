@@ -144,21 +144,6 @@ public class Activity {
 
 extension Activity {
     
-    public func getDistanceString() -> String {
-          guard let _ = distance else { return ""}
-          return String(format: "%.2f km", distance!/1000)
-      }
-      
-    public func getDurationString() -> String {
-          guard let _ = duration else { return "" }
-          return String(format: "%.2f min", duration!/60)
-      }
-      
-      public func getRepetitionsString() -> String {
-          guard let _ = repetitions else { return "" }
-          return String(Int(repetitions!))
-      }
-    
 }
 
 // MARK: - toString
