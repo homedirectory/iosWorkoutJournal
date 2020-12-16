@@ -48,6 +48,24 @@ extension Stats {
         case metres
         case seconds
         case numbers
+        case kmPerHour
+    }
+    
+    static func valueInStatsUnitsToString(_ value: Double, units: StatsUnits) -> String {
+        var valueString = ""
+        
+        switch units {
+            case .metres:
+                valueString = value.kmString
+            case .seconds:
+                valueString = value.secondsString
+            case .numbers:
+                valueString = String(Int(value))
+            case .kmPerHour:
+                valueString = value.kmPerHourString
+        }
+        
+        return valueString
     }
     
 }
