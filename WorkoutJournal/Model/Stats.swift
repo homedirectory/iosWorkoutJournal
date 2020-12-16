@@ -24,19 +24,8 @@ public class Stats {
     }
     
     public func toString() -> String {
-        var valueString = ""
+        let valueString = Stats.valueInStatsUnitsToString(self.value, units: self.units)
         
-        switch self.units {
-            case .metres:
-                valueString = String(format: "%.2f km", self.value/1000)
-            case .seconds:
-                let hours = floor(self.value / 3600)
-                let minutes = (self.value - (hours * 3600)) / 60
-                valueString = "\(Int(hours)) h \(Int(minutes)) min"
-            case .numbers:
-                valueString = String(Int(self.value))
-        }
-    
         return "\(self.name): \(valueString)"
     }
     
