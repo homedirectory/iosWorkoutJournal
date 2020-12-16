@@ -14,12 +14,9 @@ public class StaticVariables {
     static let defaultActivityTypes = [Running.self, PushUps.self, PullUps.self, Plank.self, ExcerciseSession.self]
     
     static let defaultActivityNames = StaticVariables.defaultActivityTypes.map({
-        StaticVariables.activityTypeToString(activityType: $0)
+        $0.name
     })
     
-    static func activityTypeToString(activityType: Activity.Type) -> String {
-        return String(describing: activityType).components(separatedBy: ".").last!
-    }
     
     static func getTotalTimeSpentOnActivities() -> Stats {
         return Stats(name: "Total time spent excercising", value: Running.totalDuration.value + Plank.totalDuration.value + ExcerciseSession.totalDuration.value, units: .seconds)
