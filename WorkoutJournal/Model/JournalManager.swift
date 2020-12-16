@@ -49,6 +49,7 @@ class JournalManager {
         self.lastId += 1
         print("- saved to core data")
         entry.activity!.updateAchievements()
+        type(of: entry.activity!).updateCustomStats()
     }
     
     func deleteEntry(entryId: Int) {
@@ -172,6 +173,7 @@ class JournalManager {
             })
         self.entries.forEach({
             $0.activity!.updateAchievements()
+            type(of: $0.activity!).updateCustomStats()
         })
         self.lastId = self.entries.map({
             $0.id

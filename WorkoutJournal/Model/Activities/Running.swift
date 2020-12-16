@@ -37,7 +37,6 @@ public class Running: Activity {
     
     internal required init(duration: Double? = 0, distance: Double? = 0, repetitions: Double? = nil) {
         super.init(duration: duration, distance: distance, repetitions: nil)
-        Self.totalRuns.value += 1
     }
     
     convenience init(duration: Double, distance: Double) {
@@ -67,6 +66,10 @@ public class Running: Activity {
     
     override func getAchievements() -> [Achievement] {
         return Self.achievements
+    }
+    
+    override class func updateCustomStats() {
+        Self.totalRuns.value += 1
     }
     
 }
