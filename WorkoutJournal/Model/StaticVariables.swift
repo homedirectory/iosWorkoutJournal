@@ -22,7 +22,7 @@ public class StaticVariables {
     }
     
     static func getTotalTimeSpentOnActivities() -> Stats {
-        return Stats(name: "Total time spent excercising", value: Running.totalDuration.value! + Plank.totalDuration.value! + ExcerciseSession.totalDuration.value!, units: .seconds)
+        return Stats(name: "Total time spent excercising", value: Running.totalDuration.value + Plank.totalDuration.value + ExcerciseSession.totalDuration.value, units: .seconds)
     }
     
 }

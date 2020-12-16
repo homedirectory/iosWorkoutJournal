@@ -13,7 +13,7 @@ import UIKit
 public class Stats {
     
     var name: String
-    var value: Double?
+    var value: Double
     var image: UIImage?
     let units: StatsUnits
     
@@ -24,18 +24,17 @@ public class Stats {
     }
     
     public func toString() -> String {
-        guard let val = self.value else { return "" }
         var valueString = ""
         
         switch self.units {
             case .metres:
-                valueString = String(format: "%.2f km", val/1000)
+                valueString = String(format: "%.2f km", self.value/1000)
             case .seconds:
-                let hours = floor(val / 3600)
-                let minutes = (val - (hours * 3600)) / 60
+                let hours = floor(self.value / 3600)
+                let minutes = (self.value - (hours * 3600)) / 60
                 valueString = "\(Int(hours)) h \(Int(minutes)) min"
             case .numbers:
-                valueString = String(Int(val))
+                valueString = String(Int(self.value))
         }
     
         return "\(self.name): \(valueString)"

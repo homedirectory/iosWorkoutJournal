@@ -41,12 +41,12 @@ public class Activity {
     {
         willSet {
             if let prevDuration = self.duration {
-                Self.totalDuration.value! -= prevDuration
+                Self.totalDuration.value -= prevDuration
             }
         }
         didSet {
             if let _ = self.duration {
-                Self.totalDuration.value! += self.duration!
+                Self.totalDuration.value += self.duration!
             }
         }
     }
@@ -55,12 +55,12 @@ public class Activity {
     {
         willSet {
             if let prevDistance = self.distance {
-                Self.totalDistance.value! -= prevDistance
+                Self.totalDistance.value -= prevDistance
             }
         }
         didSet {
             if let _ = self.distance {
-                Self.totalDistance.value! += self.distance!
+                Self.totalDistance.value += self.distance!
             }
         }
     }
@@ -69,12 +69,12 @@ public class Activity {
     {
         willSet {
             if let prevRepetitions = self.repetitions {
-                Self.totalRepetitions.value! -= prevRepetitions
+                Self.totalRepetitions.value -= prevRepetitions
             }
         }
         didSet {
             if let _ = self.repetitions {
-                Self.totalRepetitions.value! += self.repetitions!
+                Self.totalRepetitions.value += self.repetitions!
             }
         }
     }
@@ -90,25 +90,25 @@ public class Activity {
         self.repetitions = repetitions
 
         if let _ = duration {
-            Self.totalDuration.value! += duration!
+            Self.totalDuration.value += duration!
         }
         if let _ = distance {
-            Self.totalDistance.value! += distance!
+            Self.totalDistance.value += distance!
         }
         if let _ = repetitions {
-            Self.totalRepetitions.value! += repetitions!
+            Self.totalRepetitions.value += repetitions!
         }
     }
     
     func removeStats() {
         if let _ = self.duration {
-            Self.totalDuration.value! = max(0, Self.totalDuration.value! - self.duration!)
+            Self.totalDuration.value = max(0, Self.totalDuration.value - self.duration!)
         }
         if let _ = self.distance {
-            Self.totalDistance.value! = max(0, Self.totalDistance.value! - self.distance!)
+            Self.totalDistance.value = max(0, Self.totalDistance.value - self.distance!)
         }
         if let _ = self.repetitions {
-            Self.totalRepetitions.value! = max(0, Self.totalRepetitions.value! - self.repetitions!)
+            Self.totalRepetitions.value = max(0, Self.totalRepetitions.value - self.repetitions!)
         }
     }
     
