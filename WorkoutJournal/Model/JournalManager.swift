@@ -48,7 +48,7 @@ class JournalManager {
         }
         self.lastId += 1
         print("- saved to core data")
-        
+        entry.activity!.updateAchievements()
     }
     
     func deleteEntry(entryId: Int) {
@@ -66,6 +66,7 @@ class JournalManager {
             return
         }
         self.entries[entryIndex].activity!.removeStats()
+        self.entries[entryIndex].activity!.updateAchievementsAfterDeletion()
         self.entries.remove(at: entryIndex)
     }
     
@@ -79,6 +80,7 @@ class JournalManager {
         
         self.entries.forEach({
             $0.activity!.removeStats()
+            $0.activity!.updateAchievementsAfterDeletion()
         })
         self.entries = []
         self.lastId = 0
@@ -94,9 +96,11 @@ class JournalManager {
             print("- updating Entry (ID: \(entryId), error: \(error)")
             return
         }
-
+        
         let entry = findById(entryId: entryId)
+        entry.activity!.updateAchievementsAfterDeletion()
         entry.activity = newActivity
+        newActivity.updateAchievements()
     }
     
     func setEntryDate(entryId: Int, newDate: Date?) {
@@ -110,7 +114,7 @@ class JournalManager {
         let entry = findById(entryId: entryId)
         entry.creationDate = newDate
     }
-    
+
     func updateEntryActivity(entryId: Int, newDistance: Double?) {
         guard let newD = newDistance else { return }
         do {
@@ -123,7 +127,7 @@ class JournalManager {
         let activity = findById(entryId: entryId).activity
         activity!.distance = newD
     }
-    
+
     func updateEntryActivity(entryId: Int, newRepetitions: Double?) {
         guard let newR = newRepetitions else { return }
         do {
@@ -132,11 +136,11 @@ class JournalManager {
             print("- failed updating Entry (ID: \(entryId)), error: \(error)")
             return
         }
-        
+
         let activity = findById(entryId: entryId).activity
         activity!.repetitions = newR
     }
-    
+
     func updateEntryActivity(entryId: Int, newDuration: Double?) {
         guard let newDur = newDuration else { return }
         do {
@@ -145,7 +149,7 @@ class JournalManager {
             print("- failed updating Entry (ID: \(entryId)), error: \(error)")
             return
         }
-        
+
         let activity = findById(entryId: entryId).activity
         activity!.duration = newDur
     }
@@ -166,6 +170,9 @@ class JournalManager {
             }).sorted(by: {
                 $0.creationDate! > $1.creationDate!
             })
+        self.entries.forEach({
+            $0.activity!.updateAchievements()
+        })
         self.lastId = self.entries.map({
             $0.id
             }).max() ?? 0

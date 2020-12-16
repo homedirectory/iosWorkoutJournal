@@ -27,6 +27,10 @@ public class Running: Activity {
     
     static var totalRuns = Stats(name: "Total runs", value: 0, units: .numbers)
     
+    static var achievements: [Achievement] = [AchievementRecord(name: "A half-marathon!", description: "Longest distance ran", valueToAchieve: 21000),
+                                              AchievementRecord(name: "A full marathon!!!", description: "Longest distance ran", valueToAchieve: 42000),
+                                              AchievementRecord(name: "Pro runner confirmed", description: "Max avg. pace reached", valueToAchieve: 15)]
+    
     override class var name: String {
         return "Running"
     }
@@ -38,7 +42,6 @@ public class Running: Activity {
     
     convenience init(duration: Double, distance: Double) {
         self.init(duration: duration, distance: distance, repetitions: nil)
-        Self.totalRuns.value += 1
     }
     
     override class func getStats() -> [Stats] {
@@ -48,6 +51,18 @@ public class Running: Activity {
     override public func removeStats() {
         super.removeStats()
         Self.totalRuns.value -= 1
+    }
+    
+    public override func updateAchievements() {
+        Self.achievements[0].setCurrentValue(self.distance!)
+        Self.achievements[1].setCurrentValue(self.distance!)
+        Self.achievements[2].setCurrentValue((self.distance! / self.duration!) * 3.6)
+    }
+    
+    public override func updateAchievementsAfterDeletion() {
+        Self.achievements[0].updateAfterDeletion(deletedValue: self.distance!)
+        Self.achievements[1].updateAfterDeletion(deletedValue: self.distance!)
+        Self.achievements[2].updateAfterDeletion(deletedValue: (self.distance! / self.duration!) * 3.6)
     }
     
 }

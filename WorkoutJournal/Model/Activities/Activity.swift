@@ -32,7 +32,7 @@ public class Activity {
             return Self._totalRepetitions
         }
     }
-    
+     
     class var name: String {
         return "Activity"
     }
@@ -98,6 +98,14 @@ public class Activity {
         if let _ = repetitions {
             Self.totalRepetitions.value += repetitions!
         }
+    }
+    
+    public func updateAchievements() {
+        
+    }
+    
+    public func updateAchievementsAfterDeletion() {
+        
     }
     
     func removeStats() {
