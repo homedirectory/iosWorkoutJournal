@@ -181,6 +181,21 @@ class JournalManager {
     }
     
     // MARK: - Support
+    
+    func getEntriesForDifferentDays() -> Dictionary<[Int], [JournalEntry]> {
+        var entriesDict: [[Int]: [JournalEntry]] = [:]
+        
+        for entry in self.entries {
+            let dateComponents = [entry.creationDate!.get(.day), entry.creationDate!.get(.month), entry.creationDate!.get(.year)]
+            
+            if let _ = entriesDict[dateComponents] {
+                entriesDict[dateComponents]!.append(entry)
+            } else {
+                entriesDict[dateComponents] = [entry]
+            }
+        }
+        return entriesDict
+    }
 
     private func contains(entry journalEntry: JournalEntry) -> Bool {
         let id = journalEntry.id

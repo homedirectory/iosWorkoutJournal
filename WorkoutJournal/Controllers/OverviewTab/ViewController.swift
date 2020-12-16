@@ -12,6 +12,7 @@ class ViewController: UIViewController, Storyboarded {
     
     weak var coordinator: CoordinatorOverviewTab?
     var journalManager: JournalManager?
+    private var entriesForDifferentDays: Dictionary<[Int], [JournalEntry]>?
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newEntryButton: UIButton!
@@ -26,7 +27,8 @@ class ViewController: UIViewController, Storyboarded {
         
         tableView.delegate = self
         tableView.dataSource = self
-                
+        
+        self.entriesForDifferentDays = jm.getEntriesForDifferentDays()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,13 +56,24 @@ extension ViewController {
 
 extension ViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.entriesForDifferentDays!.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
+        return StaticVariables.dateComponentsToString(keyByIndex)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.journalManager!.entries.count
+        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
+        return self.entriesForDifferentDays![keyByIndex]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let entryCell = tableView.dequeueReusableCell(withIdentifier: JournalEntryCell.id) as! JournalEntryCell
-        entryCell.entry = journalManager!.entries[indexPath.row]
+        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[indexPath.section]
+        entryCell.entry = self.entriesForDifferentDays![keyByIndex]![indexPath.row]
         entryCell.configureDetails()
         
         return entryCell
