@@ -14,7 +14,8 @@ class AchievementRecord: Achievement {
     var name: String
     var description: String
     var valueToAchieve: Double
-    private var valueHistory: [Double] = []
+//    private var valueHistory: [Double] = []
+    private var valueHistory: Set<Double> = []
     var currentValue: Double {
         didSet {
             if self.currentValue >= self.valueToAchieve {
@@ -42,12 +43,11 @@ class AchievementRecord: Achievement {
     
     public func setCurrentValue(_ value: Double) {
         self.currentValue = max(self.currentValue, value)
-        self.valueHistory.append(value)
-        self.valueHistory.sort()
+        self.valueHistory.insert(value)
     }
     
     public func updateAfterDeletion(deletedValue: Double) {
-        self.valueHistory.remove(at: self.valueHistory.firstIndex(of: deletedValue)!)
+        self.valueHistory.remove(deletedValue)
         if self.currentValue == deletedValue {
             self.currentValue = self.valueHistory.max() ?? 0
         }
