@@ -58,12 +58,16 @@ class StatsViewController: UIViewController, Storyboarded {
                                                                  width: self.view.frame.width,
                                                                  height: self.view.frame.height - y))
         self.activityStatsView!.setup(stats: stats)
-        self.view.addSubview(self.activityStatsView!)
+        UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+          self.view.addSubview(self.activityStatsView!)
+        }, completion: nil)
     }
     
     func hideStats() {
         if let _ = self.activityStatsView {
-            self.activityStatsView!.removeFromSuperview()
+            UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+              self.activityStatsView!.removeFromSuperview()
+            }, completion: nil)
             self.activityStatsView = nil
         }
     }
