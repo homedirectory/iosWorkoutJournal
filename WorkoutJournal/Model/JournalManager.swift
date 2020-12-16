@@ -194,6 +194,7 @@ class JournalManager {
                 entriesDict[dateComponents] = [entry]
             }
         }
+        
         return entriesDict
     }
 

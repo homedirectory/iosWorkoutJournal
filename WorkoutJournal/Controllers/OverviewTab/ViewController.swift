@@ -12,7 +12,8 @@ class ViewController: UIViewController, Storyboarded {
     
     weak var coordinator: CoordinatorOverviewTab?
     var journalManager: JournalManager?
-    private var entriesForDifferentDays: Dictionary<[Int], [JournalEntry]>?
+//    private var entriesForDifferentDays: Dictionary<[Int], [JournalEntry]>?
+    private var entriesForDifferentDays: [(key: [Int], value: [JournalEntry])]?
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newEntryButton: UIButton!
@@ -28,10 +29,26 @@ class ViewController: UIViewController, Storyboarded {
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.entriesForDifferentDays = jm.getEntriesForDifferentDays()
+        self.entriesForDifferentDays = jm.getEntriesForDifferentDays().sorted(by: {_,_ in
+            true
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.entriesForDifferentDays = self.journalManager!.getEntriesForDifferentDays().sorted(by: {
+            if $0.key[2] == $1.key[2] {
+                if $0.key[1] == $1.key[1] {
+                    return $0.key[0] > $1.key[0]
+                }
+                else {
+                    return $0.key[1] > $1.key[1]
+                }
+            }
+            else {
+                return $0.key[2] > $1.key[2]
+            }
+        })
+        print(self.entriesForDifferentDays)
         self.tableView.reloadData()
     }
     
@@ -61,19 +78,22 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
-        return StaticVariables.dateComponentsToString(keyByIndex)
+//        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
+        let components = self.entriesForDifferentDays![section].key
+        return StaticVariables.dateComponentsToString(components)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
-        return self.entriesForDifferentDays![keyByIndex]!.count
+//        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
+//        return self.entriesForDifferentDays![keyByIndex]!.count
+        return self.entriesForDifferentDays![section].value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let entryCell = tableView.dequeueReusableCell(withIdentifier: JournalEntryCell.id) as! JournalEntryCell
-        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[indexPath.section]
-        entryCell.entry = self.entriesForDifferentDays![keyByIndex]![indexPath.row]
+//        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[indexPath.section]
+//        entryCell.entry = self.entriesForDifferentDays![keyByIndex]![indexPath.row]
+        entryCell.entry = self.entriesForDifferentDays![indexPath.section].value[indexPath.row]
         entryCell.configureDetails()
         
         return entryCell
