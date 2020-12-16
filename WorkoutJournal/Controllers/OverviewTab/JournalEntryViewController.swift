@@ -98,15 +98,17 @@ extension JournalEntryViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        #warning("Throw an exception here")
-            guard let activity = self.selectedActivityInstance else { return }
-            activity.duration = self.durationCell.getNumber()
-            activity.distance = self.distanceCell.getNumber()
-            activity.repetitions = self.repetitionsCell.getNumber()
+        #warning("Throw an exception here instead of return")
+        guard let _ = self.selectedActivityInstance else { return }
+        
+        let activity = type(of: self.selectedActivityInstance!).init(duration: self.durationCell.getNumber(),
+                                                                     distance: self.distanceCell.getNumber(),
+                                                                     repetitions: self.repetitionsCell.getNumber())
             
         if let entry = self.entryToUpdate {
             self.journalManager!.setEntryActivity(entryId: entry.id, newActivity: activity)
-        } else {
+        }
+        else {
             self.journalManager!.createEntry(activity: activity, date: Date())
         }
         
