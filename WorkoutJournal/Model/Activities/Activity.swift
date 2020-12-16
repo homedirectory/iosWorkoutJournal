@@ -100,12 +100,16 @@ public class Activity {
         }
     }
     
-    public func updateAchievements() {
+    func updateAchievements() {
         
     }
     
-    public func updateAchievementsAfterDeletion() {
+    func updateAchievementsAfterDeletion() {
         
+    }
+    
+    func getAchievements() -> [Achievement] {
+        return []
     }
     
     func removeStats() {

@@ -18,7 +18,7 @@ public class ExcerciseSession: Activity {
         }
     }
     
-    static var achievements: [Achievement] = [AchievementIncreasing(name: "100 hours of ex. sessions", description: "Total duration of ex. sessions", valueToAchieve: 6000)]
+    static var achievements: [Achievement] = [AchievementIncreasing(name: "100 hours of ex. sessions", description: "Total duration of ex. sessions", valueToAchieve: 360000, units: .seconds)]
     
     override class var name: String {
         return "Excercise Session"
@@ -43,5 +43,9 @@ public class ExcerciseSession: Activity {
     public override func updateAchievementsAfterDeletion() {
         Self.achievements[0].setCurrentValue(Self.totalDuration.value)
     }
+    
+    override func getAchievements() -> [Achievement] {
+          return Self.achievements
+      }
     
 }

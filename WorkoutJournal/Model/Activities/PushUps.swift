@@ -18,8 +18,8 @@ public class PushUps: Activity {
         }
     }
     
-    static var achievements: [Achievement] = [AchievementIncreasing(name: "1k push-ups", description: "Total",                                                            valueToAchieve: 1000),
-                                                        AchievementIncreasing(name: "10k push-ups", description: "Total", valueToAchieve: 10000)]
+    static var achievements: [Achievement] = [AchievementIncreasing(name: "1k push-ups", description: "Total",                                                            valueToAchieve: 1000, units: .numbers),
+                                              AchievementIncreasing(name: "10k push-ups", description: "Total", valueToAchieve: 10000, units: .numbers)]
     
     override class var name: String {
         return "Push-ups"
@@ -48,5 +48,9 @@ public class PushUps: Activity {
             $0.updateAfterDeletion(deletedValue: Self.totalRepetitions.value)
         })
     }
+    
+    override func getAchievements() -> [Achievement] {
+          return Self.achievements
+      }
     
 }

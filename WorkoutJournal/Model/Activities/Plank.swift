@@ -18,10 +18,10 @@ public class Plank: Activity {
         }
     }
     
-    static var achievements: [Achievement] = [AchievementRecord(name: "10 minutes plank", description: "Max plank duration", valueToAchieve: 600),
-                                              AchievementRecord(name: "30 minutes plank", description: "Max plank duration", valueToAchieve: 1800),
-                                              AchievementRecord(name: "60 minutes plank O_o", description: "Max plank duration", valueToAchieve: 3600),
-                                            AchievementIncreasing(name: "Reach 1000 minutes of plank", description: "Total time spent doing plank", valueToAchieve: 60000)]
+    static var achievements: [Achievement] = [AchievementRecord(name: "10 minutes plank", description: "Max plank duration", valueToAchieve: 600, units: .seconds),
+                                              AchievementRecord(name: "30 minutes plank", description: "Max plank duration", valueToAchieve: 1800, units: .seconds),
+                                              AchievementRecord(name: "60 minutes plank O_o", description: "Max plank duration", valueToAchieve: 3600, units: .seconds),
+                                              AchievementIncreasing(name: "Reach 1000 minutes of plank", description: "Total time spent doing plank", valueToAchieve: 60000, units: .seconds)]
     
     override class var name: String {
         return "Plank"
@@ -45,5 +45,9 @@ public class Plank: Activity {
         }
         Self.achievements[3].setCurrentValue(Self.totalDuration.value)
     }
+    
+    override func getAchievements() -> [Achievement] {
+          return Self.achievements
+      }
     
 }
