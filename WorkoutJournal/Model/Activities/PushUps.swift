@@ -25,6 +25,10 @@ public class PushUps: Activity {
         return "Push-ups"
     }
     
+    override class var imageName: String {
+        return "push-ups"
+    }
+    
     internal required init(duration: Double? = nil, distance: Double? = nil, repetitions: Double? = 0) {
         super.init(duration: nil, distance: nil, repetitions: repetitions)
     }

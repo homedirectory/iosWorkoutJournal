@@ -37,6 +37,10 @@ public class Activity {
         return "Activity"
     }
     
+    class var imageName: String {
+        return ""
+    }
+    
     var duration: Double?
     {
         willSet {
@@ -137,7 +141,10 @@ public class Activity {
     class func getStats() -> [Stats] {
         return [totalDuration, totalDistance, totalRepetitions]
     }
-   
+    
+    class func updateCustomStats() {
+        
+    }
 }
 
 // MARK: - Getters

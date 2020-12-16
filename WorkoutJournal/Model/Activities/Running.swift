@@ -35,6 +35,10 @@ public class Running: Activity {
         return "Running"
     }
     
+    override class var imageName: String {
+        return "running"
+    }
+    
     internal required init(duration: Double? = 0, distance: Double? = 0, repetitions: Double? = nil) {
         super.init(duration: duration, distance: distance, repetitions: nil)
     }

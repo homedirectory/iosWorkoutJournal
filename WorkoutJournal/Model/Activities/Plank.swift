@@ -27,6 +27,10 @@ public class Plank: Activity {
         return "Plank"
     }
     
+    override class var imageName: String {
+        return "plank"
+    }
+    
     internal required init(duration: Double? = 0, distance: Double? = nil, repetitions: Double? = nil) {
         super.init(duration: duration, distance: nil, repetitions: nil)
     }

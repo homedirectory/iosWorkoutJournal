@@ -24,6 +24,10 @@ public class ExcerciseSession: Activity {
         return "Excercise Session"
     }
     
+    override class var imageName: String {
+        return "excercise_session"
+    }
+    
     internal required init(duration: Double? = 0, distance: Double? = nil, repetitions: Double? = nil) {
         super.init(duration: duration, distance: nil, repetitions: nil)
     }
