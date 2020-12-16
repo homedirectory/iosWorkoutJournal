@@ -59,13 +59,18 @@ public class Running: Activity {
     override func updateAchievements() {
         Self.achievements[0].setCurrentValue(self.distance!)
         Self.achievements[1].setCurrentValue(self.distance!)
-        Self.achievements[2].setCurrentValue((self.distance! / self.duration!) * 3.6)
+        if self.distance! > 0 && self.duration! > 0 {
+            Self.achievements[2].setCurrentValue((self.distance! / self.duration!) * 3.6)
+        }
     }
     
     override func updateAchievementsAfterDeletion() {
         Self.achievements[0].updateAfterDeletion(deletedValue: self.distance!)
         Self.achievements[1].updateAfterDeletion(deletedValue: self.distance!)
-        Self.achievements[2].updateAfterDeletion(deletedValue: (self.distance! / self.duration!) * 3.6)
+        if self.distance! > 0 && self.duration! > 0 {
+            Self.achievements[2].updateAfterDeletion(deletedValue: (self.distance! / self.duration!) * 3.6)
+        }
+
     }
     
     override func getAchievements() -> [Achievement] {
