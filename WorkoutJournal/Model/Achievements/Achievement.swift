@@ -16,6 +16,9 @@ protocol Achievement {
     var currentValue: Double { get set }
     var valueToAchieve: Double { get set }
     var achieved: Bool { get }
+    var units: Stats.StatsUnits { get set }
+    
+    var descriptionString: String { get }
     
     func setCurrentValue(_ value: Double)
     

@@ -25,12 +25,18 @@ class AchievementIncreasing: Achievement {
         }
     }
     var achieved: Bool = false
+    var units: Stats.StatsUnits
     
-    init(name: String, description: String = "", valueToAchieve: Double, currentValue: Double = 0) {
+    var descriptionString: String {
+        return "\(self.description): \(Stats.valueInStatsUnitsToString(self.currentValue, units: self.units)) / \(Stats.valueInStatsUnitsToString(self.valueToAchieve, units: self.units))"
+    }
+    
+    init(name: String, description: String = "", valueToAchieve: Double, currentValue: Double = 0, units: Stats.StatsUnits) {
         self.name = name
         self.description = description
         self.valueToAchieve = valueToAchieve
         self.currentValue = currentValue
+        self.units = units
     }
     
     func setCurrentValue(_ value: Double) {

@@ -26,12 +26,18 @@ class AchievementRecord: Achievement {
         }
     }
     var achieved: Bool = false
+    var units: Stats.StatsUnits
     
-    init(name: String, description: String = "", valueToAchieve: Double, currentValue: Double = 0) {
+    var descriptionString: String {
+        return "Goal: \(Stats.valueInStatsUnitsToString(self.valueToAchieve, units: self.units)). \(self.description): \(Stats.valueInStatsUnitsToString(self.currentValue, units: self.units))"
+    }
+    
+    init(name: String, description: String = "", valueToAchieve: Double, currentValue: Double = 0, units: Stats.StatsUnits) {
         self.name = name
         self.description = description
         self.valueToAchieve = valueToAchieve
         self.currentValue = currentValue
+        self.units = units
     }
     
     public func setCurrentValue(_ value: Double) {
