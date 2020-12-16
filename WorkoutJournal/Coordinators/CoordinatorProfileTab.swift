@@ -29,7 +29,12 @@ public class CoordinatorProfileTab {
     func pushStatsViewController(journalManager: JournalManager) {
         let vc = StatsViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.journalManager = journalManager
-        self.navController?.pushViewController(vc, animated: true)
+        self.navController!.pushViewController(vc, animated: true)
+    }
+    
+    func pushAchievementsViewController() {
+        let vc = AchievementsViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
+        self.navController!.pushViewController(vc, animated: true)
     }
         
 }

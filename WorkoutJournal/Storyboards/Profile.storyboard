@@ -191,32 +191,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-xQ-Tn3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-xQ-Tn3">
                                 <rect key="frame" x="0.0" y="183" width="414" height="679"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AchievementCell" id="Ml5-tc-Fv2" customClass="AchievementCell" customModule="WorkoutJournal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ml5-tc-Fv2" id="s6f-Me-xld">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBV-wt-Zoa">
-                                                    <rect key="frame" x="20" y="11.5" width="374" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gF-q1-RCX">
+                                                    <rect key="frame" x="20" y="47" width="69.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gf0-ix-dh5">
+                                                    <rect key="frame" x="374" y="20" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gf0-ix-dh5" secondAttribute="height" multiplier="1:1" id="eib-CZ-9Ho"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBi-bi-w7r">
+                                                    <rect key="frame" x="20" y="12" width="46.5" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zBV-wt-Zoa" firstAttribute="leading" secondItem="s6f-Me-xld" secondAttribute="leadingMargin" id="MlV-Co-4b3"/>
-                                                <constraint firstItem="zBV-wt-Zoa" firstAttribute="centerY" secondItem="s6f-Me-xld" secondAttribute="centerY" id="dZy-RO-Lfl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zBV-wt-Zoa" secondAttribute="trailing" id="lrd-ia-Fgs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7gF-q1-RCX" secondAttribute="bottom" constant="1" id="57r-aj-T0d"/>
+                                                <constraint firstItem="DBi-bi-w7r" firstAttribute="top" secondItem="s6f-Me-xld" secondAttribute="top" constant="12" id="5zw-rd-a1v"/>
+                                                <constraint firstItem="gf0-ix-dh5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DBi-bi-w7r" secondAttribute="trailing" constant="10" id="DDe-Jq-875"/>
+                                                <constraint firstItem="gf0-ix-dh5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7gF-q1-RCX" secondAttribute="trailing" constant="10" id="DeJ-Ab-b2J"/>
+                                                <constraint firstItem="gf0-ix-dh5" firstAttribute="centerY" secondItem="s6f-Me-xld" secondAttribute="centerY" id="F8Y-tv-QHv"/>
+                                                <constraint firstItem="DBi-bi-w7r" firstAttribute="leading" secondItem="s6f-Me-xld" secondAttribute="leadingMargin" id="IcB-yk-g9y"/>
+                                                <constraint firstAttribute="trailing" secondItem="gf0-ix-dh5" secondAttribute="trailing" constant="5" id="dJF-rh-kdi"/>
+                                                <constraint firstItem="gf0-ix-dh5" firstAttribute="top" secondItem="s6f-Me-xld" secondAttribute="topMargin" constant="9" id="deT-Jh-WaI"/>
+                                                <constraint firstItem="7gF-q1-RCX" firstAttribute="leading" secondItem="s6f-Me-xld" secondAttribute="leadingMargin" id="lJi-3v-vpV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label" destination="zBV-wt-Zoa" id="qeI-QD-pyT"/>
+                                            <outlet property="achievedImageView" destination="gf0-ix-dh5" id="OU6-B0-ypA"/>
+                                            <outlet property="descriptionLabel" destination="7gF-q1-RCX" id="8mK-SJ-cRn"/>
+                                            <outlet property="imageView" destination="gf0-ix-dh5" id="4xg-bG-sZC"/>
+                                            <outlet property="nameLabel" destination="DBi-bi-w7r" id="RMB-ys-l0f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

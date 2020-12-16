@@ -69,6 +69,9 @@ extension ProfileViewController: UICollectionViewDelegate {
         if indexPath.row == 0 {
             self.coordinator!.pushStatsViewController(journalManager: self.journalManager!)
         }
+        else if indexPath.row == 1 {
+            self.coordinator!.pushAchievementsViewController()
+        }
     }
     
 }
