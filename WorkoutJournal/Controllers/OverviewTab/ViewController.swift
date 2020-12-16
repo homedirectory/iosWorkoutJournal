@@ -76,6 +76,21 @@ extension ViewController: UITableViewDelegate {
         self.coordinator!.pushJournalEntryViewController(journalManager: self.journalManager!, entryToUpdate: entry)
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cell = self.tableView.cellForRow(at: indexPath) as! JournalEntryCell
+        guard let entry = cell.entry else { return UISwipeActionsConfiguration(actions: []) }
+        
+        let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
+            self.journalManager?.deleteEntry(entryId: entry.id)
+            
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
+        })
+        
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+        return configuration
+    }
+    
 }
 
 

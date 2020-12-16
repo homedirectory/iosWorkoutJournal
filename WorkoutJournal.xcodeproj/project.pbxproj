@@ -42,8 +42,6 @@
 		E587E983256E534A0063A46C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E982256E534A0063A46C /* User.swift */; };
 		E587E987256E54A00063A46C /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E986256E54A00063A46C /* JournalEntry.swift */; };
 		E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */; };
-		E5B7D174257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */; };
-		E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */; };
 		E5B7D179257FC6B400DCB684 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */; };
 		E5B7D17D257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */; };
 		E5B7D17F257FD1D000DCB684 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */; };
@@ -109,8 +107,6 @@
 		E587E986256E54A00063A46C /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		E587E988256E5D6E0063A46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
-		E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalEntryActivityDetailsView.xib; sourceTree = "<group>"; };
-		E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryActivityDetailsView.swift; sourceTree = "<group>"; };
 		E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
 		E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewActivityCell.swift; sourceTree = "<group>"; };
 		E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
@@ -299,7 +295,6 @@
 		E5B7D16F257F96CC00DCB684 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E5B7D175257FA47E00DCB684 /* JournalEntryActivityDetails */,
 				E5B7D170257F96D400DCB684 /* Cells */,
 				E5D292212588EDAD00A6671F /* ActivityStatsView.swift */,
 			);
@@ -314,15 +309,6 @@
 				E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		E5B7D175257FA47E00DCB684 /* JournalEntryActivityDetails */ = {
-			isa = PBXGroup;
-			children = (
-				E5B7D173257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib */,
-				E5B7D176257FA49500DCB684 /* JournalEntryActivityDetailsView.swift */,
-			);
-			path = JournalEntryActivityDetails;
 			sourceTree = "<group>";
 		};
 		E5B7D186257FDEB000DCB684 /* JournalEntryTableView */ = {
@@ -454,7 +440,6 @@
 				E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */,
 				E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */,
 				E587E973256E49D30063A46C /* Assets.xcassets in Resources */,
-				E5B7D174257FA3A400DCB684 /* JournalEntryActivityDetailsView.xib in Resources */,
 				E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */,
 				E5D292152587EAF300A6671F /* Profile.storyboard in Resources */,
 				E587E96E256E49D20063A46C /* Overview.storyboard in Resources */,
@@ -552,7 +537,6 @@
 				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
 				E5D2921E2588D9EF00A6671F /* StatsViewController.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
-				E5B7D177257FA49500DCB684 /* JournalEntryActivityDetailsView.swift in Sources */,
 				E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */,
 				E5D2921125879D0300A6671F /* Extensions.swift in Sources */,
 				E533E0FA258A3D04007D8BC6 /* AchievementIncreasing.swift in Sources */,
