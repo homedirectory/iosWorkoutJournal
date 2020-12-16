@@ -17,6 +17,7 @@ class JournalEntryViewController: UIViewController, Storyboarded {
     private var detailsCellLabels = ["Duration", "Distance", "Repetititons"]
     private var selectedActivityInstance: Activity?
     var entryToUpdate: JournalEntry?
+    var selectedDate: Date?
     
     lazy var activityCell = self.tableView.cellForRow(at: [0, 0]) as! JournalEntryTableViewActivityCell
     lazy var durationCell = self.tableView.cellForRow(at: [0, 1]) as! JournalEntryTableViewDetailsCell
@@ -27,7 +28,6 @@ class JournalEntryViewController: UIViewController, Storyboarded {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var testButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet var gestureRecognizer: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,7 @@ class JournalEntryViewController: UIViewController, Storyboarded {
         
         if let _ = self.entryToUpdate {
             self.selectedActivityInstance = self.entryToUpdate!.activity
+            self.selectedDate = self.entryToUpdate!.creationDate
         }
         
     }
@@ -81,18 +82,6 @@ class JournalEntryViewController: UIViewController, Storyboarded {
 
 extension JournalEntryViewController {
     
-    @objc func resignTextFields() {
-        for cell in [self.durationCell, self.distanceCell, self.repetitionsCell] {
-            if cell.textField.isFirstResponder {
-                cell.textField.resignFirstResponder()
-            }
-        }
-    }
-    
-    @IBAction func gestureRecognizerAction(_ sender: Any) {
-        self.resignTextFields()
-    }
-    
     @IBAction func testButtonAction(_ sender: Any) {
         self.tableView.reloadData()
     }
@@ -107,9 +96,10 @@ extension JournalEntryViewController {
             
         if let entry = self.entryToUpdate {
             self.journalManager!.setEntryActivity(entryId: entry.id, newActivity: activity)
+            self.journalManager!.setEntryDate(entryId: entry.id, newDate: self.selectedDate ?? Date())
         }
         else {
-            self.journalManager!.createEntry(activity: activity, date: Date())
+            self.journalManager!.createEntry(activity: activity, date: self.selectedDate ?? Date())
         }
         
         self.selectedActivityInstance = nil
@@ -161,10 +151,23 @@ extension JournalEntryViewController: UITableViewDataSource {
             }
             return cell
         }
-        
+    
         let cell = self.tableView.dequeueReusableCell(withIdentifier: JournalEntryTableViewDateCell.id) as! JournalEntryTableViewDateCell
-        cell.label.text = "Date"
+        cell.setup(date: self.selectedDate, handler: { [weak self] date in
+            self!.view.endEditing(true)
+            self!.selectedDate = date
+        })
+        
         return cell
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        if touch.view == self.view {
+            print("touch")
+            self.dateCell.displayDate()
+            self.view.endEditing(true)
+        }
     }
     
     
@@ -181,10 +184,6 @@ extension JournalEntryViewController: UITableViewDelegate {
             self.coordinator!.pushActivitiesListViewController(trigerredCell: self.activityCell)
         }
         
-        if indexPath.row == 4 {
-//            let datePicker = UIDatePicker()
-//            self.dateCell.datePicker = datePicker
-            
-        }
     }
+    
 }

@@ -9,26 +9,46 @@
 import Foundation
 import UIKit
 
-#warning("TODO: complete this cell with date picker")
+
 class JournalEntryTableViewDateCell: UITableViewCell {
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var textField: UITextField!
     
     var date: Date?
+    let datePicker = UIDatePicker()
+    var endEditingHandler: ((Date?) -> ())?
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-
+    func setup(date: Date?, handler: @escaping (Date?) -> ()) {
+        self.date = date
+        self.endEditingHandler = handler
+        
+        if let date = self.date {
+            self.datePicker.date = date
+            self.displayDate()
+        }
+        else {
+            self.textField.text = "Today"
+            self.datePicker.date = Date()
+        }
+                
+        self.datePicker.datePickerMode = .date
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(displayDate))
+        toolbar.setItems([doneButton], animated: true)
+        
+        self.textField.font = .systemFont(ofSize: 20)
+        self.textField.inputAccessoryView = toolbar
+        self.textField.inputView = self.datePicker
     }
     
-}
-
-// MARK: - IBActions
-
-extension JournalEntryTableViewDateCell {
-    
-    @IBAction func datePickerAction(_ sender: Any) {
+    @objc func displayDate() {
+        self.date = self.datePicker.date
+        let dateComponents = [self.datePicker.date.get(.day), self.datePicker.date.get(.month), self.datePicker.date.get(.year)]
+        self.textField.text = StaticVariables.dateComponentsToString(dateComponents)
+        self.endEditingHandler!(self.date)
     }
     
 }

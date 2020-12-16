@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z8x-O1-bfl">
-                                <rect key="frame" x="0.0" y="194" width="414" height="568"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalEntryTableViewActivityCell" rowHeight="75" id="rbk-ug-OTs" customClass="JournalEntryTableViewActivityCell" customModule="WorkoutJournal" customModuleProvider="target">
@@ -169,26 +169,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgA-Yy-R1U">
-                                                    <rect key="frame" x="30" y="26" width="40.5" height="23"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SEm-x6-Mxh">
+                                                    <rect key="frame" x="20" y="11" width="374" height="53"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XgA-Yy-R1U" firstAttribute="centerY" secondItem="Wnh-JC-kkF" secondAttribute="centerY" id="KzC-WZ-1XW"/>
-                                                <constraint firstItem="XgA-Yy-R1U" firstAttribute="leading" secondItem="Wnh-JC-kkF" secondAttribute="leadingMargin" constant="10" id="hh4-oZ-gnO"/>
+                                                <constraint firstItem="SEm-x6-Mxh" firstAttribute="leading" secondItem="Wnh-JC-kkF" secondAttribute="leadingMargin" id="ERN-0I-sAi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SEm-x6-Mxh" secondAttribute="trailing" id="LRr-8E-Ylg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SEm-x6-Mxh" secondAttribute="bottom" id="MDu-Ou-KsR"/>
+                                                <constraint firstItem="SEm-x6-Mxh" firstAttribute="top" secondItem="Wnh-JC-kkF" secondAttribute="topMargin" id="jRO-Gp-le9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label" destination="XgA-Yy-R1U" id="XVK-ai-bzd"/>
+                                            <outlet property="textField" destination="SEm-x6-Mxh" id="f0t-kW-7ST"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOP-3i-GBU">
-                                <rect key="frame" x="374" y="144" width="30" height="30"/>
+                                <rect key="frame" x="374" y="94" width="30" height="30"/>
                                 <state key="normal" title="Test"/>
                                 <connections>
                                     <action selector="testButtonAction:" destination="F6Q-ny-oks" eventType="touchUpInside" id="T6J-5r-0rO"/>
@@ -216,28 +217,19 @@
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="bottom" secondItem="rlB-AH-jeD" secondAttribute="bottom" constant="10" id="How-4n-aHf"/>
                             <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="MOP-3i-GBU" secondAttribute="bottom" constant="20" id="NFE-zo-Xhv"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="trailing" secondItem="MOP-3i-GBU" secondAttribute="trailing" constant="10" id="Qf3-Ac-7e7"/>
-                            <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="xzp-tB-CPF" secondAttribute="top" constant="150" id="dmC-Oe-yRI"/>
+                            <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="xzp-tB-CPF" secondAttribute="top" constant="100" id="dmC-Oe-yRI"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="trailing" secondItem="rlB-AH-jeD" secondAttribute="trailing" constant="75" id="tNg-iH-dQv"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="bottom" secondItem="z8x-O1-bfl" secondAttribute="bottom" constant="100" id="tQP-h2-d2D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xzp-tB-CPF"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="iK9-uE-tYx" appends="YES" id="22z-2H-nwS"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="gestureRecognizer" destination="iK9-uE-tYx" id="4uZ-Np-OYG"/>
                         <outlet property="saveButton" destination="rlB-AH-jeD" id="q1l-vM-3MB"/>
                         <outlet property="tableView" destination="z8x-O1-bfl" id="Lm8-sH-Xg1"/>
                         <outlet property="testButton" destination="MOP-3i-GBU" id="xvw-ix-fTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKG-Om-MgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer cancelsTouchesInView="NO" id="iK9-uE-tYx">
-                    <connections>
-                        <action selector="gestureRecognizerAction:" destination="F6Q-ny-oks" id="LRT-QE-dzb"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="873.91304347826099" y="101.78571428571428"/>
         </scene>
