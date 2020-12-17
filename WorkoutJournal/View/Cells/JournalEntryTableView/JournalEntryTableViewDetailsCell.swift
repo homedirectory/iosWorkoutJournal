@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class JournalEntryTableViewDetailsCell: UITableViewCell, UITextFieldDelegate {
+class JournalEntryTableViewDetailsCell: UITableViewCell {
     
     @IBOutlet weak var textField: UITextField!
     
@@ -60,7 +60,7 @@ class JournalEntryTableViewDetailsCell: UITableViewCell, UITextFieldDelegate {
 
 // MARK: - UITextFieldDelegate
 
-extension JournalEntryTableViewDetailsCell {
+extension JournalEntryTableViewDetailsCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.textField.resignFirstResponder()
