@@ -23,6 +23,8 @@ class LoginViewController: UIViewController, Storyboarded {
 
         // Do any additional setup after loading the view.
         self.errorLabel.alpha = 0
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
@@ -71,4 +73,15 @@ class LoginViewController: UIViewController, Storyboarded {
             }
         }
     }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }

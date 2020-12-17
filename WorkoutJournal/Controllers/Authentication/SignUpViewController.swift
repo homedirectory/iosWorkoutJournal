@@ -25,6 +25,10 @@ class SignUpViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
 
         self.errorLabel.alpha = 0
+        
+        self.nameTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
     
     @IBAction func signUpButtonAction(_ sender: Any) {
@@ -92,4 +96,15 @@ class SignUpViewController: UIViewController, Storyboarded {
         }
     }
 
+}
+
+// MARK: - UITextFieldDelegate
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
