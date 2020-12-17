@@ -12,7 +12,7 @@ import UIKit
 
 class JournalEntryViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: CoordinatorOverviewTab?
+    weak var coordinator: OverviewCoordinator?
     var journalManager: JournalManager?
     private var detailsCellLabels = ["Duration", "Distance", "Repetititons"]
     private var selectedActivityInstance: Activity?

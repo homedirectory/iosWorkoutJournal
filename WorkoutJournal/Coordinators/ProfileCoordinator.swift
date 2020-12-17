@@ -1,5 +1,5 @@
 //
-//  CoordinatorProfileTab.swift
+//  ProfileCoordinator.swift
 //  WorkoutJournal
 //
 //  Created by Vlad Bilyk on 14.12.2020.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-public class CoordinatorProfileTab {
+public class ProfileCoordinator {
     
     static var STORYBOARD_NAME: String = "Profile"
     

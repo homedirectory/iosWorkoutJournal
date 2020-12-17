@@ -12,7 +12,7 @@ import UIKit
 
 class ProfileViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: CoordinatorProfileTab?
+    weak var coordinator: ProfileCoordinator?
     var journalManager: JournalManager?
     
     let cellLabels = ["Stats", "Achievements"]

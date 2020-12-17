@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-public class CoordinatorOverviewTab {
+public class OverviewCoordinator {
     
     static var STORYBOARD_NAME: String = "Overview"
     
@@ -20,7 +20,7 @@ public class CoordinatorOverviewTab {
     }
     
     func start(journalManager: JournalManager) {
-        let vc = ViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
+        let vc = OverviewViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
         vc.journalManager = journalManager
         self.navController = UINavigationController(rootViewController: vc)
