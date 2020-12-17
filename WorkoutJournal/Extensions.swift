@@ -62,4 +62,8 @@ extension Date {
     func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
         return calendar.component(component, from: self)
     }
+    
+    func toString(shortMonthNames: Bool) -> String {
+        return StaticVariables.dateComponentsToString([self.get(.day), self.get(.month), self.get(.year)], shortMonthNames: shortMonthNames)
+    }
 }
