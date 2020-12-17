@@ -45,6 +45,11 @@ class LoginViewController: UIViewController, Storyboarded {
             else {
                 // transition to the main screen
                 self.coordinator!.pushTabBarController()
+                do {
+                    try CredentialsStorage.storage.save(credentials: Credentials(email: email, password: password))
+                } catch let err {
+                    print("- failed to save credentials: \(err)")
+                }
             }
         }
         

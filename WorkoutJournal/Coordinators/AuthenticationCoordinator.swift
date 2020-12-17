@@ -17,12 +17,25 @@ class AuthenticationCoordinator {
     var profileCoordinator: ProfileCoordinator?
     
     var navController: UINavigationController?
-    
+        
     init(navController: UINavigationController) {
         self.navController = navController
     }
     
     func start() {
+        do {
+            if let _ = try CredentialsStorage.storage.fetchCredentials() {
+                self.pushTabBarController()
+                return
+            }
+        } catch let err {
+            print("- failed to fetch credentials: \(err)")
+        }
+        
+        self.pushViewController()
+    }
+    
+    func pushViewController() {
         let vc = ViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
         self.navController!.pushViewController(vc, animated: true)
@@ -51,7 +64,9 @@ class AuthenticationCoordinator {
         self.profileCoordinator = ProfileCoordinator()
         self.profileCoordinator!.popToViewControllerHandler = { [weak self] in
             if let _ = self {
-                self!.navController!.popToRootViewController(animated: true)
+                let vc = ViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
+                vc.coordinator = self
+                self!.navController!.setViewControllers([vc], animated: true)
                 self!.navController!.isNavigationBarHidden = false
             }
         }

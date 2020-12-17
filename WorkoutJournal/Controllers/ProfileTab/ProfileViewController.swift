@@ -34,13 +34,21 @@ class ProfileViewController: UIViewController, Storyboarded {
     
     @IBAction func signOutButtonAction(_ sender: Any) {
         let firebaseAuth = Auth.auth()
+        // attempt to sign out
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
             return
         }
+        // transition to launch screen (ViewController)
         self.coordinator!.popToViewController()
+        // try to delete saved credentials
+        do {
+            try CredentialsStorage.storage.deleteCredentials()
+        } catch let err {
+            print("- failed to delete credentials: \(err)")
+        }
     }
     
 }
