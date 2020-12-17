@@ -83,6 +83,30 @@ public class Activity {
         }
     }
     
+    var details: String {
+        var details = ""
+        
+        if let distance = self.distance {
+            details += distance.kmString
+        }
+        
+        if let duration = self.duration {
+            if !details.isEmpty {
+                details += " | "
+            }
+            details += duration.secondsString
+        }
+        
+        if let reps = self.repetitions {
+            if !details.isEmpty {
+                details += " | "
+            }
+            details += String(Int(reps))
+        }
+        
+        return details
+    }
+    
     lazy var entityName: String = {
         let name = NSStringFromClass(type(of: self)) + "Model"
         return name.components(separatedBy: ".").last!
@@ -145,6 +169,7 @@ public class Activity {
     class func updateCustomStats() {
         
     }
+    
 }
 
 // MARK: - Getters
