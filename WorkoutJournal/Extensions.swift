@@ -24,7 +24,7 @@ extension UICollectionViewCell {
 extension Double {
     var kmString: String {
         var result = "-"
-        if Int((self / 100)) % 10 == 0 {
+        if Int((self / 10)) % 10 == 0 {
             result = "\(Int(self/1000)) km"
         }
         else {
