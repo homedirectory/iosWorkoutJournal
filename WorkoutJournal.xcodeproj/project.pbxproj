@@ -36,7 +36,7 @@
 		E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E587E988256E5D6E0063A46C /* GoogleService-Info.plist */; };
 		E587E967256E49D20063A46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E966256E49D20063A46C /* AppDelegate.swift */; };
 		E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E968256E49D20063A46C /* SceneDelegate.swift */; };
-		E587E96B256E49D20063A46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E96A256E49D20063A46C /* ViewController.swift */; };
+		E587E96B256E49D20063A46C /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E96A256E49D20063A46C /* OverviewViewController.swift */; };
 		E587E96E256E49D20063A46C /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E96C256E49D20063A46C /* Overview.storyboard */; };
 		E587E973256E49D30063A46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E587E972256E49D30063A46C /* Assets.xcassets */; };
 		E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E974256E49D30063A46C /* LaunchScreen.storyboard */; };
@@ -98,7 +98,7 @@
 		E587E963256E49D20063A46C /* WorkoutJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E587E966256E49D20063A46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E587E968256E49D20063A46C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E587E96A256E49D20063A46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E587E96A256E49D20063A46C /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		E587E96D256E49D20063A46C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Overview.storyboard; sourceTree = "<group>"; };
 		E587E970256E49D20063A46C /* WorkoutJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutJournal.xcdatamodel; sourceTree = "<group>"; };
 		E587E972256E49D30063A46C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 		E5D292172587EB9100A6671F /* OverviewTab */ = {
 			isa = PBXGroup;
 			children = (
-				E587E96A256E49D20063A46C /* ViewController.swift */,
+				E587E96A256E49D20063A46C /* OverviewViewController.swift */,
 				E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */,
 				E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */,
 			);
@@ -495,7 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E587E96B256E49D20063A46C /* ViewController.swift in Sources */,
+				E587E96B256E49D20063A46C /* OverviewViewController.swift in Sources */,
 				E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */,
 				E587E967256E49D20063A46C /* AppDelegate.swift in Sources */,
 				E587E983256E534A0063A46C /* User.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  OverviewViewController.swift
 //  WorkoutJournal
 //
 //  Created by Vlad Bilyk on 25.11.2020.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, Storyboarded {
+class OverviewViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: CoordinatorOverviewTab?
+    weak var coordinator: OverviewCoordinator?
     var journalManager: JournalManager?
 //    private var entriesForDifferentDays: Dictionary<[Int], [JournalEntry]>?
     private var entriesForDifferentDays: [(key: [Int], value: [JournalEntry])]?
@@ -48,7 +48,6 @@ class ViewController: UIViewController, Storyboarded {
                 return $0.key[2] > $1.key[2]
             }
         })
-        print(self.entriesForDifferentDays)
         self.tableView.reloadData()
     }
     
@@ -56,7 +55,7 @@ class ViewController: UIViewController, Storyboarded {
 
 // MARK: - IBActions
 
-extension ViewController {
+extension OverviewViewController {
 
     @IBAction func newEntryButtonAction(_ sender: Any) {
         self.coordinator!.pushJournalEntryViewController(journalManager: self.journalManager!)
@@ -71,7 +70,7 @@ extension ViewController {
 
 // MARK: - UITableView extensions
 
-extension ViewController: UITableViewDataSource {
+extension OverviewViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.entriesForDifferentDays!.count
@@ -101,7 +100,7 @@ extension ViewController: UITableViewDataSource {
     
 }
 
-extension ViewController: UITableViewDelegate {
+extension OverviewViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
