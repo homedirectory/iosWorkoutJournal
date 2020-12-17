@@ -189,7 +189,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOP-3i-GBU">
-                                <rect key="frame" x="374" y="94" width="30" height="30"/>
+                                <rect key="frame" x="230" y="94" width="174" height="30"/>
                                 <state key="normal" title="Test"/>
                                 <connections>
                                     <action selector="testButtonAction:" destination="F6Q-ny-oks" eventType="touchUpInside" id="T6J-5r-0rO"/>
@@ -206,6 +206,27 @@
                                     <action selector="saveButtonAction:" destination="F6Q-ny-oks" eventType="touchUpInside" id="BYy-jp-vfJ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e1P-fl-CbG">
+                                <rect key="frame" x="20" y="89" width="200" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="che-Fd-C08">
+                                        <rect key="frame" x="0.0" y="12.5" width="141" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qhQ-K3-NKs">
+                                        <rect key="frame" x="151" y="7" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="shareSwitchAction:" destination="F6Q-ny-oks" eventType="valueChanged" id="V9q-GQ-TeF"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="edX-qd-mE8"/>
+                                    <constraint firstItem="qhQ-K3-NKs" firstAttribute="centerY" secondItem="che-Fd-C08" secondAttribute="centerY" id="xIJ-d2-Il1"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
@@ -218,13 +239,19 @@
                             <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="MOP-3i-GBU" secondAttribute="bottom" constant="20" id="NFE-zo-Xhv"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="trailing" secondItem="MOP-3i-GBU" secondAttribute="trailing" constant="10" id="Qf3-Ac-7e7"/>
                             <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="xzp-tB-CPF" secondAttribute="top" constant="100" id="dmC-Oe-yRI"/>
+                            <constraint firstItem="e1P-fl-CbG" firstAttribute="leading" secondItem="xzp-tB-CPF" secondAttribute="leading" constant="20" id="ieU-t2-1ZY"/>
+                            <constraint firstItem="e1P-fl-CbG" firstAttribute="top" secondItem="xzp-tB-CPF" secondAttribute="top" constant="45" id="n2l-Oh-put"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="trailing" secondItem="rlB-AH-jeD" secondAttribute="trailing" constant="75" id="tNg-iH-dQv"/>
                             <constraint firstItem="xzp-tB-CPF" firstAttribute="bottom" secondItem="z8x-O1-bfl" secondAttribute="bottom" constant="100" id="tQP-h2-d2D"/>
+                            <constraint firstItem="MOP-3i-GBU" firstAttribute="leading" secondItem="e1P-fl-CbG" secondAttribute="trailing" constant="10" id="tuP-kY-hQp"/>
+                            <constraint firstItem="z8x-O1-bfl" firstAttribute="top" secondItem="e1P-fl-CbG" secondAttribute="bottom" constant="10" id="zGd-Nu-Zev"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xzp-tB-CPF"/>
                     </view>
                     <connections>
                         <outlet property="saveButton" destination="rlB-AH-jeD" id="q1l-vM-3MB"/>
+                        <outlet property="shareLabel" destination="che-Fd-C08" id="ImO-lE-Va8"/>
+                        <outlet property="shareSwitch" destination="qhQ-K3-NKs" id="aTt-EO-0nG"/>
                         <outlet property="tableView" destination="z8x-O1-bfl" id="Lm8-sH-Xg1"/>
                         <outlet property="testButton" destination="MOP-3i-GBU" id="xvw-ix-fTD"/>
                     </connections>

@@ -11,11 +11,20 @@ import Foundation
 
 class User {
     
-    let id: Int
+    let id: String
     var fullName: String
     
-    init(id: Int, fullName: String) {
+    static var defaultUser: User {
+        return User(id: "123", fullName: "John")
+    }
+    
+    static var defaultUserImageName: String {
+        return "person.circle.fill"
+    }
+    
+    init(id: String, fullName: String) {
         self.id = id
         self.fullName = fullName
     }
+    
 }

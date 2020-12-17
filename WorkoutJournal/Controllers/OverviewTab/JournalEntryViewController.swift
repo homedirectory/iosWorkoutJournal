@@ -28,6 +28,8 @@ class JournalEntryViewController: UIViewController, Storyboarded {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var testButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var shareLabel: UILabel!
+    @IBOutlet weak var shareSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +75,6 @@ class JournalEntryViewController: UIViewController, Storyboarded {
         return [self.selectedActivityInstance!.duration,
                 self.selectedActivityInstance!.distance,
                 self.selectedActivityInstance!.repetitions]
-
     }
     
 }
@@ -82,6 +83,9 @@ class JournalEntryViewController: UIViewController, Storyboarded {
 
 extension JournalEntryViewController {
     
+    @IBAction func shareSwitchAction(_ sender: Any) {
+    }
+        
     @IBAction func testButtonAction(_ sender: Any) {
         self.tableView.reloadData()
     }
@@ -99,9 +103,13 @@ extension JournalEntryViewController {
             self.journalManager!.setEntryDate(entryId: entry.id, newDate: self.selectedDate ?? Date())
         }
         else {
-            self.journalManager!.createEntry(activity: activity, date: self.selectedDate ?? Date())
+            let entry = self.journalManager!.createEntry(activity: activity, date: self.selectedDate ?? Date())
+            // if switch is on and entry is valid, create new post and write it into db
+            if self.shareSwitch.isOn && entry != nil {
+                FeedPostDelegate.savePost(FeedPost(user: User.defaultUser, journalEntry: entry!))
+            }
         }
-        
+
         self.selectedActivityInstance = nil
         self.entryToUpdate = nil
         self.coordinator!.navController?.popViewController(animated: true)

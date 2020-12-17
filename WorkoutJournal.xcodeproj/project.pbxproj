@@ -50,6 +50,12 @@
 		E5AF9FD4258BB225003A4EA5 /* Credentials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD2258BB225003A4EA5 /* Credentials.xcdatamodeld */; };
 		E5AF9FD6258BB27D003A4EA5 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD5258BB27D003A4EA5 /* CredentialsStorage.swift */; };
 		E5AF9FD8258BB2B4003A4EA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */; };
+		E5AF9FDA258BD446003A4EA5 /* PostsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AF9FD9258BD445003A4EA5 /* PostsFeed.storyboard */; };
+		E5AF9FDD258BD475003A4EA5 /* PostsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */; };
+		E5AF9FDF258BD53F003A4EA5 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */; };
+		E5AF9FE1258BDBB6003A4EA5 /* FeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */; };
+		E5AF9FE3258BDFD0003A4EA5 /* FeedPostDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE2258BDFD0003A4EA5 /* FeedPostDelegate.swift */; };
+		E5AF9FE5258BE591003A4EA5 /* PostsFeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */; };
 		E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */; };
 		E5B7D179257FC6B400DCB684 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */; };
 		E5B7D17D257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */; };
@@ -123,6 +129,12 @@
 		E5AF9FD3258BB225003A4EA5 /* Credentials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Credentials.xcdatamodel; sourceTree = "<group>"; };
 		E5AF9FD5258BB27D003A4EA5 /* CredentialsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
 		E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		E5AF9FD9258BD445003A4EA5 /* PostsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostsFeed.storyboard; sourceTree = "<group>"; };
+		E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedViewController.swift; sourceTree = "<group>"; };
+		E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
+		E5AF9FE2258BDFD0003A4EA5 /* FeedPostDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostDelegate.swift; sourceTree = "<group>"; };
+		E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedCoordinator.swift; sourceTree = "<group>"; };
 		E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
 		E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
 		E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewActivityCell.swift; sourceTree = "<group>"; };
@@ -277,6 +289,8 @@
 				E5E8A122257D2C4A00238364 /* Stats.swift */,
 				E5B7D184257FD41D00DCB684 /* StaticVariables.swift */,
 				E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */,
+				E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */,
+				E5AF9FE2258BDFD0003A4EA5 /* FeedPostDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +307,7 @@
 		E587E97F256E4A110063A46C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E5AF9FDB258BD45E003A4EA5 /* PostsFeedTab */,
 				E51EC528258B59DC00988359 /* Authentication */,
 				E5D292172587EB9100A6671F /* OverviewTab */,
 				E5D292162587EB8400A6671F /* ProfileTab */,
@@ -307,6 +322,7 @@
 				E587E974256E49D30063A46C /* LaunchScreen.storyboard */,
 				E5D292142587EAF300A6671F /* Profile.storyboard */,
 				E51EC526258B59A800988359 /* Authentication.storyboard */,
+				E5AF9FD9258BD445003A4EA5 /* PostsFeed.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -331,6 +347,14 @@
 			path = Credentials;
 			sourceTree = "<group>";
 		};
+		E5AF9FDB258BD45E003A4EA5 /* PostsFeedTab */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */,
+			);
+			path = PostsFeedTab;
+			sourceTree = "<group>";
+		};
 		E5B7D16F257F96CC00DCB684 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +370,7 @@
 				E5D2921A2588C1D700A6671F /* ProfileCollectionView */,
 				E5B7D186257FDEB000DCB684 /* JournalEntryTableView */,
 				E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */,
+				E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -405,6 +430,7 @@
 				E5E8A124257E907400238364 /* OverviewCoordinator.swift */,
 				E5D292122587E83400A6671F /* ProfileCoordinator.swift */,
 				E51EC52F258B5EDD00988359 /* AuthenticationCoordinator.swift */,
+				E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -477,6 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5AF9FDA258BD446003A4EA5 /* PostsFeed.storyboard in Resources */,
 				E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */,
 				E51EC527258B59A800988359 /* Authentication.storyboard in Resources */,
 				E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */,
@@ -539,6 +566,7 @@
 				E587E96B256E49D20063A46C /* OverviewViewController.swift in Sources */,
 				E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */,
 				E587E967256E49D20063A46C /* AppDelegate.swift in Sources */,
+				E5AF9FE1258BDBB6003A4EA5 /* FeedPost.swift in Sources */,
 				E587E983256E534A0063A46C /* User.swift in Sources */,
 				E53AD6E42578218500143FCB /* RunningModel+CoreDataClass.swift in Sources */,
 				E5AF9FD4258BB225003A4EA5 /* Credentials.xcdatamodeld in Sources */,
@@ -554,6 +582,7 @@
 				E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */,
 				E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */,
 				E5B7D17F257FD1D000DCB684 /* ActivitiesListViewController.swift in Sources */,
+				E5AF9FDD258BD475003A4EA5 /* PostsFeedViewController.swift in Sources */,
 				E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */,
 				E53AD6C925780F5400143FCB /* PushUps.swift in Sources */,
 				E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */,
@@ -567,6 +596,7 @@
 				E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */,
 				E5D29226258A135F00A6671F /* AchievementCell.swift in Sources */,
 				E5D29224258A10DE00A6671F /* AchievementsViewController.swift in Sources */,
+				E5AF9FE3258BDFD0003A4EA5 /* FeedPostDelegate.swift in Sources */,
 				E5E8A123257D2C4A00238364 /* Stats.swift in Sources */,
 				E5E8A125257E907400238364 /* OverviewCoordinator.swift in Sources */,
 				E51EC52E258B5AD300988359 /* SignUpViewController.swift in Sources */,
@@ -581,7 +611,9 @@
 				E5539B2D258291B100103EA6 /* ActivityModel+CoreDataClass.swift in Sources */,
 				E51EC530258B5EDD00988359 /* AuthenticationCoordinator.swift in Sources */,
 				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
+				E5AF9FDF258BD53F003A4EA5 /* PostCell.swift in Sources */,
 				E5D2921E2588D9EF00A6671F /* StatsViewController.swift in Sources */,
+				E5AF9FE5258BE591003A4EA5 /* PostsFeedCoordinator.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
 				E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */,
 				E5D2921125879D0300A6671F /* Extensions.swift in Sources */,

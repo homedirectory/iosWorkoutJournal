@@ -13,6 +13,7 @@ class AuthenticationCoordinator {
     
     static var STORYBOARD_NAME: String = "Authentication"
     
+    var postsFeedCoordinator: PostsFeedCoordinator?
     var overviewCoordinator: OverviewCoordinator?
     var profileCoordinator: ProfileCoordinator?
     
@@ -55,6 +56,11 @@ class AuthenticationCoordinator {
     
     func pushTabBarController() {
         let tabBarController = UITabBarController()
+        
+        self.postsFeedCoordinator = PostsFeedCoordinator()
+        self.postsFeedCoordinator!.start()
+        let navControllerPostsFeed = self.postsFeedCoordinator!.navController!
+        navControllerPostsFeed.title = "Feed"
 
         self.overviewCoordinator = OverviewCoordinator()
         self.overviewCoordinator!.start(journalManager: JournalManager.shared)
@@ -74,9 +80,10 @@ class AuthenticationCoordinator {
         let navControllerProfile = self.profileCoordinator!.navController!
         navControllerProfile.title = "Profile"
 
-        tabBarController.setViewControllers([navControllerOverview, navControllerProfile], animated: true)
+        tabBarController.setViewControllers([navControllerPostsFeed, navControllerOverview, navControllerProfile], animated: true)
+        tabBarController.selectedIndex = 1
 
-        let imageNames: [String] = ["house", "person"]
+        let imageNames: [String] = ["globe", "house", "person"]
 
         guard let items = tabBarController.tabBar.items else { return }
 
@@ -86,6 +93,8 @@ class AuthenticationCoordinator {
 
         self.navController!.pushViewController(tabBarController, animated: true)
         self.navController!.isNavigationBarHidden = true
+        
+        FeedPostDelegate.fetchAllPosts()
     }
     
 }
