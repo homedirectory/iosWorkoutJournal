@@ -32,9 +32,11 @@ public class StaticVariables {
     
     static let monthsNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
-    static func dateComponentsToString(_ componenets: [Int]) -> String {
+    static let shortMonthsNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    
+    static func dateComponentsToString(_ componenets: [Int], shortMonthNames: Bool) -> String {
         let day = componenets[0]
-        let monthString = Self.monthsNames[componenets[1] - 1]
+        let monthString = shortMonthNames ? Self.shortMonthsNames[componenets[1] - 1] : Self.monthsNames[componenets[1] - 1]
         let year = componenets[2]
         return "\(day) \(monthString), \(year)"
     }

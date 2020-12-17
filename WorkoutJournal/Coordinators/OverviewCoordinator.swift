@@ -31,14 +31,14 @@ public class OverviewCoordinator {
         vc.coordinator = self
         vc.journalManager = journalManager
         vc.entryToUpdate = entry
-        navController!.pushViewController(vc, animated: true)
+        self.navController!.pushViewController(vc, animated: true)
     }
     
     func pushActivitiesListViewController(trigerredCell: JournalEntryTableViewActivityCell) {
         let vc = ActivitiesListViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
         vc.fromCell = trigerredCell
-        navController!.pushViewController(vc, animated: true)
+        self.navController!.pushViewController(vc, animated: true)
     }
     
     

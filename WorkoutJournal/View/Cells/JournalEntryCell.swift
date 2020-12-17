@@ -23,28 +23,8 @@ class JournalEntryCell: UITableViewCell {
         guard let activity = self.entry?.activity else { return }
         
         self.labelActivityName.text = type(of: activity).name
-        
-        var details = ""
-        
-        if let distance = activity.distance {
-            details += distance.kmString
-        }
-        
-        if let duration = activity.duration {
-            if !details.isEmpty {
-                details += " | "
-            }
-            details += duration.secondsString
-        }
-        
-        if let reps = activity.repetitions {
-            if !details.isEmpty {
-                details += " | "
-            }
-            details += String(Int(reps))
-        }
-        
-        self.detailsLabel.text = details
+                
+        self.detailsLabel.text = activity.details
         self.detailsLabel.textColor = .gray
     }
     

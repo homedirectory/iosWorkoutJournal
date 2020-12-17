@@ -47,7 +47,7 @@ class JournalEntryTableViewDateCell: UITableViewCell {
     @objc func displayDate() {
         self.date = self.datePicker.date
         let dateComponents = [self.datePicker.date.get(.day), self.datePicker.date.get(.month), self.datePicker.date.get(.year)]
-        self.textField.text = StaticVariables.dateComponentsToString(dateComponents)
+        self.textField.text = StaticVariables.dateComponentsToString(dateComponents, shortMonthNames: false)
         self.endEditingHandler!(self.date)
     }
     

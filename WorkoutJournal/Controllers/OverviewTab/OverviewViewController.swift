@@ -77,21 +77,16 @@ extension OverviewViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
         let components = self.entriesForDifferentDays![section].key
-        return StaticVariables.dateComponentsToString(components)
+        return StaticVariables.dateComponentsToString(components, shortMonthNames: false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[section]
-//        return self.entriesForDifferentDays![keyByIndex]!.count
         return self.entriesForDifferentDays![section].value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let entryCell = tableView.dequeueReusableCell(withIdentifier: JournalEntryCell.id) as! JournalEntryCell
-//        let keyByIndex = Array(self.entriesForDifferentDays!.keys)[indexPath.section]
-//        entryCell.entry = self.entriesForDifferentDays![keyByIndex]![indexPath.row]
         entryCell.entry = self.entriesForDifferentDays![indexPath.section].value[indexPath.row]
         entryCell.configureDetails()
         

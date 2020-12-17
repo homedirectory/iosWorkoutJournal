@@ -32,12 +32,12 @@ class JournalManager {
         
     // MARK: - CRUD
     
-    func createEntry(activity: Activity, date: Date) {
+    func createEntry(activity: Activity, date: Date) -> JournalEntry? {
         let entry = JournalEntry(id: self.lastId + 1, activity: activity, date: date)
         
         if self.contains(entry: entry) {
             print("- failed creating, error: entryId already exists")
-            return
+            return nil
         }
         
         entries.insert(entry, at: 0)
@@ -50,6 +50,8 @@ class JournalManager {
         print("- saved to core data")
         entry.activity!.updateAchievements()
         type(of: entry.activity!).updateCustomStats()
+        
+        return entry
     }
     
     func deleteEntry(entryId: Int) {
