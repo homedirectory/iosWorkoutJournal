@@ -39,4 +39,10 @@ public class StaticVariables {
         return "\(day) \(monthString), \(year)"
     }
     
+    static func validatePassword(_ password: String) -> Bool {
+        let passwordText = NSPredicate(format: "SELF MATCHES %@",
+                                       "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordText.evaluate(with: password)
+    }
+    
 }

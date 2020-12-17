@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E51EC523258A788400988359 /* ActivityStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC522258A788300988359 /* ActivityStatsView.swift */; };
+		E51EC527258B59A800988359 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51EC526258B59A800988359 /* Authentication.storyboard */; };
+		E51EC52A258B5AB500988359 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC529258B5AB500988359 /* ViewController.swift */; };
+		E51EC52C258B5AC500988359 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC52B258B5AC500988359 /* LoginViewController.swift */; };
+		E51EC52E258B5AD300988359 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC52D258B5AD300988359 /* SignUpViewController.swift */; };
+		E51EC530258B5EDD00988359 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC52F258B5EDD00988359 /* AuthenticationCoordinator.swift */; };
 		E533E0FA258A3D04007D8BC6 /* AchievementIncreasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533E0F9258A3D04007D8BC6 /* AchievementIncreasing.swift */; };
 		E533E0FC258A3F34007D8BC6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533E0FB258A3F34007D8BC6 /* Achievement.swift */; };
 		E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */; };
@@ -51,7 +56,7 @@
 		E5B7D189257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */; };
 		E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */; };
 		E5D2921125879D0300A6671F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921025879D0300A6671F /* Extensions.swift */; };
-		E5D292132587E83400A6671F /* CoordinatorProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292122587E83400A6671F /* CoordinatorProfileTab.swift */; };
+		E5D292132587E83400A6671F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292122587E83400A6671F /* ProfileCoordinator.swift */; };
 		E5D292152587EAF300A6671F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D292142587EAF300A6671F /* Profile.storyboard */; };
 		E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292182587EBA300A6671F /* ProfileViewController.swift */; };
 		E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921B2588C21D00A6671F /* ImageTextCell.swift */; };
@@ -61,7 +66,7 @@
 		E5D29226258A135F00A6671F /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D29225258A135F00A6671F /* AchievementCell.swift */; };
 		E5D29228258A161800A6671F /* AchievementRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D29227258A161800A6671F /* AchievementRecord.swift */; };
 		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
-		E5E8A125257E907400238364 /* CoordinatorOverviewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */; };
+		E5E8A125257E907400238364 /* OverviewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* OverviewCoordinator.swift */; };
 		E5E8A129257E918300238364 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A128257E918300238364 /* Storyboarded.swift */; };
 		F5FEFBEC5E9EF02B9EBC2BC3 /* Pods_WorkoutJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +76,11 @@
 		7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D004BDCDC4F255A8F1542556 /* Pods-WorkoutJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutJournal.debug.xcconfig"; path = "Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal.debug.xcconfig"; sourceTree = "<group>"; };
 		E51EC522258A788300988359 /* ActivityStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityStatsView.swift; sourceTree = "<group>"; };
+		E51EC526258B59A800988359 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		E51EC529258B5AB500988359 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E51EC52B258B5AC500988359 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E51EC52D258B5AD300988359 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E51EC52F258B5EDD00988359 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		E533E0F9258A3D04007D8BC6 /* AchievementIncreasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIncreasing.swift; sourceTree = "<group>"; };
 		E533E0FB258A3F34007D8BC6 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		E53AD6C625780B2B00143FCB /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
@@ -116,7 +126,7 @@
 		E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewDetailsCell.swift; sourceTree = "<group>"; };
 		E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewDateCell.swift; sourceTree = "<group>"; };
 		E5D2921025879D0300A6671F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E5D292122587E83400A6671F /* CoordinatorProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProfileTab.swift; sourceTree = "<group>"; };
+		E5D292122587E83400A6671F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		E5D292142587EAF300A6671F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E5D292182587EBA300A6671F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E5D2921B2588C21D00A6671F /* ImageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextCell.swift; sourceTree = "<group>"; };
@@ -126,7 +136,7 @@
 		E5D29225258A135F00A6671F /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		E5D29227258A161800A6671F /* AchievementRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRecord.swift; sourceTree = "<group>"; };
 		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
-		E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorOverviewTab.swift; sourceTree = "<group>"; };
+		E5E8A124257E907400238364 /* OverviewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCoordinator.swift; sourceTree = "<group>"; };
 		E5E8A128257E918300238364 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +167,16 @@
 				7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E51EC528258B59DC00988359 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E51EC529258B5AB500988359 /* ViewController.swift */,
+				E51EC52B258B5AC500988359 /* LoginViewController.swift */,
+				E51EC52D258B5AD300988359 /* SignUpViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		E533E0F8258A3CC9007D8BC6 /* Achievements */ = {
@@ -227,7 +247,6 @@
 				E5B7D16F257F96CC00DCB684 /* View */,
 				E5E8A127257E917800238364 /* Protocols */,
 				E5E8A126257E909E00238364 /* Coordinators */,
-				E587E988256E5D6E0063A46C /* GoogleService-Info.plist */,
 				E587E981256E4A2E0063A46C /* CoreData */,
 				E587E980256E4A1F0063A46C /* Storyboards */,
 				E587E97F256E4A110063A46C /* Controllers */,
@@ -235,6 +254,7 @@
 				E587E97D256E49FB0063A46C /* Model */,
 				E587E972256E49D30063A46C /* Assets.xcassets */,
 				E587E977256E49D30063A46C /* Info.plist */,
+				E587E988256E5D6E0063A46C /* GoogleService-Info.plist */,
 				E5D2921025879D0300A6671F /* Extensions.swift */,
 			);
 			path = WorkoutJournal;
@@ -266,6 +286,7 @@
 		E587E97F256E4A110063A46C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E51EC528258B59DC00988359 /* Authentication */,
 				E5D292172587EB9100A6671F /* OverviewTab */,
 				E5D292162587EB8400A6671F /* ProfileTab */,
 			);
@@ -278,6 +299,7 @@
 				E587E96C256E49D20063A46C /* Overview.storyboard */,
 				E587E974256E49D30063A46C /* LaunchScreen.storyboard */,
 				E5D292142587EAF300A6671F /* Profile.storyboard */,
+				E51EC526258B59A800988359 /* Authentication.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -363,8 +385,9 @@
 		E5E8A126257E909E00238364 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				E5E8A124257E907400238364 /* CoordinatorOverviewTab.swift */,
-				E5D292122587E83400A6671F /* CoordinatorProfileTab.swift */,
+				E5E8A124257E907400238364 /* OverviewCoordinator.swift */,
+				E5D292122587E83400A6671F /* ProfileCoordinator.swift */,
+				E51EC52F258B5EDD00988359 /* AuthenticationCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -438,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */,
+				E51EC527258B59A800988359 /* Authentication.storyboard in Resources */,
 				E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */,
 				E587E973256E49D30063A46C /* Assets.xcassets in Resources */,
 				E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */,
@@ -504,6 +528,7 @@
 				E5B7D183257FD24100DCB684 /* ActivityTypeCell.swift in Sources */,
 				E5B7D189257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift in Sources */,
 				E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */,
+				E51EC52A258B5AB500988359 /* ViewController.swift in Sources */,
 				E53AD6DF2578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift in Sources */,
 				E587E987256E54A00063A46C /* JournalEntry.swift in Sources */,
 				E53AD6DE2578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift in Sources */,
@@ -518,13 +543,15 @@
 				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E5D292202588DD0100A6671F /* ActivityStatsCell.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
+				E51EC52C258B5AC500988359 /* LoginViewController.swift in Sources */,
 				E5E8A129257E918300238364 /* Storyboarded.swift in Sources */,
 				E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */,
 				E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */,
 				E5D29226258A135F00A6671F /* AchievementCell.swift in Sources */,
 				E5D29224258A10DE00A6671F /* AchievementsViewController.swift in Sources */,
 				E5E8A123257D2C4A00238364 /* Stats.swift in Sources */,
-				E5E8A125257E907400238364 /* CoordinatorOverviewTab.swift in Sources */,
+				E5E8A125257E907400238364 /* OverviewCoordinator.swift in Sources */,
+				E51EC52E258B5AD300988359 /* SignUpViewController.swift in Sources */,
 				E5D29228258A161800A6671F /* AchievementRecord.swift in Sources */,
 				E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */,
 				E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */,
@@ -534,13 +561,14 @@
 				E5757A4F2576835900A381C5 /* Activity.swift in Sources */,
 				E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */,
 				E5539B2D258291B100103EA6 /* ActivityModel+CoreDataClass.swift in Sources */,
+				E51EC530258B5EDD00988359 /* AuthenticationCoordinator.swift in Sources */,
 				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
 				E5D2921E2588D9EF00A6671F /* StatsViewController.swift in Sources */,
 				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
 				E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */,
 				E5D2921125879D0300A6671F /* Extensions.swift in Sources */,
 				E533E0FA258A3D04007D8BC6 /* AchievementIncreasing.swift in Sources */,
-				E5D292132587E83400A6671F /* CoordinatorProfileTab.swift in Sources */,
+				E5D292132587E83400A6671F /* ProfileCoordinator.swift in Sources */,
 				E53AD6E22578218500143FCB /* PushUpsModel+CoreDataClass.swift in Sources */,
 				E53AD6C725780B2B00143FCB /* Running.swift in Sources */,
 				E53AD6CD25780F7400143FCB /* Plank.swift in Sources */,

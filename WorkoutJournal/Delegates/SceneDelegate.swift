@@ -11,9 +11,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinatorOverview: CoordinatorOverviewTab?
-    var coordinatorProfile: CoordinatorProfileTab?
-
+    var coordinatorAuthentication: AuthenticationCoordinator?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -21,29 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let tabBarController = UITabBarController()
+        let navController = UINavigationController()
+        self.coordinatorAuthentication = AuthenticationCoordinator(navController: navController)
+        self.coordinatorAuthentication!.start()
         
-        coordinatorOverview = CoordinatorOverviewTab()
-        coordinatorOverview!.start(journalManager: JournalManager.shared)
-        let navControllerOverview = coordinatorOverview!.navController!
-        navControllerOverview.title = "Overview"
-                
-        coordinatorProfile = CoordinatorProfileTab()
-        coordinatorProfile!.start(journalManager: JournalManager.shared)
-        let navControllerProfile = coordinatorProfile!.navController!
-        navControllerProfile.title = "Profile"
-        
-        tabBarController.setViewControllers([navControllerOverview, navControllerProfile], animated: true)
-        
-        let imageNames: [String] = ["house", "person"]
-        
-        guard let items = tabBarController.tabBar.items else { return }
-        
-        for (i, item) in items.enumerated() {
-            item.image = UIImage(systemName: imageNames[i])
-        }
-        
-        window?.rootViewController = tabBarController
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
 
