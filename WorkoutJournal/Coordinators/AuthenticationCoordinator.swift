@@ -49,6 +49,12 @@ class AuthenticationCoordinator {
         navControllerOverview.title = "Overview"
 
         self.profileCoordinator = ProfileCoordinator()
+        self.profileCoordinator!.popToViewControllerHandler = { [weak self] in
+            if let _ = self {
+                self!.navController!.popToRootViewController(animated: true)
+                self!.navController!.isNavigationBarHidden = false
+            }
+        }
         self.profileCoordinator!.start(journalManager: JournalManager.shared)
         let navControllerProfile = self.profileCoordinator!.navController!
         navControllerProfile.title = "Profile"

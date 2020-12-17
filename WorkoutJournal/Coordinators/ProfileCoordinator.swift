@@ -16,6 +16,8 @@ public class ProfileCoordinator {
     
     var navController: UINavigationController?
     
+    var popToViewControllerHandler: (() -> ())?
+    
     init() {
     }
     
@@ -35,6 +37,11 @@ public class ProfileCoordinator {
     func pushAchievementsViewController() {
         let vc = AchievementsViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         self.navController!.pushViewController(vc, animated: true)
+    }
+    
+    func popToViewController() {
+        self.popToViewControllerHandler!()
+//        self.navController!.popToRootViewController(animated: true)
     }
         
 }

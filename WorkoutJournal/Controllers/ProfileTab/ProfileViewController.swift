@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import FirebaseAuth
 
 class ProfileViewController: UIViewController, Storyboarded {
     
@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, Storyboarded {
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var signOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,16 @@ class ProfileViewController: UIViewController, Storyboarded {
         self.collectionView.backgroundColor = .lightGray
     }
     
+    @IBAction func signOutButtonAction(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+            return
+        }
+        self.coordinator!.popToViewController()
+    }
     
 }
 

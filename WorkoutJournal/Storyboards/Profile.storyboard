@@ -63,11 +63,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7c-uT-0MW">
+                                <rect key="frame" x="173.5" y="778" width="67" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="SpE-fO-6gO"/>
+                                    <constraint firstAttribute="height" constant="34" id="qof-aO-FwS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOutButtonAction:" destination="VRP-D5-xTJ" eventType="touchUpInside" id="EBf-Sj-iAV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ae5-xV-3kj" firstAttribute="centerX" secondItem="9kY-20-CJs" secondAttribute="centerX" id="9XK-BS-riX"/>
                             <constraint firstItem="C8n-rm-Db8" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qAX-IL-qS7" secondAttribute="bottom" constant="100" id="AGi-6G-c05"/>
+                            <constraint firstItem="N7c-uT-0MW" firstAttribute="centerX" secondItem="9kY-20-CJs" secondAttribute="centerX" id="Hzd-aN-r41"/>
+                            <constraint firstItem="C8n-rm-Db8" firstAttribute="bottom" secondItem="N7c-uT-0MW" secondAttribute="bottom" constant="50" id="PdW-CE-gCG"/>
                             <constraint firstItem="qAX-IL-qS7" firstAttribute="leading" secondItem="9kY-20-CJs" secondAttribute="leading" id="Tg1-Vd-UdJ"/>
                             <constraint firstItem="qAX-IL-qS7" firstAttribute="centerX" secondItem="9kY-20-CJs" secondAttribute="centerX" id="fLd-4T-03I"/>
                             <constraint firstItem="qAX-IL-qS7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ae5-xV-3kj" secondAttribute="bottom" constant="100" id="fd5-Wr-uAP"/>
@@ -80,6 +94,7 @@
                     <connections>
                         <outlet property="collectionView" destination="qAX-IL-qS7" id="mip-nX-ODh"/>
                         <outlet property="flowLayout" destination="sf1-7e-FdB" id="XVc-fH-TNH"/>
+                        <outlet property="signOutButton" destination="N7c-uT-0MW" id="dab-ad-u3g"/>
                         <outlet property="topLabel" destination="ae5-xV-3kj" id="rqd-XH-uUs"/>
                     </connections>
                 </viewController>
