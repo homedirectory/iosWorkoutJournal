@@ -14,38 +14,68 @@ final class CredentialsStorage {
     
     static let storage = CredentialsStorage()
     
+    private init() {
+        
+    }
+    
     enum Issue: Error {
         case noValue
     }
     
-    func save(credentials: Credentials) throws {
-        let entity = NSEntityDescription.entity(forEntityName: "CredentialsModel", in: persistentContainer.viewContext)!
-        let managedObject = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
-        managedObject.setValue(credentials.email, forKey: "email")
-        managedObject.setValue(credentials.password, forKey: "password")
+    func save(user: User) throws {
+        let entityUser = NSEntityDescription.entity(forEntityName: "UserModel", in: persistentContainer.viewContext)!
+        let managedObjectUser = NSManagedObject(entity: entityUser, insertInto: persistentContainer.viewContext)
+        
+        let entityCredentials = NSEntityDescription.entity(forEntityName: "CredentialsModel", in: persistentContainer.viewContext)!
+        let managedObjectCredentials = NSManagedObject(entity: entityCredentials, insertInto: persistentContainer.viewContext)
+        
+        guard let credentials = user.credentials else {
+            throw CredentialsStorageError.UserCredentialsNotFound
+        }
+        
+        managedObjectCredentials.setValue(credentials.email, forKey: "email")
+        managedObjectCredentials.setValue(credentials.password, forKey: "password")
+        
+        managedObjectUser.setValue(user.name, forKey: "name")
+        managedObjectUser.setValue(user.following, forKey: "following")
+        managedObjectUser.setValue(managedObjectCredentials, forKey: "credentials")
 
         saveContext()
-        print("- saved credentials")
+        print("CoreData: saved credentials")
     }
     
-    func fetchCredentials() throws -> Credentials? {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CredentialsModel")
+    func updateUser(value: Any, forKey key: String) throws {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserModel")
         let results = try persistentContainer.viewContext.fetch(fetchRequest)
         
-        guard let managedObject = results.first else {
-            return nil
-        }
-        let credentials = Credentials(email: managedObject.value(forKey: "email") as! String, password: managedObject.value(forKey: "password") as! String)
+        guard let userManagedObject = results.first else { return }
         
-        return credentials
+        userManagedObject.setValue(value, forKey: key)
+        
+        saveContext()
+        print("CoreData: updated user")
     }
     
-    func deleteCredentials() throws {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CredentialsModel")
+    func fetchUser() throws -> User? {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserModel")
+        let results = try persistentContainer.viewContext.fetch(fetchRequest)
+        
+        guard let userManagedObject = results.first else {
+            return nil
+        }
+        let credentialsManagedObject = userManagedObject.value(forKey: "credentials") as! NSManagedObject
+        let credentials = Credentials(email: credentialsManagedObject.value(forKey: "email") as! String, password: credentialsManagedObject.value(forKey: "password") as! String)
+        let user = User(name: userManagedObject.value(forKey: "name") as! String, following: userManagedObject.value(forKey: "following") as! [String], credentials: credentials)
+        
+        return user
+    }
+    
+    func deleteUserAndCredentials() throws {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserModel")
         let results = try persistentContainer.viewContext.fetch(fetchRequest)
         
         if results.isEmpty {
-            print("no credentials to delete")
+            print("CoreData: no credentials to delete")
             return
         }
         
@@ -54,7 +84,7 @@ final class CredentialsStorage {
         }
         
         saveContext()
-        print("- deleted credentials")
+        print("CoreData: deleted user and credentials")
     }
     
     // MARK: - Core Data stack
@@ -102,6 +132,14 @@ final class CredentialsStorage {
         }
     }
     
+}
+
+
+extension CredentialsStorage {
+    
+    enum CredentialsStorageError: Error {
+        case UserCredentialsNotFound
+    }
     
 }
 

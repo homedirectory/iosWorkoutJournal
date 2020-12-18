@@ -18,7 +18,6 @@ class PostsFeedViewController: UIViewController, Storyboarded {
             })
         }
     }
-    private let feedPostManager: FeedPostManager = FeedPostManager.shared
     
     private let refreshControl = UIRefreshControl()
     
@@ -33,14 +32,12 @@ class PostsFeedViewController: UIViewController, Storyboarded {
         self.tableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
         
-        self.posts = self.feedPostManager.fetched
+        self.posts = FeedPostManager.shared.fetched
     }
     
     @objc func refreshPosts() {
         self.refreshControl.endRefreshing()
-        print(self.posts)
-        self.posts = self.feedPostManager.fetched
-        print(self.posts)
+        self.posts = FeedPostManager.shared.fetched
         self.tableView.reloadData()
     }
     

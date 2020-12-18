@@ -19,6 +19,10 @@ class ProfileViewController: UIViewController, Storyboarded {
     let cellImages = ["chart.bar", "a.circle"]
     
     @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var signOutButton: UIButton!
@@ -30,6 +34,10 @@ class ProfileViewController: UIViewController, Storyboarded {
         self.collectionView.dataSource = self
         
         self.collectionView.backgroundColor = .lightGray
+        
+        self.userNameLabel.text = UserManager.shared.currentUser?.name ?? "??"
+        
+        self.profileImageView.image = UIImage(systemName: User.defaultUserImageName)
     }
     
     @IBAction func signOutButtonAction(_ sender: Any) {
@@ -37,18 +45,20 @@ class ProfileViewController: UIViewController, Storyboarded {
         // attempt to sign out
         do {
             try firebaseAuth.signOut()
+            // log out current user
+            UserManager.shared.logOutCurrentUser()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
             return
         }
+        
         // transition to launch screen (ViewController)
         self.coordinator!.popToViewController()
-        // try to delete saved credentials
-        do {
-            try CredentialsStorage.storage.deleteCredentials()
-        } catch let err {
-            print("- failed to delete credentials: \(err)")
-        }
+    }
+    
+    @IBAction func followingButtonAction(_ sender: Any) {
+        print(UserManager.shared.currentUser!.following)
+        self.coordinator!.pushFollowedUsersViewController()
     }
     
 }

@@ -16,7 +16,7 @@ class AuthenticationCoordinator {
     var postsFeedCoordinator: PostsFeedCoordinator?
     var overviewCoordinator: OverviewCoordinator?
     var profileCoordinator: ProfileCoordinator?
-    
+        
     var navController: UINavigationController?
         
     init(navController: UINavigationController) {
@@ -25,12 +25,13 @@ class AuthenticationCoordinator {
     
     func start() {
         do {
-            if let _ = try CredentialsStorage.storage.fetchCredentials() {
-                self.pushTabBarController()
+            if let user = try CredentialsStorage.storage.fetchUser() {
+                UserManager.shared.currentUser = user
+                self.pushTabBarController(fetchNeeded: false)
                 return
             }
         } catch let err {
-            print("- failed to fetch credentials: \(err)")
+            print("- failed to fetch last logged in user: \(err)")
         }
         
         self.pushViewController()
@@ -54,7 +55,7 @@ class AuthenticationCoordinator {
         self.navController!.pushViewController(vc, animated: true)
     }
     
-    func pushTabBarController() {
+    func pushTabBarController(fetchNeeded: Bool) {
         let tabBarController = UITabBarController()
         
         self.postsFeedCoordinator = PostsFeedCoordinator()
@@ -94,7 +95,16 @@ class AuthenticationCoordinator {
         self.navController!.pushViewController(tabBarController, animated: true)
         self.navController!.isNavigationBarHidden = true
         
-        FeedPostManager.shared.fetchAllPosts()
+        if fetchNeeded {
+            // fetch followed users for current user if they exist (they definitely should)
+            if let currentUser = UserManager.shared.currentUser {
+                UserManager.shared.fetchFollowing(forUser: currentUser, saveUser: false, postFetcher: {
+                    // fetch posts
+                    FeedPostManager.shared.fetchAllPosts()
+                })
+            }
+        }
+        
     }
     
 }

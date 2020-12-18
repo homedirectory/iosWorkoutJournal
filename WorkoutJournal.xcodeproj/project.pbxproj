@@ -47,6 +47,9 @@
 		E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E974256E49D30063A46C /* LaunchScreen.storyboard */; };
 		E587E983256E534A0063A46C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E982256E534A0063A46C /* User.swift */; };
 		E587E987256E54A00063A46C /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E986256E54A00063A46C /* JournalEntry.swift */; };
+		E59A799E258D105600529BAB /* FollowedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A799D258D105600529BAB /* FollowedUsersViewController.swift */; };
+		E59A79A0258D132400529BAB /* FollowedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A799F258D132400529BAB /* FollowedUserCell.swift */; };
+		E59F85C1258CFCD500436D6B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F85C0258CFCD500436D6B /* UserManager.swift */; };
 		E5AF9FD4258BB225003A4EA5 /* Credentials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD2258BB225003A4EA5 /* Credentials.xcdatamodeld */; };
 		E5AF9FD6258BB27D003A4EA5 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD5258BB27D003A4EA5 /* CredentialsStorage.swift */; };
 		E5AF9FD8258BB2B4003A4EA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */; };
@@ -126,6 +129,9 @@
 		E587E982256E534A0063A46C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E587E986256E54A00063A46C /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		E587E988256E5D6E0063A46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E59A799D258D105600529BAB /* FollowedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUsersViewController.swift; sourceTree = "<group>"; };
+		E59A799F258D132400529BAB /* FollowedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUserCell.swift; sourceTree = "<group>"; };
+		E59F85C0258CFCD500436D6B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		E5AF9FD3258BB225003A4EA5 /* Credentials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Credentials.xcdatamodel; sourceTree = "<group>"; };
 		E5AF9FD5258BB27D003A4EA5 /* CredentialsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
 		E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -204,6 +210,15 @@
 				E51EC52D258B5AD300988359 /* SignUpViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E52E82A6258D547A00C38627 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				E587E986256E54A00063A46C /* JournalEntry.swift */,
+				E54BBA9D256E69690099886C /* JournalManager.swift */,
+			);
+			path = Journal;
 			sourceTree = "<group>";
 		};
 		E533E0F8258A3CC9007D8BC6 /* Achievements */ = {
@@ -290,15 +305,13 @@
 		E587E97D256E49FB0063A46C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E52E82A6258D547A00C38627 /* Journal */,
+				E59F85BF258CFCC200436D6B /* User */,
 				E5013142258CD20500F452BD /* FeedPost */,
 				E533E0F8258A3CC9007D8BC6 /* Achievements */,
 				E54BBAA9256FBDAC0099886C /* Activities */,
-				E587E982256E534A0063A46C /* User.swift */,
-				E587E986256E54A00063A46C /* JournalEntry.swift */,
-				E54BBA9D256E69690099886C /* JournalManager.swift */,
 				E5E8A122257D2C4A00238364 /* Stats.swift */,
 				E5B7D184257FD41D00DCB684 /* StaticVariables.swift */,
-				E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,6 +359,16 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		E59F85BF258CFCC200436D6B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */,
+				E587E982256E534A0063A46C /* User.swift */,
+				E59F85C0258CFCD500436D6B /* UserManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		E5AF9FD1258BB202003A4EA5 /* Credentials */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +402,7 @@
 				E5B7D186257FDEB000DCB684 /* JournalEntryTableView */,
 				E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */,
 				E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */,
+				E59A799F258D132400529BAB /* FollowedUserCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -408,6 +432,7 @@
 				E5D292182587EBA300A6671F /* ProfileViewController.swift */,
 				E5D2921D2588D9EF00A6671F /* StatsViewController.swift */,
 				E5D29223258A10DE00A6671F /* AchievementsViewController.swift */,
+				E59A799D258D105600529BAB /* FollowedUsersViewController.swift */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -580,6 +605,7 @@
 				E5AF9FD4258BB225003A4EA5 /* Credentials.xcdatamodeld in Sources */,
 				E533E0FC258A3F34007D8BC6 /* Achievement.swift in Sources */,
 				E5B7D183257FD24100DCB684 /* ActivityTypeCell.swift in Sources */,
+				E59F85C1258CFCD500436D6B /* UserManager.swift in Sources */,
 				E5B7D189257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift in Sources */,
 				E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */,
 				E51EC52A258B5AB500988359 /* ViewController.swift in Sources */,
@@ -597,8 +623,10 @@
 				E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */,
 				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
 				E5D292202588DD0100A6671F /* ActivityStatsCell.swift in Sources */,
+				E59A799E258D105600529BAB /* FollowedUsersViewController.swift in Sources */,
 				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
 				E51EC52C258B5AC500988359 /* LoginViewController.swift in Sources */,
+				E59A79A0258D132400529BAB /* FollowedUserCell.swift in Sources */,
 				E5E8A129257E918300238364 /* Storyboarded.swift in Sources */,
 				E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */,
 				E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */,

@@ -72,14 +72,16 @@ class SignUpViewController: UIViewController, Storyboarded {
                         }
                         else {
                             // write new user into db users
-                            usersRef.document(name).setData(["following": [String]()]) { error in
+                            usersRef.document(name).setData(["uid" : result!.user.uid, "name": name, "following": [String]()]) { error in
                                 if let err = error {
                                     self.showError(err.localizedDescription)
                                 } else {
                                     // write new username into db usernames
                                     usernamesRef.document(name).setData([:])
+                                    // set current user
+                                    UserManager.shared.setCurrentUser(withName: name, withCredentials: Credentials(email: email, password: password))
                                     // transition to the main screen
-                                    self.coordinator!.pushTabBarController()
+                                    self.coordinator!.pushTabBarController(fetchNeeded: false)
                                 }
                             }
                         }

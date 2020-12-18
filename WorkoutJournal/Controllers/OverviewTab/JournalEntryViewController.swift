@@ -104,14 +104,14 @@ extension JournalEntryViewController {
             self.journalManager!.setEntryDate(entryId: entry.id, newDate: self.selectedDate ?? Date())
             // if switch is on and this entry is updated, create new post and write it into db
             if self.shareSwitch.isOn {
-                self.feedPostManager.savePost(FeedPost(user: User.defaultUser, journalEntry: entry))
+                self.feedPostManager.savePost(FeedPost(user: UserManager.shared.currentUser!, journalEntry: entry))
             }
         }
         else {
             let entry = self.journalManager!.createEntry(activity: activity, date: self.selectedDate ?? Date())
             // if switch is on and entry is valid, create new post and write it into db
             if self.shareSwitch.isOn && entry != nil {
-                self.feedPostManager.savePost(FeedPost(user: User.defaultUser, journalEntry: entry!))
+                self.feedPostManager.savePost(FeedPost(user: UserManager.shared.currentUser!, journalEntry: entry!))
             }
         }
 

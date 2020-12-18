@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class LoginViewController: UIViewController, Storyboarded {
     
@@ -43,12 +44,27 @@ class LoginViewController: UIViewController, Storyboarded {
                 self.showError(err.localizedDescription)
             }
             else {
-                // transition to the main screen
-                self.coordinator!.pushTabBarController()
-                do {
-                    try CredentialsStorage.storage.save(credentials: Credentials(email: email, password: password))
-                } catch let err {
-                    print("- failed to save credentials: \(err)")
+                // find user uid by email
+                let userUID = result!.user.uid
+                //fetch user from users by uid
+                let db = Firestore.firestore()
+                db.collection("users").whereField("uid", in: [userUID])
+                    .getDocuments() { (querySnapshot, error) in
+                        if let err = error {
+                            self.showError("Error fetching user info: \(err.localizedDescription)")
+                        }
+                            // if user was found -> set them as the current user
+                        else {
+                            for document in querySnapshot!.documents {
+                                let data = document.data()
+                                let name = data["name"] as! String
+                                let following = data["following"] as! [String]
+                                let credentials = Credentials(email: email, password: password)
+                                UserManager.shared.setCurrentUser(withName: name, withFollowing: following, withCredentials: credentials)
+                                // transition to the main screen
+                                self.coordinator!.pushTabBarController(fetchNeeded: true)
+                            }
+                        }
                 }
             }
         }

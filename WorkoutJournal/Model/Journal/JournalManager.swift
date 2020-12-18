@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreData
+import FirebaseFirestore
 
 
-class JournalManager {
+public class JournalManager {
     
     enum JournalManagerEror: Error {
         case WrongActivityType
@@ -50,6 +51,33 @@ class JournalManager {
         print("- saved to core data")
         entry.activity!.updateAchievements()
         type(of: entry.activity!).updateCustomStats()
+        
+        // save entry to db
+        let db = Firestore.firestore()
+        let activitiesRef = db.collection("activities")
+        let entriesRef = db.collection("entries")
+        // 1) save entry
+        entriesRef.document(String(entry.id)).setData([
+            "id" : entry.id,
+            "username" : UserManager.shared.currentUser!.name,
+            "date" : date
+        ]) { error in
+            if let err = error {
+                print("Firestore: saving entry failed, \(err.localizedDescription)")
+            } else {
+                // 2) save activity
+                activitiesRef.document(String(entry.id)).setData([
+                    "name" : type(of: activity).name,
+                    "distance": activity.distance,
+                    "duration": activity.duration,
+                    "repetitions": activity.repetitions,
+                ]) { error in
+                    if let err = error {
+                        print("Firestore: saving activity failed, \(err.localizedDescription)")
+                    }
+                }
+            }
+        }
         
         return entry
     }

@@ -12,7 +12,6 @@ class OverviewViewController: UIViewController, Storyboarded {
     
     weak var coordinator: OverviewCoordinator?
     var journalManager: JournalManager?
-//    private var entriesForDifferentDays: Dictionary<[Int], [JournalEntry]>?
     private var entriesForDifferentDays: [(key: [Int], value: [JournalEntry])]?
 
     @IBOutlet weak var tableView: UITableView!

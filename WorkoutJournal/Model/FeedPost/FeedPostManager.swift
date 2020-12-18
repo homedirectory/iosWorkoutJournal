@@ -42,24 +42,30 @@ public class FeedPostManager {
         }
     }
 
+    // fetch only those posts that were posted by the users followed by current user
     func fetchAllPosts() {
+        // before fetching clear the fetched Array
+        self.fetched = []
+        
+        guard let currentUser = UserManager.shared.currentUser else { return }
+        
         let db = Firestore.firestore()
-
-    
-        db.collection(FeedPostManager.collectionName).getDocuments() { (querySnapshot, err) in
-            print("getting documents")
-            if let err = err {
-                print("- Error getting documents: \(err.localizedDescription)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    let data = document.data()
-                    let post = FeedPost(user: User(name: data["username"] as! String, following: []), activityName: data["activity_name"] as! String, activityDetails: data["activity_details"] as! String, activityDate: (data["activity_date"] as! Timestamp).dateValue(), postedDate: (data["date"] as! Timestamp).dateValue())
-                    self.fetched.append(post)
+        
+        let fetchFromUsers = currentUser.following + [currentUser.name]
+        
+        db.collection(FeedPostManager.collectionName).whereField("username", in: fetchFromUsers)
+            .getDocuments() { (querySnapshot, error) in
+                if let err = error {
+                    print("- Error getting documents: \(err.localizedDescription)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        let post = FeedPost(user: User(name: data["username"] as! String, following: []), activityName: data["activity_name"] as! String, activityDetails: data["activity_details"] as! String, activityDate: (data["activity_date"] as! Timestamp).dateValue(), postedDate: (data["date"] as! Timestamp).dateValue())
+                        self.fetched.append(post)
+                    }
                 }
-            }
         }
-
+        
     }
     
 }

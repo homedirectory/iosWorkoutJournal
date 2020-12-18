@@ -19,7 +19,6 @@ class AchievementCell: UITableViewCell {
         self.descriptionLabel.text = achievement.descriptionString
         if achievement.achieved {
             self.achievedImageView.image = UIImage(systemName: "checkmark.circle.fill")
-            self.achievedImageView.tintColor = .systemGreen
             self.achievedImageView.alpha = 1
         }
         else {

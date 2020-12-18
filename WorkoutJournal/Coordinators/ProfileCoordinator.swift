@@ -41,7 +41,11 @@ public class ProfileCoordinator {
     
     func popToViewController() {
         self.popToViewControllerHandler!()
-//        self.navController!.popToRootViewController(animated: true)
+    }
+    
+    func pushFollowedUsersViewController() {
+        let vc = FollowedUsersViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
+        self.navController!.pushViewController(vc, animated: true)
     }
         
 }
