@@ -12,6 +12,7 @@ class PostsFeedViewController: UIViewController, Storyboarded {
     
     weak var coordinator: PostsFeedCoordinator?
     var posts: [FeedPost] = []
+    private let feedPostManager: FeedPostManager = FeedPostManager.shared
     private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,12 +26,14 @@ class PostsFeedViewController: UIViewController, Storyboarded {
         self.tableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
         
-        self.posts = FeedPostDelegate.fetched
+        self.posts = self.feedPostManager.fetched
     }
     
     @objc func refreshPosts() {
         self.refreshControl.endRefreshing()
-        self.posts = FeedPostDelegate.fetched
+        print(self.posts)
+        self.posts = self.feedPostManager.fetched
+        print(self.posts)
         self.tableView.reloadData()
     }
     

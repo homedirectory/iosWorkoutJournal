@@ -94,7 +94,7 @@ class AuthenticationCoordinator {
         self.navController!.pushViewController(tabBarController, animated: true)
         self.navController!.isNavigationBarHidden = true
         
-        FeedPostDelegate.fetchAllPosts()
+        FeedPostManager.shared.fetchAllPosts()
     }
     
 }

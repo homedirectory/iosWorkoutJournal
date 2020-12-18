@@ -14,6 +14,7 @@ class JournalEntryViewController: UIViewController, Storyboarded {
     
     weak var coordinator: OverviewCoordinator?
     var journalManager: JournalManager?
+    let feedPostManager: FeedPostManager = FeedPostManager.shared
     private var detailsCellLabels = ["Duration", "Distance", "Repetititons"]
     private var selectedActivityInstance: Activity?
     var entryToUpdate: JournalEntry?
@@ -106,7 +107,7 @@ extension JournalEntryViewController {
             let entry = self.journalManager!.createEntry(activity: activity, date: self.selectedDate ?? Date())
             // if switch is on and entry is valid, create new post and write it into db
             if self.shareSwitch.isOn && entry != nil {
-                FeedPostDelegate.savePost(FeedPost(user: User.defaultUser, journalEntry: entry!))
+                self.feedPostManager.savePost(FeedPost(user: User.defaultUser, journalEntry: entry!))
             }
         }
 
