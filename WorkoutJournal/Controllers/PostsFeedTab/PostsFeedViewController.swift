@@ -11,8 +11,15 @@ import UIKit
 class PostsFeedViewController: UIViewController, Storyboarded {
     
     weak var coordinator: PostsFeedCoordinator?
-    var posts: [FeedPost] = []
+    var posts: [FeedPost] = [] {
+        didSet {
+            self.posts.sort(by: {
+                $0.postedDate > $1.postedDate
+            })
+        }
+    }
     private let feedPostManager: FeedPostManager = FeedPostManager.shared
+    
     private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
