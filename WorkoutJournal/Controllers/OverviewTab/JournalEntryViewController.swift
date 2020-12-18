@@ -102,6 +102,10 @@ extension JournalEntryViewController {
         if let entry = self.entryToUpdate {
             self.journalManager!.setEntryActivity(entryId: entry.id, newActivity: activity)
             self.journalManager!.setEntryDate(entryId: entry.id, newDate: self.selectedDate ?? Date())
+            // if switch is on and this entry is updated, create new post and write it into db
+            if self.shareSwitch.isOn {
+                self.feedPostManager.savePost(FeedPost(user: User.defaultUser, journalEntry: entry))
+            }
         }
         else {
             let entry = self.journalManager!.createEntry(activity: activity, date: self.selectedDate ?? Date())
