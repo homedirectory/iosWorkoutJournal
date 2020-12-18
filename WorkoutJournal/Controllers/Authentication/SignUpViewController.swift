@@ -43,28 +43,52 @@ class SignUpViewController: UIViewController, Storyboarded {
         let name = self.nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let email = self.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = self.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        // create the user
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        
+        
+        let db = Firestore.firestore()
+        
+        let usersRef = db.collection("users")
+        let usernamesRef = db.collection("usernames")
+        
+        // check if this username is available
+        let usernameRef = usernamesRef.document(name)
+        
+        usernameRef.getDocument { (docSnapshot, error) in
             if let err = error {
                 self.showError(err.localizedDescription)
             }
             else {
-                let db = Firestore.firestore()
-                // store the created user in the database
-                db.collection("users").addDocument(data: ["name": name, "uid": result!.user.uid]) { (error) in
-                    if let err = error {
-                        self.showError(err.localizedDescription)
-                    }
+                // if username exists
+                if docSnapshot!.exists {
+                    print("this username exists")
+                    self.showError("This username is unavailable")
                 }
-                if !self.failed {
-                    // transition to the main screen
-                    self.coordinator!.pushTabBarController()
+                    // if username is available
+                else {
+                    // create user
+                    Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                        if let err = error {
+                            self.showError(err.localizedDescription)
+                        }
+                        else {
+                            // write new user into db users
+                            usersRef.document(name).setData(["following": [String]()]) { error in
+                                if let err = error {
+                                    self.showError(err.localizedDescription)
+                                } else {
+                                    // write new username into db usernames
+                                    usernamesRef.document(name).setData([:])
+                                    // transition to the main screen
+                                    self.coordinator!.pushTabBarController()
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-    
-    
+                
     // returns an error mesage if validation fails
     private func validateTextFields() -> String? {
         // check input fields for emptiness

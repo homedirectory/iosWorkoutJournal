@@ -54,7 +54,7 @@
 		E5AF9FDD258BD475003A4EA5 /* PostsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */; };
 		E5AF9FDF258BD53F003A4EA5 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */; };
 		E5AF9FE1258BDBB6003A4EA5 /* FeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */; };
-		E5AF9FE3258BDFD0003A4EA5 /* FeedPostDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE2258BDFD0003A4EA5 /* FeedPostDelegate.swift */; };
+		E5AF9FE3258BDFD0003A4EA5 /* FeedPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE2258BDFD0003A4EA5 /* FeedPostManager.swift */; };
 		E5AF9FE5258BE591003A4EA5 /* PostsFeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */; };
 		E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */; };
 		E5B7D179257FC6B400DCB684 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */; };
@@ -133,7 +133,7 @@
 		E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedViewController.swift; sourceTree = "<group>"; };
 		E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
-		E5AF9FE2258BDFD0003A4EA5 /* FeedPostDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostDelegate.swift; sourceTree = "<group>"; };
+		E5AF9FE2258BDFD0003A4EA5 /* FeedPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostManager.swift; sourceTree = "<group>"; };
 		E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedCoordinator.swift; sourceTree = "<group>"; };
 		E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
 		E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +185,15 @@
 				7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5013142258CD20500F452BD /* FeedPost */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */,
+				E5AF9FE2258BDFD0003A4EA5 /* FeedPostManager.swift */,
+			);
+			path = FeedPost;
 			sourceTree = "<group>";
 		};
 		E51EC528258B59DC00988359 /* Authentication */ = {
@@ -281,6 +290,7 @@
 		E587E97D256E49FB0063A46C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5013142258CD20500F452BD /* FeedPost */,
 				E533E0F8258A3CC9007D8BC6 /* Achievements */,
 				E54BBAA9256FBDAC0099886C /* Activities */,
 				E587E982256E534A0063A46C /* User.swift */,
@@ -289,8 +299,6 @@
 				E5E8A122257D2C4A00238364 /* Stats.swift */,
 				E5B7D184257FD41D00DCB684 /* StaticVariables.swift */,
 				E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */,
-				E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */,
-				E5AF9FE2258BDFD0003A4EA5 /* FeedPostDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -596,7 +604,7 @@
 				E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */,
 				E5D29226258A135F00A6671F /* AchievementCell.swift in Sources */,
 				E5D29224258A10DE00A6671F /* AchievementsViewController.swift in Sources */,
-				E5AF9FE3258BDFD0003A4EA5 /* FeedPostDelegate.swift in Sources */,
+				E5AF9FE3258BDFD0003A4EA5 /* FeedPostManager.swift in Sources */,
 				E5E8A123257D2C4A00238364 /* Stats.swift in Sources */,
 				E5E8A125257E907400238364 /* OverviewCoordinator.swift in Sources */,
 				E51EC52E258B5AD300988359 /* SignUpViewController.swift in Sources */,

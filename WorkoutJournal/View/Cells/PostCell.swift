@@ -20,7 +20,7 @@ class PostCell: UITableViewCell {
     func setup(withPost post: FeedPost) {
         self.userImageView.image = UIImage(systemName: User.defaultUserImageName)
         
-        self.userLabel.text = post.user.fullName
+        self.userLabel.text = post.user.name
         
         self.dateLabel.text = post.postedDate.toString(shortMonthNames: true)
         
