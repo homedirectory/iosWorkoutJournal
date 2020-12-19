@@ -9,6 +9,8 @@
 import UIKit
 
 class PostCell: UITableViewCell {
+    
+    var post: FeedPost?
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
@@ -18,6 +20,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var activityDateLabel: UILabel!
     
     func setup(withPost post: FeedPost) {
+        self.post = post
+        
         self.userImageView.image = UIImage(systemName: User.defaultUserImageName)
         
         self.userLabel.text = post.user.name

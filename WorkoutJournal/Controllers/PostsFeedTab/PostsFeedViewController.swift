@@ -25,7 +25,9 @@ class PostsFeedViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = "Posts Feed"
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
@@ -61,5 +63,26 @@ extension PostsFeedViewController: UITableViewDataSource {
 }
 
 extension PostsFeedViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cell = self.tableView.cellForRow(at: indexPath) as! PostCell
+                
+        guard let post = cell.post else { return UISwipeActionsConfiguration(actions: []) }
+        
+        if post.user.name != UserManager.shared.currentUser!.name {
+            return UISwipeActionsConfiguration(actions: [])
+        }
+        
+        let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
+            FeedPostManager.shared.deletePost(post, completion: {
+                self.posts.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                completionHandler(true)
+            })
+        })
+        
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+        return configuration
+    }
     
 }

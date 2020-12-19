@@ -16,13 +16,14 @@ class StatsViewController: UIViewController, Storyboarded {
     var journalManager: JournalManager = JournalManager.shared
     var tapRecognizer: UIGestureRecognizer?
     
-    @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Stats"
         
         self.tableView.dataSource = self
         self.tableView.delegate = self

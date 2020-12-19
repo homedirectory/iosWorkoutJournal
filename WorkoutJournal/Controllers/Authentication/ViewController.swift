@@ -17,8 +17,14 @@ class ViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.loginButton.setTitleColor(.white, for: .normal)
+        self.loginButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.loginButton.layer.cornerRadius = 15.0
+        
+        self.signUpButton.setTitleColor(.white, for: .normal)
+        self.signUpButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.signUpButton.layer.cornerRadius = 15.0
     }
     
 

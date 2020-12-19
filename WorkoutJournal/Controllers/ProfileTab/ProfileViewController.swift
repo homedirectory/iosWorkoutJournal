@@ -18,7 +18,6 @@ class ProfileViewController: UIViewController, Storyboarded {
     let cellLabels = ["Stats", "Achievements"]
     let cellImages = ["chart.bar", "a.circle"]
     
-    @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -33,20 +32,15 @@ class ProfileViewController: UIViewController, Storyboarded {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.collectionView.backgroundColor = .lightGray
+        self.title = "Profile"
+        
+//        self.collectionView.backgroundColor = .lightGray
         
         self.userNameLabel.text = UserManager.shared.currentUser?.name ?? "??"
         
         self.profileImageView.image = UIImage(systemName: User.defaultUserImageName)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print(UserManager.shared.justLoggedIn)
-        print(JournalManager.shared.entries.map({
-            $0.id
-        }))
-    }
-    
+     
     @IBAction func signOutButtonAction(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         // attempt to sign out

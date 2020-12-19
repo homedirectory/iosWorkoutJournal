@@ -15,21 +15,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePh-Ib-h0N">
-                                <rect key="frame" x="40" y="742" width="334" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ePh-Ib-h0N">
+                                <rect key="frame" x="82" y="383" width="250" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysG-OG-ujS">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="gyT-du-QKd"/>
+                                            <constraint firstAttribute="width" constant="250" id="78K-0G-1Bz"/>
+                                            <constraint firstAttribute="height" constant="45" id="gyT-du-QKd"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButtonAction:" destination="Qhh-xO-ase" eventType="touchUpInside" id="TFl-oA-CSk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpI-dn-Oo3">
-                                        <rect key="frame" x="0.0" y="50" width="334" height="30"/>
+                                        <rect key="frame" x="0.0" y="85" width="250" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <action selector="signUpButtonAction:" destination="Qhh-xO-ase" eventType="touchUpInside" id="zMK-hG-NJQ"/>
@@ -37,15 +40,16 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="jpI-dn-Oo3" firstAttribute="width" secondItem="ysG-OG-ujS" secondAttribute="width" id="K1Z-5r-vsH"/>
                                     <constraint firstItem="jpI-dn-Oo3" firstAttribute="height" secondItem="ysG-OG-ujS" secondAttribute="height" id="KX9-Lj-pmh"/>
+                                    <constraint firstItem="jpI-dn-Oo3" firstAttribute="height" secondItem="ysG-OG-ujS" secondAttribute="height" id="f8a-Qc-n2M"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dCY-bp-deB" firstAttribute="trailing" secondItem="ePh-Ib-h0N" secondAttribute="trailing" constant="40" id="1Ny-LI-MX6"/>
-                            <constraint firstItem="ePh-Ib-h0N" firstAttribute="leading" secondItem="dCY-bp-deB" secondAttribute="leading" constant="40" id="B10-vh-t8w"/>
-                            <constraint firstItem="dCY-bp-deB" firstAttribute="bottom" secondItem="ePh-Ib-h0N" secondAttribute="bottom" constant="40" id="D3f-uq-Eui"/>
+                            <constraint firstItem="ePh-Ib-h0N" firstAttribute="centerX" secondItem="VOI-zm-R8z" secondAttribute="centerX" id="G9z-Uv-3qz"/>
+                            <constraint firstItem="ePh-Ib-h0N" firstAttribute="centerY" secondItem="VOI-zm-R8z" secondAttribute="centerY" id="Pjj-ni-Kha"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dCY-bp-deB"/>
                     </view>
@@ -67,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lwA-P2-xeW">
-                                <rect key="frame" x="40" y="244" width="334" height="254"/>
+                                <rect key="frame" x="40" y="244" width="334" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eoc-m5-u9X">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -83,7 +87,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mW-6g-Lnw">
-                                        <rect key="frame" x="0.0" y="120" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
@@ -91,7 +95,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taU-Gf-HGC">
-                                        <rect key="frame" x="0.0" y="174" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="180" width="334" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="RRN-UY-dRj"/>
                                         </constraints>
@@ -102,6 +106,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LTq-T3-akR" firstAttribute="height" secondItem="Eoc-m5-u9X" secondAttribute="height" id="MHz-Rd-znW"/>
+                                    <constraint firstItem="1mW-6g-Lnw" firstAttribute="height" secondItem="Eoc-m5-u9X" secondAttribute="height" id="XJi-ep-lup"/>
                                 </constraints>
                             </stackView>
                         </subviews>

@@ -22,7 +22,10 @@ class LoginViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.loginButton.setTitleColor(.white, for: .normal)
+        self.loginButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.loginButton.layer.cornerRadius = 15.0
+        
         self.errorLabel.alpha = 0
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self

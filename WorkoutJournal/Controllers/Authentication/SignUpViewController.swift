@@ -23,6 +23,10 @@ class SignUpViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.signUpButton.setTitleColor(.white, for: .normal)
+        self.signUpButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.signUpButton.layer.cornerRadius = 15.0
 
         self.errorLabel.alpha = 0
         

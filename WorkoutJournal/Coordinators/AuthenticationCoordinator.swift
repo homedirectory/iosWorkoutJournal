@@ -108,6 +108,7 @@ class AuthenticationCoordinator {
             }
         }
         else {
+            FeedPostManager.shared.fetchAllPosts()
             self.navController!.pushViewController(tabBarController, animated: true)
             self.navController!.isNavigationBarHidden = true
         }

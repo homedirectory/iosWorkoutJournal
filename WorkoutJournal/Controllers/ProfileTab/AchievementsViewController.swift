@@ -23,12 +23,13 @@ class AchievementsViewController: UIViewController, Storyboarded {
             }).count
     }
     
-    @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var tableLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Achievements"
         
         self.tableView.dataSource = self
         self.tableView.delegate = self

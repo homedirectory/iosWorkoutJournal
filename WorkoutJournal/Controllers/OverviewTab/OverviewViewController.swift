@@ -29,6 +29,11 @@ class OverviewViewController: UIViewController, Storyboarded {
         tableView.dataSource = self
         tableView.refreshControl = self.refreshControl
         
+        self.title = "Overview"
+        
+        self.deleteAllButton.isEnabled = false
+        self.deleteAllButton.isHidden = true
+        
         self.refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         
         self.entriesForDifferentDays = self.journalManager.getEntriesForDifferentDays().sorted(by: {_,_ in
