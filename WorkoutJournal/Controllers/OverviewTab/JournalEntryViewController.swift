@@ -40,6 +40,9 @@ class JournalEntryViewController: UIViewController, Storyboarded {
         
         self.saveButton.layer.cornerRadius = 25.0
         
+        self.testButton.isEnabled = false
+        self.testButton.isHidden = true
+        
         if let _ = self.entryToUpdate {
             self.selectedActivityInstance = self.entryToUpdate!.activity
             self.selectedDate = self.entryToUpdate!.creationDate
