@@ -1,5 +1,5 @@
 //
-//  JournalEntry.swift
+//  DistanceAcrivity.swift
 //  WorkoutJournal
 //
 //  Created by Vlad Bilyk on 25.11.2020.
@@ -9,6 +9,9 @@
 import Foundation
 
 
-class JournalEntry {
+protocol DistanceActivity: Activity {
+    
+    var distance: Double {get set}
     
 }
+

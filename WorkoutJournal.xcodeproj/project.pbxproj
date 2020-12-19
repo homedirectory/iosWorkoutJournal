@@ -3,35 +3,165 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51EC523258A788400988359 /* ActivityStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC522258A788300988359 /* ActivityStatsView.swift */; };
+		E51EC527258B59A800988359 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51EC526258B59A800988359 /* Authentication.storyboard */; };
+		E51EC52A258B5AB500988359 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC529258B5AB500988359 /* ViewController.swift */; };
+		E51EC52C258B5AC500988359 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC52B258B5AC500988359 /* LoginViewController.swift */; };
+		E51EC52E258B5AD300988359 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC52D258B5AD300988359 /* SignUpViewController.swift */; };
+		E51EC530258B5EDD00988359 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51EC52F258B5EDD00988359 /* AuthenticationCoordinator.swift */; };
+		E533E0FA258A3D04007D8BC6 /* AchievementIncreasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533E0F9258A3D04007D8BC6 /* AchievementIncreasing.swift */; };
+		E533E0FC258A3F34007D8BC6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533E0FB258A3F34007D8BC6 /* Achievement.swift */; };
+		E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */; };
+		E53AD6C725780B2B00143FCB /* Running.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6C625780B2B00143FCB /* Running.swift */; };
+		E53AD6C925780F5400143FCB /* PushUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6C825780F5400143FCB /* PushUps.swift */; };
+		E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6CA25780F5B00143FCB /* PullUps.swift */; };
+		E53AD6CD25780F7400143FCB /* Plank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6CC25780F7400143FCB /* Plank.swift */; };
+		E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6CE25780F9000143FCB /* ExcerciseSession.swift */; };
+		E53AD6DE2578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D02578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift */; };
+		E53AD6DF2578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D12578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift */; };
+		E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D22578218500143FCB /* PullUpsModel+CoreDataClass.swift */; };
+		E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D32578218500143FCB /* PullUpsModel+CoreDataProperties.swift */; };
+		E53AD6E22578218500143FCB /* PushUpsModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D42578218500143FCB /* PushUpsModel+CoreDataClass.swift */; };
+		E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */; };
+		E53AD6E42578218500143FCB /* RunningModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */; };
+		E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */; };
+		E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */; };
+		E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */; };
+		E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */; };
+		E53AD6EA2578218500143FCB /* PlankModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */; };
+		E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */; };
+		E54BBA9E256E69690099886C /* JournalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BBA9D256E69690099886C /* JournalManager.swift */; };
+		E5539B2D258291B100103EA6 /* ActivityModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5539B2C258291B000103EA6 /* ActivityModel+CoreDataClass.swift */; };
+		E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */; };
+		E5757A4F2576835900A381C5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757A4E2576835900A381C5 /* Activity.swift */; };
+		E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E587E988256E5D6E0063A46C /* GoogleService-Info.plist */; };
 		E587E967256E49D20063A46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E966256E49D20063A46C /* AppDelegate.swift */; };
 		E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E968256E49D20063A46C /* SceneDelegate.swift */; };
-		E587E96B256E49D20063A46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E96A256E49D20063A46C /* ViewController.swift */; };
-		E587E96E256E49D20063A46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E96C256E49D20063A46C /* Main.storyboard */; };
-		E587E971256E49D20063A46C /* WorkoutJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */; };
+		E587E96B256E49D20063A46C /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E96A256E49D20063A46C /* OverviewViewController.swift */; };
+		E587E96E256E49D20063A46C /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E96C256E49D20063A46C /* Overview.storyboard */; };
 		E587E973256E49D30063A46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E587E972256E49D30063A46C /* Assets.xcassets */; };
 		E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E587E974256E49D30063A46C /* LaunchScreen.storyboard */; };
 		E587E983256E534A0063A46C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E982256E534A0063A46C /* User.swift */; };
-		E587E985256E547D0063A46C /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E984256E547D0063A46C /* Journal.swift */; };
 		E587E987256E54A00063A46C /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587E986256E54A00063A46C /* JournalEntry.swift */; };
+		E59A799E258D105600529BAB /* FollowedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A799D258D105600529BAB /* FollowedUsersViewController.swift */; };
+		E59A79A0258D132400529BAB /* FollowedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59A799F258D132400529BAB /* FollowedUserCell.swift */; };
+		E59F85C1258CFCD500436D6B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F85C0258CFCD500436D6B /* UserManager.swift */; };
+		E5AF9FD4258BB225003A4EA5 /* Credentials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD2258BB225003A4EA5 /* Credentials.xcdatamodeld */; };
+		E5AF9FD6258BB27D003A4EA5 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD5258BB27D003A4EA5 /* CredentialsStorage.swift */; };
+		E5AF9FD8258BB2B4003A4EA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */; };
+		E5AF9FDA258BD446003A4EA5 /* PostsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AF9FD9258BD445003A4EA5 /* PostsFeed.storyboard */; };
+		E5AF9FDD258BD475003A4EA5 /* PostsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */; };
+		E5AF9FDF258BD53F003A4EA5 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */; };
+		E5AF9FE1258BDBB6003A4EA5 /* FeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */; };
+		E5AF9FE3258BDFD0003A4EA5 /* FeedPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE2258BDFD0003A4EA5 /* FeedPostManager.swift */; };
+		E5AF9FE5258BE591003A4EA5 /* PostsFeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */; };
+		E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */; };
+		E5B7D179257FC6B400DCB684 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */; };
+		E5B7D17D257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */; };
+		E5B7D17F257FD1D000DCB684 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */; };
+		E5B7D183257FD24100DCB684 /* ActivityTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D182257FD24100DCB684 /* ActivityTypeCell.swift */; };
+		E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D184257FD41D00DCB684 /* StaticVariables.swift */; };
+		E5B7D189257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */; };
+		E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */; };
+		E5D2921125879D0300A6671F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921025879D0300A6671F /* Extensions.swift */; };
+		E5D292132587E83400A6671F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292122587E83400A6671F /* ProfileCoordinator.swift */; };
+		E5D292152587EAF300A6671F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D292142587EAF300A6671F /* Profile.storyboard */; };
+		E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D292182587EBA300A6671F /* ProfileViewController.swift */; };
+		E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921B2588C21D00A6671F /* ImageTextCell.swift */; };
+		E5D2921E2588D9EF00A6671F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921D2588D9EF00A6671F /* StatsViewController.swift */; };
+		E5D292202588DD0100A6671F /* ActivityStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2921F2588DD0100A6671F /* ActivityStatsCell.swift */; };
+		E5D29224258A10DE00A6671F /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D29223258A10DE00A6671F /* AchievementsViewController.swift */; };
+		E5D29226258A135F00A6671F /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D29225258A135F00A6671F /* AchievementCell.swift */; };
+		E5D29228258A161800A6671F /* AchievementRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D29227258A161800A6671F /* AchievementRecord.swift */; };
+		E5E8A123257D2C4A00238364 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A122257D2C4A00238364 /* Stats.swift */; };
+		E5E8A125257E907400238364 /* OverviewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A124257E907400238364 /* OverviewCoordinator.swift */; };
+		E5E8A129257E918300238364 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8A128257E918300238364 /* Storyboarded.swift */; };
+		F5FEFBEC5E9EF02B9EBC2BC3 /* Pods_WorkoutJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D81DB0BCAE88DC71E946C2C /* Pods-WorkoutJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutJournal.release.xcconfig"; path = "Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal.release.xcconfig"; sourceTree = "<group>"; };
+		7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D004BDCDC4F255A8F1542556 /* Pods-WorkoutJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutJournal.debug.xcconfig"; path = "Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal.debug.xcconfig"; sourceTree = "<group>"; };
+		E51EC522258A788300988359 /* ActivityStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityStatsView.swift; sourceTree = "<group>"; };
+		E51EC526258B59A800988359 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		E51EC529258B5AB500988359 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E51EC52B258B5AC500988359 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E51EC52D258B5AD300988359 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E51EC52F258B5EDD00988359 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		E533E0F9258A3D04007D8BC6 /* AchievementIncreasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIncreasing.swift; sourceTree = "<group>"; };
+		E533E0FB258A3F34007D8BC6 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		E53AD6C625780B2B00143FCB /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
+		E53AD6C825780F5400143FCB /* PushUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUps.swift; sourceTree = "<group>"; };
+		E53AD6CA25780F5B00143FCB /* PullUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUps.swift; sourceTree = "<group>"; };
+		E53AD6CC25780F7400143FCB /* Plank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plank.swift; sourceTree = "<group>"; };
+		E53AD6CE25780F9000143FCB /* ExcerciseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseSession.swift; sourceTree = "<group>"; };
+		E53AD6D02578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExcerciseSessionModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D12578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExcerciseSessionModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D22578218500143FCB /* PullUpsModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PullUpsModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D32578218500143FCB /* PullUpsModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PullUpsModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D42578218500143FCB /* PushUpsModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PushUpsModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PushUpsModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunningModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunningModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntryModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlankModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlankModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E54BBA9D256E69690099886C /* JournalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalManager.swift; sourceTree = "<group>"; };
+		E5539B2C258291B000103EA6 /* ActivityModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ActivityModel+CoreDataClass.swift"; path = "WorkoutJournal/CoreData/Entities/ActivityModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		E5757A4E2576835900A381C5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E587E963256E49D20063A46C /* WorkoutJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E587E966256E49D20063A46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E587E968256E49D20063A46C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E587E96A256E49D20063A46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E587E96D256E49D20063A46C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E587E96A256E49D20063A46C /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		E587E96D256E49D20063A46C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Overview.storyboard; sourceTree = "<group>"; };
 		E587E970256E49D20063A46C /* WorkoutJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutJournal.xcdatamodel; sourceTree = "<group>"; };
 		E587E972256E49D30063A46C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E587E975256E49D30063A46C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E587E977256E49D30063A46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E587E982256E534A0063A46C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E587E984256E547D0063A46C /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		E587E986256E54A00063A46C /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		E587E988256E5D6E0063A46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E59A799D258D105600529BAB /* FollowedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUsersViewController.swift; sourceTree = "<group>"; };
+		E59A799F258D132400529BAB /* FollowedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUserCell.swift; sourceTree = "<group>"; };
+		E59F85C0258CFCD500436D6B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		E5AF9FD3258BB225003A4EA5 /* Credentials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Credentials.xcdatamodel; sourceTree = "<group>"; };
+		E5AF9FD5258BB27D003A4EA5 /* CredentialsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
+		E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		E5AF9FD9258BD445003A4EA5 /* PostsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostsFeed.storyboard; sourceTree = "<group>"; };
+		E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedViewController.swift; sourceTree = "<group>"; };
+		E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
+		E5AF9FE2258BDFD0003A4EA5 /* FeedPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostManager.swift; sourceTree = "<group>"; };
+		E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedCoordinator.swift; sourceTree = "<group>"; };
+		E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
+		E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
+		E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewActivityCell.swift; sourceTree = "<group>"; };
+		E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
+		E5B7D182257FD24100DCB684 /* ActivityTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCell.swift; sourceTree = "<group>"; };
+		E5B7D184257FD41D00DCB684 /* StaticVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticVariables.swift; sourceTree = "<group>"; };
+		E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewDetailsCell.swift; sourceTree = "<group>"; };
+		E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryTableViewDateCell.swift; sourceTree = "<group>"; };
+		E5D2921025879D0300A6671F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E5D292122587E83400A6671F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		E5D292142587EAF300A6671F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E5D292182587EBA300A6671F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E5D2921B2588C21D00A6671F /* ImageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextCell.swift; sourceTree = "<group>"; };
+		E5D2921D2588D9EF00A6671F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		E5D2921F2588DD0100A6671F /* ActivityStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatsCell.swift; sourceTree = "<group>"; };
+		E5D29223258A10DE00A6671F /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		E5D29225258A135F00A6671F /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
+		E5D29227258A161800A6671F /* AchievementRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRecord.swift; sourceTree = "<group>"; };
+		E5E8A122257D2C4A00238364 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		E5E8A124257E907400238364 /* OverviewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCoordinator.swift; sourceTree = "<group>"; };
+		E5E8A128257E918300238364 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +169,109 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5FEFBEC5E9EF02B9EBC2BC3 /* Pods_WorkoutJournal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C8B5C632FA32DFD758E899F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D004BDCDC4F255A8F1542556 /* Pods-WorkoutJournal.debug.xcconfig */,
+				7D81DB0BCAE88DC71E946C2C /* Pods-WorkoutJournal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB60E078E1D1B7BAA9A3833A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0D67B1BB9F253A7B603A0 /* Pods_WorkoutJournal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5013142258CD20500F452BD /* FeedPost */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF9FE0258BDBB6003A4EA5 /* FeedPost.swift */,
+				E5AF9FE2258BDFD0003A4EA5 /* FeedPostManager.swift */,
+			);
+			path = FeedPost;
+			sourceTree = "<group>";
+		};
+		E51EC528258B59DC00988359 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E51EC529258B5AB500988359 /* ViewController.swift */,
+				E51EC52B258B5AC500988359 /* LoginViewController.swift */,
+				E51EC52D258B5AD300988359 /* SignUpViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E52E82A6258D547A00C38627 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				E587E986256E54A00063A46C /* JournalEntry.swift */,
+				E54BBA9D256E69690099886C /* JournalManager.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		E533E0F8258A3CC9007D8BC6 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				E5D29227258A161800A6671F /* AchievementRecord.swift */,
+				E533E0F9258A3D04007D8BC6 /* AchievementIncreasing.swift */,
+				E533E0FB258A3F34007D8BC6 /* Achievement.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		E54BBAA9256FBDAC0099886C /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				E5757A4E2576835900A381C5 /* Activity.swift */,
+				E53AD6C625780B2B00143FCB /* Running.swift */,
+				E53AD6C825780F5400143FCB /* PushUps.swift */,
+				E53AD6CA25780F5B00143FCB /* PullUps.swift */,
+				E53AD6CC25780F7400143FCB /* Plank.swift */,
+				E53AD6CE25780F9000143FCB /* ExcerciseSession.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		E5757A6025768F9100A381C5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E53AD6D02578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift */,
+				E53AD6D12578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift */,
+				E53AD6D22578218500143FCB /* PullUpsModel+CoreDataClass.swift */,
+				E53AD6D32578218500143FCB /* PullUpsModel+CoreDataProperties.swift */,
+				E53AD6D42578218500143FCB /* PushUpsModel+CoreDataClass.swift */,
+				E53AD6D52578218500143FCB /* PushUpsModel+CoreDataProperties.swift */,
+				E53AD6D62578218500143FCB /* RunningModel+CoreDataClass.swift */,
+				E53AD6D72578218500143FCB /* RunningModel+CoreDataProperties.swift */,
+				E53AD6D92578218500143FCB /* ActivityModel+CoreDataProperties.swift */,
+				E5539B2C258291B000103EA6 /* ActivityModel+CoreDataClass.swift */,
+				E53AD6DA2578218500143FCB /* JournalEntryModel+CoreDataClass.swift */,
+				E53AD6DB2578218500143FCB /* JournalEntryModel+CoreDataProperties.swift */,
+				E53AD6DC2578218500143FCB /* PlankModel+CoreDataClass.swift */,
+				E53AD6DD2578218500143FCB /* PlankModel+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		E587E95A256E49D20063A46C = {
 			isa = PBXGroup;
 			children = (
 				E587E965256E49D20063A46C /* WorkoutJournal */,
 				E587E964256E49D20063A46C /* Products */,
+				9C8B5C632FA32DFD758E899F /* Pods */,
+				CB60E078E1D1B7BAA9A3833A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +286,9 @@
 		E587E965256E49D20063A46C /* WorkoutJournal */ = {
 			isa = PBXGroup;
 			children = (
+				E5B7D16F257F96CC00DCB684 /* View */,
+				E5E8A127257E917800238364 /* Protocols */,
+				E5E8A126257E909E00238364 /* Coordinators */,
 				E587E981256E4A2E0063A46C /* CoreData */,
 				E587E980256E4A1F0063A46C /* Storyboards */,
 				E587E97F256E4A110063A46C /* Controllers */,
@@ -71,6 +296,8 @@
 				E587E97D256E49FB0063A46C /* Model */,
 				E587E972256E49D30063A46C /* Assets.xcassets */,
 				E587E977256E49D30063A46C /* Info.plist */,
+				E587E988256E5D6E0063A46C /* GoogleService-Info.plist */,
+				E5D2921025879D0300A6671F /* Extensions.swift */,
 			);
 			path = WorkoutJournal;
 			sourceTree = "<group>";
@@ -78,9 +305,13 @@
 		E587E97D256E49FB0063A46C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E587E982256E534A0063A46C /* User.swift */,
-				E587E984256E547D0063A46C /* Journal.swift */,
-				E587E986256E54A00063A46C /* JournalEntry.swift */,
+				E52E82A6258D547A00C38627 /* Journal */,
+				E59F85BF258CFCC200436D6B /* User */,
+				E5013142258CD20500F452BD /* FeedPost */,
+				E533E0F8258A3CC9007D8BC6 /* Achievements */,
+				E54BBAA9256FBDAC0099886C /* Activities */,
+				E5E8A122257D2C4A00238364 /* Stats.swift */,
+				E5B7D184257FD41D00DCB684 /* StaticVariables.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,7 +328,10 @@
 		E587E97F256E4A110063A46C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E587E96A256E49D20063A46C /* ViewController.swift */,
+				E5AF9FDB258BD45E003A4EA5 /* PostsFeedTab */,
+				E51EC528258B59DC00988359 /* Authentication */,
+				E5D292172587EB9100A6671F /* OverviewTab */,
+				E5D292162587EB8400A6671F /* ProfileTab */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,8 +339,11 @@
 		E587E980256E4A1F0063A46C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E587E96C256E49D20063A46C /* Main.storyboard */,
+				E587E96C256E49D20063A46C /* Overview.storyboard */,
 				E587E974256E49D30063A46C /* LaunchScreen.storyboard */,
+				E5D292142587EAF300A6671F /* Profile.storyboard */,
+				E51EC526258B59A800988359 /* Authentication.storyboard */,
+				E5AF9FD9258BD445003A4EA5 /* PostsFeed.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -114,9 +351,129 @@
 		E587E981256E4A2E0063A46C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				E5AF9FD1258BB202003A4EA5 /* Credentials */,
+				E5757A6025768F9100A381C5 /* Entities */,
 				E587E96F256E49D20063A46C /* WorkoutJournal.xcdatamodeld */,
+				E5757A4C25767DD800A381C5 /* CoreDataStorage.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E59F85BF258CFCC200436D6B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF9FD7258BB2B4003A4EA5 /* Credentials.swift */,
+				E587E982256E534A0063A46C /* User.swift */,
+				E59F85C0258CFCD500436D6B /* UserManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		E5AF9FD1258BB202003A4EA5 /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF9FD2258BB225003A4EA5 /* Credentials.xcdatamodeld */,
+				E5AF9FD5258BB27D003A4EA5 /* CredentialsStorage.swift */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		E5AF9FDB258BD45E003A4EA5 /* PostsFeedTab */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF9FDC258BD475003A4EA5 /* PostsFeedViewController.swift */,
+			);
+			path = PostsFeedTab;
+			sourceTree = "<group>";
+		};
+		E5B7D16F257F96CC00DCB684 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E51EC522258A788300988359 /* ActivityStatsView.swift */,
+				E5B7D170257F96D400DCB684 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5B7D170257F96D400DCB684 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E5D2921A2588C1D700A6671F /* ProfileCollectionView */,
+				E5B7D186257FDEB000DCB684 /* JournalEntryTableView */,
+				E5B7D171257F96E200DCB684 /* JournalEntryCell.swift */,
+				E5AF9FDE258BD53F003A4EA5 /* PostCell.swift */,
+				E59A799F258D132400529BAB /* FollowedUserCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E5B7D186257FDEB000DCB684 /* JournalEntryTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7D187257FDEBE00DCB684 /* ActivityCell */,
+				E5B7D17C257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift */,
+				E5B7D188257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift */,
+				E5B7D18A257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift */,
+			);
+			path = JournalEntryTableView;
+			sourceTree = "<group>";
+		};
+		E5B7D187257FDEBE00DCB684 /* ActivityCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7D182257FD24100DCB684 /* ActivityTypeCell.swift */,
+			);
+			path = ActivityCell;
+			sourceTree = "<group>";
+		};
+		E5D292162587EB8400A6671F /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				E5D292182587EBA300A6671F /* ProfileViewController.swift */,
+				E5D2921D2588D9EF00A6671F /* StatsViewController.swift */,
+				E5D29223258A10DE00A6671F /* AchievementsViewController.swift */,
+				E59A799D258D105600529BAB /* FollowedUsersViewController.swift */,
+			);
+			path = ProfileTab;
+			sourceTree = "<group>";
+		};
+		E5D292172587EB9100A6671F /* OverviewTab */ = {
+			isa = PBXGroup;
+			children = (
+				E587E96A256E49D20063A46C /* OverviewViewController.swift */,
+				E5B7D178257FC6B400DCB684 /* JournalEntryViewController.swift */,
+				E5B7D17E257FD1D000DCB684 /* ActivitiesListViewController.swift */,
+			);
+			path = OverviewTab;
+			sourceTree = "<group>";
+		};
+		E5D2921A2588C1D700A6671F /* ProfileCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E5D2921B2588C21D00A6671F /* ImageTextCell.swift */,
+				E5D2921F2588DD0100A6671F /* ActivityStatsCell.swift */,
+				E5D29225258A135F00A6671F /* AchievementCell.swift */,
+			);
+			path = ProfileCollectionView;
+			sourceTree = "<group>";
+		};
+		E5E8A126257E909E00238364 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				E5E8A124257E907400238364 /* OverviewCoordinator.swift */,
+				E5D292122587E83400A6671F /* ProfileCoordinator.swift */,
+				E51EC52F258B5EDD00988359 /* AuthenticationCoordinator.swift */,
+				E5AF9FE4258BE591003A4EA5 /* PostsFeedCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		E5E8A127257E917800238364 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E5E8A128257E918300238364 /* Storyboarded.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +483,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E587E97A256E49D30063A46C /* Build configuration list for PBXNativeTarget "WorkoutJournal" */;
 			buildPhases = (
+				DD22BD554F434B1DE6C6B80F /* [CP] Check Pods Manifest.lock */,
 				E587E95F256E49D20063A46C /* Sources */,
 				E587E960256E49D20063A46C /* Frameworks */,
 				E587E961256E49D20063A46C /* Resources */,
+				B3606756051E3DB2ABE5645F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,38 +536,143 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5AF9FDA258BD446003A4EA5 /* PostsFeed.storyboard in Resources */,
+				E5396124257692DD00E54057 /* WorkoutJournal.xcdatamodeld in Resources */,
+				E51EC527258B59A800988359 /* Authentication.storyboard in Resources */,
 				E587E976256E49D30063A46C /* LaunchScreen.storyboard in Resources */,
 				E587E973256E49D30063A46C /* Assets.xcassets in Resources */,
-				E587E96E256E49D20063A46C /* Main.storyboard in Resources */,
+				E5757A6A257690E700A381C5 /* GoogleService-Info.plist in Resources */,
+				E5D292152587EAF300A6671F /* Profile.storyboard in Resources */,
+				E587E96E256E49D20063A46C /* Overview.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B3606756051E3DB2ABE5645F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkoutJournal/Pods-WorkoutJournal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD22BD554F434B1DE6C6B80F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkoutJournal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E587E95F256E49D20063A46C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E587E96B256E49D20063A46C /* ViewController.swift in Sources */,
-				E587E971256E49D20063A46C /* WorkoutJournal.xcdatamodeld in Sources */,
+				E587E96B256E49D20063A46C /* OverviewViewController.swift in Sources */,
+				E53AD6E72578218500143FCB /* ActivityModel+CoreDataProperties.swift in Sources */,
 				E587E967256E49D20063A46C /* AppDelegate.swift in Sources */,
+				E5AF9FE1258BDBB6003A4EA5 /* FeedPost.swift in Sources */,
 				E587E983256E534A0063A46C /* User.swift in Sources */,
+				E53AD6E42578218500143FCB /* RunningModel+CoreDataClass.swift in Sources */,
+				E5AF9FD4258BB225003A4EA5 /* Credentials.xcdatamodeld in Sources */,
+				E533E0FC258A3F34007D8BC6 /* Achievement.swift in Sources */,
+				E5B7D183257FD24100DCB684 /* ActivityTypeCell.swift in Sources */,
+				E59F85C1258CFCD500436D6B /* UserManager.swift in Sources */,
+				E5B7D189257FDEDD00DCB684 /* JournalEntryTableViewDetailsCell.swift in Sources */,
 				E587E969256E49D20063A46C /* SceneDelegate.swift in Sources */,
+				E51EC52A258B5AB500988359 /* ViewController.swift in Sources */,
+				E53AD6DF2578218500143FCB /* ExcerciseSessionModel+CoreDataProperties.swift in Sources */,
 				E587E987256E54A00063A46C /* JournalEntry.swift in Sources */,
-				E587E985256E547D0063A46C /* Journal.swift in Sources */,
+				E53AD6DE2578218500143FCB /* ExcerciseSessionModel+CoreDataClass.swift in Sources */,
+				E53AD6EA2578218500143FCB /* PlankModel+CoreDataClass.swift in Sources */,
+				E5B7D172257F96E200DCB684 /* JournalEntryCell.swift in Sources */,
+				E53AD6CB25780F5B00143FCB /* PullUps.swift in Sources */,
+				E5B7D17F257FD1D000DCB684 /* ActivitiesListViewController.swift in Sources */,
+				E5AF9FDD258BD475003A4EA5 /* PostsFeedViewController.swift in Sources */,
+				E53AD6EB2578218500143FCB /* PlankModel+CoreDataProperties.swift in Sources */,
+				E53AD6C925780F5400143FCB /* PushUps.swift in Sources */,
+				E53AD6E02578218500143FCB /* PullUpsModel+CoreDataClass.swift in Sources */,
+				E5D292192587EBA300A6671F /* ProfileViewController.swift in Sources */,
+				E53AD6E92578218500143FCB /* JournalEntryModel+CoreDataProperties.swift in Sources */,
+				E5D292202588DD0100A6671F /* ActivityStatsCell.swift in Sources */,
+				E59A799E258D105600529BAB /* FollowedUsersViewController.swift in Sources */,
+				E5757A4D25767DD800A381C5 /* CoreDataStorage.swift in Sources */,
+				E51EC52C258B5AC500988359 /* LoginViewController.swift in Sources */,
+				E59A79A0258D132400529BAB /* FollowedUserCell.swift in Sources */,
+				E5E8A129257E918300238364 /* Storyboarded.swift in Sources */,
+				E5D2921C2588C21D00A6671F /* ImageTextCell.swift in Sources */,
+				E5B7D185257FD41D00DCB684 /* StaticVariables.swift in Sources */,
+				E5D29226258A135F00A6671F /* AchievementCell.swift in Sources */,
+				E5D29224258A10DE00A6671F /* AchievementsViewController.swift in Sources */,
+				E5AF9FE3258BDFD0003A4EA5 /* FeedPostManager.swift in Sources */,
+				E5E8A123257D2C4A00238364 /* Stats.swift in Sources */,
+				E5E8A125257E907400238364 /* OverviewCoordinator.swift in Sources */,
+				E51EC52E258B5AD300988359 /* SignUpViewController.swift in Sources */,
+				E5D29228258A161800A6671F /* AchievementRecord.swift in Sources */,
+				E53AD6E52578218500143FCB /* RunningModel+CoreDataProperties.swift in Sources */,
+				E53AD6E32578218500143FCB /* PushUpsModel+CoreDataProperties.swift in Sources */,
+				E5B7D179257FC6B400DCB684 /* JournalEntryViewController.swift in Sources */,
+				E53AD6E82578218500143FCB /* JournalEntryModel+CoreDataClass.swift in Sources */,
+				E51EC523258A788400988359 /* ActivityStatsView.swift in Sources */,
+				E5757A4F2576835900A381C5 /* Activity.swift in Sources */,
+				E5B7D18B257FDF1D00DCB684 /* JournalEntryTableViewDateCell.swift in Sources */,
+				E5539B2D258291B100103EA6 /* ActivityModel+CoreDataClass.swift in Sources */,
+				E51EC530258B5EDD00988359 /* AuthenticationCoordinator.swift in Sources */,
+				E53AD6CF25780F9000143FCB /* ExcerciseSession.swift in Sources */,
+				E5AF9FDF258BD53F003A4EA5 /* PostCell.swift in Sources */,
+				E5D2921E2588D9EF00A6671F /* StatsViewController.swift in Sources */,
+				E5AF9FE5258BE591003A4EA5 /* PostsFeedCoordinator.swift in Sources */,
+				E54BBA9E256E69690099886C /* JournalManager.swift in Sources */,
+				E53AD6E12578218500143FCB /* PullUpsModel+CoreDataProperties.swift in Sources */,
+				E5D2921125879D0300A6671F /* Extensions.swift in Sources */,
+				E533E0FA258A3D04007D8BC6 /* AchievementIncreasing.swift in Sources */,
+				E5D292132587E83400A6671F /* ProfileCoordinator.swift in Sources */,
+				E5AF9FD8258BB2B4003A4EA5 /* Credentials.swift in Sources */,
+				E53AD6E22578218500143FCB /* PushUpsModel+CoreDataClass.swift in Sources */,
+				E53AD6C725780B2B00143FCB /* Running.swift in Sources */,
+				E53AD6CD25780F7400143FCB /* Plank.swift in Sources */,
+				E5AF9FD6258BB27D003A4EA5 /* CredentialsStorage.swift in Sources */,
+				E5B7D17D257FCD1300DCB684 /* JournalEntryTableViewActivityCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E587E96C256E49D20063A46C /* Main.storyboard */ = {
+		E587E96C256E49D20063A46C /* Overview.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E587E96D256E49D20063A46C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Overview.storyboard;
 			sourceTree = "<group>";
 		};
 		E587E974256E49D30063A46C /* LaunchScreen.storyboard */ = {
@@ -338,6 +802,7 @@
 		};
 		E587E97B256E49D30063A46C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D004BDCDC4F255A8F1542556 /* Pods-WorkoutJournal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +821,7 @@
 		};
 		E587E97C256E49D30063A46C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D81DB0BCAE88DC71E946C2C /* Pods-WorkoutJournal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -403,6 +869,16 @@
 			);
 			currentVersion = E587E970256E49D20063A46C /* WorkoutJournal.xcdatamodel */;
 			path = WorkoutJournal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		E5AF9FD2258BB225003A4EA5 /* Credentials.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E5AF9FD3258BB225003A4EA5 /* Credentials.xcdatamodel */,
+			);
+			currentVersion = E5AF9FD3258BB225003A4EA5 /* Credentials.xcdatamodel */;
+			path = Credentials.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,5 +1,5 @@
 //
-//  Journal.swift
+//  RepetitionActivity.swift
 //  WorkoutJournal
 //
 //  Created by Vlad Bilyk on 25.11.2020.
@@ -9,8 +9,8 @@
 import Foundation
 
 
-class Journal {
-   
+protocol RepetitionActivity: Activity {
     
+    var repetitions: Int {get set}
     
 }
