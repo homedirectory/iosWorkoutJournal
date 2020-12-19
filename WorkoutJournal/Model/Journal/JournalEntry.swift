@@ -11,18 +11,18 @@ import Foundation
 
 class JournalEntry {
     
-    let id: Int
+    let id: String
     var activity: Activity?
     var creationDate: Date?
     
-    init(id: Int, activity: Activity, date: Date) {
+    init(id: String, activity: Activity, date: Date) {
         self.activity = activity
         self.creationDate = date
         self.id = id
     }
     
     init(_ managedObject: JournalEntryModel) {
-        self.id = managedObject.value(forKey: "id") as! Int
+        self.id = managedObject.value(forKey: "id") as! String
         let activity = managedObject.value(forKey: "activity")! as! ActivityModel
         self.activity = activity.transform()
         self.creationDate = managedObject.value(forKey: "date") as? Date

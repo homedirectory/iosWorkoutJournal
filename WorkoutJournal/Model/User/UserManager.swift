@@ -14,6 +14,7 @@ class UserManager {
     
     var currentUser: User? = nil
     private var credentialsStorage: CredentialsStorage = CredentialsStorage.storage
+    var justLoggedIn: Bool = false
     
     static let shared = UserManager()
     
@@ -30,6 +31,7 @@ class UserManager {
     // called after logging in
     func setCurrentUser(withName name: String, withFollowing following: [String], withCredentials credentials: Credentials) {
         self.currentUser = User(name: name, following: following, credentials: credentials)
+        self.justLoggedIn = true
         do {
             try self.credentialsStorage.save(user: self.currentUser!)
         } catch let err {
@@ -43,8 +45,10 @@ class UserManager {
         do {
             try CredentialsStorage.storage.deleteUserAndCredentials()
         } catch let err {
-            print("- failed to delete credentials: \(err)")
+            print("CoreData: failed to delete credentials: \(err)")
         }
+        // try to delete saved entries
+        JournalManager.shared.deleteAllEntries()
     }
     
     func fetchFollowing(forUser user: User, saveUser: Bool, postFetcher: (() -> ())? = nil) {
@@ -140,7 +144,7 @@ class UserManager {
         // commit the batch
         batch.commit() { err in
             if let err = err {
-                print("Firestore: Error updating user \(err)")
+                print("Firestore: Error updating user \(err.localizedDescription)")
             } else {
                 print("Firestore: Updating user succeeded.")
                 // save to core data

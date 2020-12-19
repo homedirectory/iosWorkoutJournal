@@ -21,16 +21,14 @@ public class ProfileCoordinator {
     init() {
     }
     
-    func start(journalManager: JournalManager) {
+    func start() {
         let vc = ProfileViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
-        vc.journalManager = journalManager
         self.navController = UINavigationController(rootViewController: vc)
     }
     
-    func pushStatsViewController(journalManager: JournalManager) {
+    func pushStatsViewController() {
         let vc = StatsViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
-        vc.journalManager = journalManager
         self.navController!.pushViewController(vc, animated: true)
     }
     

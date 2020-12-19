@@ -170,6 +170,26 @@ public class Activity {
         
     }
     
+    static func getActivityType(byName: String) -> Activity.Type? {
+        if byName == "Running" {
+            return Running.self
+        }
+        else if byName == "Push-ups" {
+            return PushUps.self
+        }
+        else if byName == "Pull-ups" {
+            return PullUps.self
+        }
+        else if byName == "Plank" {
+            return Plank.self
+        }
+        else if byName == "Excercise Session" {
+            return ExcerciseSession.self
+        }
+        
+        return nil
+    }
+    
 }
 
 // MARK: - Getters

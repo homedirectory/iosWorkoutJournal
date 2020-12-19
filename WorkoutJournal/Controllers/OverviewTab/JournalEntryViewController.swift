@@ -13,7 +13,7 @@ import UIKit
 class JournalEntryViewController: UIViewController, Storyboarded {
     
     weak var coordinator: OverviewCoordinator?
-    var journalManager: JournalManager?
+    var journalManager: JournalManager = JournalManager.shared
     let feedPostManager: FeedPostManager = FeedPostManager.shared
     private var detailsCellLabels = ["Duration", "Distance", "Repetititons"]
     private var selectedActivityInstance: Activity?
@@ -100,15 +100,15 @@ extension JournalEntryViewController {
                                                                      repetitions: self.repetitionsCell.getNumber())
             
         if let entry = self.entryToUpdate {
-            self.journalManager!.setEntryActivity(entryId: entry.id, newActivity: activity)
-            self.journalManager!.setEntryDate(entryId: entry.id, newDate: self.selectedDate ?? Date())
+            self.journalManager.setEntryActivity(entryId: entry.id, newActivity: activity)
+            self.journalManager.setEntryDate(entryId: entry.id, newDate: self.selectedDate ?? Date())
             // if switch is on and this entry is updated, create new post and write it into db
             if self.shareSwitch.isOn {
                 self.feedPostManager.savePost(FeedPost(user: UserManager.shared.currentUser!, journalEntry: entry))
             }
         }
         else {
-            let entry = self.journalManager!.createEntry(activity: activity, date: self.selectedDate ?? Date())
+            let entry = self.journalManager.createEntry(activity: activity, date: self.selectedDate ?? Date())
             // if switch is on and entry is valid, create new post and write it into db
             if self.shareSwitch.isOn && entry != nil {
                 self.feedPostManager.savePost(FeedPost(user: UserManager.shared.currentUser!, journalEntry: entry!))

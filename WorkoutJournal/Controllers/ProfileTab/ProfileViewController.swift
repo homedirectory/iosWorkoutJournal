@@ -13,7 +13,7 @@ import FirebaseAuth
 class ProfileViewController: UIViewController, Storyboarded {
     
     weak var coordinator: ProfileCoordinator?
-    var journalManager: JournalManager?
+    var journalManager: JournalManager = JournalManager.shared
     
     let cellLabels = ["Stats", "Achievements"]
     let cellImages = ["chart.bar", "a.circle"]
@@ -38,6 +38,13 @@ class ProfileViewController: UIViewController, Storyboarded {
         self.userNameLabel.text = UserManager.shared.currentUser?.name ?? "??"
         
         self.profileImageView.image = UIImage(systemName: User.defaultUserImageName)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(UserManager.shared.justLoggedIn)
+        print(JournalManager.shared.entries.map({
+            $0.id
+        }))
     }
     
     @IBAction func signOutButtonAction(_ sender: Any) {
@@ -96,7 +103,7 @@ extension ProfileViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            self.coordinator!.pushStatsViewController(journalManager: self.journalManager!)
+            self.coordinator!.pushStatsViewController()
         }
         else if indexPath.row == 1 {
             self.coordinator!.pushAchievementsViewController()

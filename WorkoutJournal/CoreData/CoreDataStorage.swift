@@ -12,6 +12,12 @@ import CoreData
 
 final class CoreDataStorage {
     
+    static let storage = CoreDataStorage()
+    
+    private init() {
+        
+    }
+    
     enum Issue: Error {
         case noValue
     }
@@ -29,6 +35,7 @@ final class CoreDataStorage {
         entryManagedObject.setValue(entry.creationDate, forKey: "date")
         entryManagedObject.setValue(activityManagedObject, forKey: "activity")
 
+        print("CoreData: saved an entry")
         saveContext()
     }
     
@@ -36,13 +43,13 @@ final class CoreDataStorage {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         let results = try persistentContainer.viewContext.fetch(fetchRequest)
         
-        print("fetched \(results.count) objects")
+        print("CoreData: fetched \(results.count) entries")
         return results
     }
     
-    func fetch(entityName: String, id: Int) throws -> NSManagedObject {
+    func fetch(entityName: String, id: String) throws -> NSManagedObject {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
-        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [Int64(id)])
+        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [id])
         let results = try persistentContainer.viewContext.fetch(fetchRequest)
         guard let managedObject = results.first else {
             throw Issue.noValue
@@ -50,21 +57,21 @@ final class CoreDataStorage {
         return managedObject
     }
     
-    func updateEntry(entryId: Int, newValue: Any?, keyPath: String) throws {
+    func updateEntry(entryId: String, newValue: Any?, keyPath: String) throws {
         let managedObject = try self.fetch(entityName: "JournalEntryModel", id: entryId)
         
         managedObject.setValue(newValue, forKey: keyPath)
         saveContext()
-        print("updated an entry(ID:\(entryId)) in CoreData")
+        print("CoreData: updated an entry(ID:\(entryId))")
     }
     
-    func updateEntryActivity(entryId: Int, newValue: Any?, keyPath: String) throws {
+    func updateEntryActivity(entryId: String, newValue: Any?, keyPath: String) throws {
         let managedObject = try self.fetch(entityName: "JournalEntryModel", id: entryId)
         
         let activity: NSManagedObject = managedObject.value(forKey: "activity") as! NSManagedObject
         activity.setValue(newValue, forKey: keyPath)
         saveContext()
-        print("updated an entry(ID:\(entryId)) in CoreData")
+        print("CoreData: updated an entry activity(ID:\(entryId))")
     }
         
     func delete(objects: [NSManagedObject]) {
@@ -78,10 +85,10 @@ final class CoreDataStorage {
         }
         
         saveContext()
-        print("- deleted \(objects.count) objects from CoreData")
+        print("CoreData: deleted \(objects.count) entries")
     }
     
-    func deleteEntry(entryId: Int) throws {
+    func deleteEntry(entryId: String) throws {
         let result = try self.fetch(entityName: "JournalEntryModel", id: entryId)
         delete(objects: [result])
     }
@@ -91,7 +98,7 @@ final class CoreDataStorage {
         delete(objects: results)
     }
     
-    func deleteEntryActivity(entryId: Int) throws {
+    func deleteEntryActivity(entryId: String) throws {
         let result = try self.fetch(entityName: "JournalEntryModel", id: entryId)
         let activity = result.value(forKey: "activity") as! NSManagedObject
         delete(objects: [activity])
@@ -106,7 +113,9 @@ final class CoreDataStorage {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
+        
         let container = NSPersistentContainer(name: "WorkoutJournal")
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

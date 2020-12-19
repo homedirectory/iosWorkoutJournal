@@ -19,17 +19,15 @@ public class OverviewCoordinator {
     init() {
     }
     
-    func start(journalManager: JournalManager) {
+    func start() {
         let vc = OverviewViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
-        vc.journalManager = journalManager
         self.navController = UINavigationController(rootViewController: vc)
     }
     
-    func pushJournalEntryViewController(journalManager: JournalManager, entryToUpdate entry: JournalEntry? = nil) {
+    func pushJournalEntryViewController(entryToUpdate entry: JournalEntry? = nil) {
         let vc = JournalEntryViewController.instantiate(storyboardName: Self.STORYBOARD_NAME)
         vc.coordinator = self
-        vc.journalManager = journalManager
         vc.entryToUpdate = entry
         self.navController!.pushViewController(vc, animated: true)
     }

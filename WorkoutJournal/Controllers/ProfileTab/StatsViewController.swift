@@ -13,7 +13,7 @@ class StatsViewController: UIViewController, Storyboarded {
     
     private let activityTypes: [Activity.Type] = StaticVariables.defaultActivityTypes
     private var activityStatsView: ActivityStatsView?
-    var journalManager: JournalManager?
+    var journalManager: JournalManager = JournalManager.shared
     var tapRecognizer: UIGestureRecognizer?
     
     @IBOutlet weak var topLabel: UILabel!

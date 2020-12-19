@@ -18,7 +18,7 @@ extension JournalEntryModel {
     }
 
     @NSManaged public var date: Date?
-    @NSManaged public var id: Int64
+    @NSManaged public var id: String?
     @NSManaged public var activity: ActivityModel?
 
 }

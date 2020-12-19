@@ -27,6 +27,7 @@ class AuthenticationCoordinator {
         do {
             if let user = try CredentialsStorage.storage.fetchUser() {
                 UserManager.shared.currentUser = user
+                JournalManager.shared.fetchCoreData()
                 self.pushTabBarController(fetchNeeded: false)
                 return
             }
@@ -64,7 +65,7 @@ class AuthenticationCoordinator {
         navControllerPostsFeed.title = "Feed"
 
         self.overviewCoordinator = OverviewCoordinator()
-        self.overviewCoordinator!.start(journalManager: JournalManager.shared)
+        self.overviewCoordinator!.start()
         let navControllerOverview = self.overviewCoordinator!.navController!
         navControllerOverview.title = "Overview"
 
@@ -77,7 +78,7 @@ class AuthenticationCoordinator {
                 self!.navController!.isNavigationBarHidden = false
             }
         }
-        self.profileCoordinator!.start(journalManager: JournalManager.shared)
+        self.profileCoordinator!.start()
         let navControllerProfile = self.profileCoordinator!.navController!
         navControllerProfile.title = "Profile"
 
@@ -92,17 +93,23 @@ class AuthenticationCoordinator {
             item.image = UIImage(systemName: imageNames[i])
         }
 
-        self.navController!.pushViewController(tabBarController, animated: true)
-        self.navController!.isNavigationBarHidden = true
-        
         if fetchNeeded {
             // fetch followed users for current user if they exist (they definitely should)
             if let currentUser = UserManager.shared.currentUser {
-                UserManager.shared.fetchFollowing(forUser: currentUser, saveUser: false, postFetcher: {
-                    // fetch posts
-                    FeedPostManager.shared.fetchAllPosts()
+                JournalManager.shared.fetchFirestore(completion: { [weak self] in
+                    UserManager.shared.fetchFollowing(forUser: currentUser, saveUser: false, postFetcher: {
+                        // fetch posts
+                        FeedPostManager.shared.fetchAllPosts()
+                    })
+                    self!.navController!.pushViewController(tabBarController, animated: true)
+                    self!.navController!.isNavigationBarHidden = true
                 })
+                
             }
+        }
+        else {
+            self.navController!.pushViewController(tabBarController, animated: true)
+            self.navController!.isNavigationBarHidden = true
         }
         
     }
