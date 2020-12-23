@@ -4,6 +4,8 @@
 
 ##Other
 **/.DS_Store
+presentation/
+GoogleService-Info.plist
 
 ## User settings
 xcuserdata/
