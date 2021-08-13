@@ -1,6 +1,6 @@
 # iOS WorkoutJournal App
 
-Tired of journaling with a pen in your notebook? Wanna share your workouts with friends? Then this app is made just for you!
+A little ugly, but it works. My first attempt at creating an iOS app.
 
 Here are some screenshots:
 
